@@ -5,12 +5,13 @@ import {BrowserRouter} from 'react-router-dom';
 import './index.css';
 // import App from './App';
 import * as serviceWorker from './serviceWorker';
-import Home from './components/Home';
+
+import App from './components/App';
 
 
 ReactDOM.render(
 <BrowserRouter>
-<Home />
+<App />
 </BrowserRouter>
 , document.getElementById('root'));
 

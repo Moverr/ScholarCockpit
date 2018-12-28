@@ -11,8 +11,7 @@ class Home extends Component {
         return (
             <div className={'home'}>
                 <h1>SCHOLA </h1>
-                <PublicNavigation/>
-                <Router/>
+               
 
                 
                 
