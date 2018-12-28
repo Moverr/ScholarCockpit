@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
-import {Switch, Route} from 'react-router-dom';
-//Redirect
+
 
 import { NavLink} from 'react-router-dom';
-import Login from './Login';
-import Home from './Home';
 
 
 class PublicNavigation extends Component {
@@ -29,12 +26,6 @@ class PublicNavigation extends Component {
                 </ul>
                 
 
-                 <Switch>
-                 {/* <Redirect from="/login" to="/login"/> */}
-                <Route path="/home" component={Home} />
-                <Route path="/login" component={Login} />
-                
-                 </Switch>
             </div>
 
            
