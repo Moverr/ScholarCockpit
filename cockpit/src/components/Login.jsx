@@ -31,6 +31,7 @@ class Login extends Component {
 
      handleSubmit(event) {
         event.preventDefault();
+        alert("Almost ready for saving");
        }
 
 
@@ -48,9 +49,9 @@ class Login extends Component {
             <form onSubmit={this.handleSubmit}>
                 <h1> LOGIN FORM</h1>
                 <label>Username</label>
-                <input  name="username" type="text" className="form-control" value={this.state.value} onChange={this.handleChange} />
+                <input  name="username" type="text" className="form-control" value={this.state.username} onChange={this.handleChange} />
                 <label>Password</label>
-                <input  name="password" type="password" className="form-control" value={this.state.value} onChange={this.handleChange} />
+                <input  name="password" type="password" className="form-control" value={this.state.password} onChange={this.handleChange} />
                 
             </form>
         </div>;
