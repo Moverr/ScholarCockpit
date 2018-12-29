@@ -10,10 +10,10 @@ class Router extends Component {
     render() {
         return (
             <div>
-                <Switch>                 
-                    <Route path="/home" component={Home} />
-                    <Route path="/" component={Home} />                
-                    <Route path="/login" component={Login} />                    
+                <Switch>    
+                    <Route exact path="/" component={Home} />                  
+                    <Route exact path="/home" component={Home} />                              
+                    <Route exact path="/login" component={Login} />                    
                  </Switch>
                  
                 
