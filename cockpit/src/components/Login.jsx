@@ -19,6 +19,7 @@ class Login extends Component {
 
      handleSubmit(event) {
         event.preventDefault();
+        //todo: send data to the  server 
         alert('A name was submitted: ' + this.state.value);
        
       }
@@ -26,14 +27,34 @@ class Login extends Component {
 
 
     render() { 
+
+        if(!this.props.schoolname){
+            return (
+                this.shoolForm()
+            )
+        }
+        
         return (
-            <div className="body-wrapper">
-            <form onSubmit={this.handleSubmit} >
-                <h1> SCHOOL NAME</h1>
-                <input type="text"  className="form-control" value={this.state.value} onChange={this.handleChange} />
-                </form>
-            </div>
+            this.loginForm()
         )
+    }
+
+    loginForm() {
+        return <div className="body-wrapper">
+            <form onSubmit={this.handleSubmit}>
+                <h1> SCHOOL NAME</h1>
+                <input type="text" className="form-control" value={this.state.value} onChange={this.handleChange} />
+            </form>
+        </div>;
+    }
+
+    shoolForm() {
+        return <div className="body-wrapper">
+            <form onSubmit={this.handleSubmit}>
+                <h1> SCHOOL NAME</h1>
+                <input type="text" className="form-control" value={this.state.value} onChange={this.handleChange} />
+            </form>
+        </div>;
     }
 }
 
