@@ -11,7 +11,17 @@ class Login extends Component {
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
-    
+
+    componentDidMount(){
+
+        this.setState({
+            value: !this.props.schoolname ? null : this.props.schoolname 
+        }           
+        )
+
+
+    }
+
      handleChange(event){
         this.setState({value:event.target.value});
      }
@@ -19,8 +29,9 @@ class Login extends Component {
 
      handleSubmit(event) {
         event.preventDefault();
-        //todo: send data to the  server 
-        alert('A name was submitted: ' + this.state.value);
+        
+         
+        
        
       }
 
@@ -28,7 +39,13 @@ class Login extends Component {
 
     render() { 
 
-        if(!this.props.schoolname){
+      
+       
+    
+        const  schoolname = this.state.value;
+
+
+        if(!schoolname){
             return (
                 this.shoolForm()
             )
@@ -42,7 +59,7 @@ class Login extends Component {
     loginForm() {
         return <div className="body-wrapper">
             <form onSubmit={this.handleSubmit}>
-                <h1> SCHOOL NAME</h1>
+                <h1> LOGIN FORM</h1>
                 <input type="text" className="form-control" value={this.state.value} onChange={this.handleChange} />
             </form>
         </div>;
