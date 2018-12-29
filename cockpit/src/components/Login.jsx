@@ -22,13 +22,13 @@ class Login extends Component {
       }
 
 
-      
+
     render() { 
         return (
             <div className="body-wrapper">
-            <form onSubmit={this.handleSubmit}>
-                <h1>Enter Shoool Name</h1>
-                <input type="text" value={this.state.value} onChange={this.handleChange} />
+            <form onSubmit={this.handleSubmit} >
+                <h1> SCHOOL NAME</h1>
+                <input type="text"  className="form-control" value={this.state.value} onChange={this.handleChange} />
                 </form>
             </div>
         )
