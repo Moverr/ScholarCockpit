@@ -6,7 +6,10 @@ class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            value:''
+            username:'',
+            password:'',
+            schoolname:''
+            
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -21,8 +24,8 @@ class Login extends Component {
 
     }
 
-     handleChange(event){
-        this.setState({value:event.target.value});
+     handleChange(evt){
+        this.setState({ [evt.target.name]: evt.target.value });
      }
 
 
@@ -44,7 +47,11 @@ class Login extends Component {
         return <div className="body-wrapper">
             <form onSubmit={this.handleSubmit}>
                 <h1> LOGIN FORM</h1>
-                <input type="text" className="form-control" value={this.state.value} onChange={this.handleChange} />
+                <label>Username</label>
+                <input  name="username" type="text" className="form-control" value={this.state.value} onChange={this.handleChange} />
+                <label>Password</label>
+                <input  name="password" type="password" className="form-control" value={this.state.value} onChange={this.handleChange} />
+                
             </form>
         </div>;
     }
