@@ -7,9 +7,10 @@ import { NavLink} from 'react-router-dom';
 class PublicNavigation extends Component {
     render() {
         return (
-            <div>
 
-                 <ul className={'public_navigation'}>
+            <nav className={"navbar navbar-default navbar-fixed-top"}>
+  <div className={"container"}>
+  <ul className={'public_navigation'}>
                     <li>
                     <NavLink to={'home'} activeClassName="active">
                                    Home
@@ -26,7 +27,10 @@ class PublicNavigation extends Component {
                 </ul>
                 
 
-            </div>
+  </div>
+</nav>
+
+            
 
            
         );
