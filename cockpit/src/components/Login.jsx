@@ -9,6 +9,7 @@ class Login extends Component {
             value:''
         };
         this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
     
      handleChange(event){
@@ -17,8 +18,9 @@ class Login extends Component {
 
 
      handleSubmit(event) {
-        alert('A name was submitted: ' + this.state.value);
         event.preventDefault();
+        alert('A name was submitted: ' + this.state.value);
+       
       }
 
 
