@@ -39,31 +39,21 @@ class Login extends Component {
 
     render() { 
 
-      
-       
-    
-        const  schoolname = this.state.value;
+        // const  schoolname = this.state.value;
 
-
-        if(!schoolname){
-            return (
-                this.shoolForm()
-            )
-        }
-        
         return (
-            this.loginForm()
-        )
+            this.shoolForm()
+        )        
     }
 
-    loginForm() {
-        return <div className="body-wrapper">
-            <form onSubmit={this.handleSubmit}>
-                <h1> LOGIN FORM</h1>
-                <input type="text" className="form-control" value={this.state.value} onChange={this.handleChange} />
-            </form>
-        </div>;
-    }
+    // loginForm() {
+    //     return <div className="body-wrapper">
+    //         <form onSubmit={this.handleSubmit}>
+    //             <h1> LOGIN FORM</h1>
+    //             <input type="text" className="form-control" value={this.state.value} onChange={this.handleChange} />
+    //         </form>
+    //     </div>;
+    // }
 
     shoolForm() {
         return <div className="body-wrapper">

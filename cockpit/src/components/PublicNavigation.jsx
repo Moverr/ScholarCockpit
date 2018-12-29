@@ -30,6 +30,9 @@ class PublicNavigation extends Component {
                         <NavLink to={'login'} activeClassName="active">login</NavLink>
                     </li>
                     <li>
+                        <NavLink to={'verify'} activeClassName="active">verify</NavLink>
+                    </li>
+                    <li>
                         <NavLink to={'login'} activeClassName="active">Register</NavLink>
                     </li>                    
     </ul>
