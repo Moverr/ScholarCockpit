@@ -7,14 +7,29 @@ class Login extends Component {
         super(props);
         this.state = {
             value:''
-        }
+        };
+        this.handleChange = this.handleChange.bind(this);
     }
     
-    render() {
+     handleChange(event){
+        this.setState({value:event.target.value});
+     }
+
+
+     handleSubmit(event) {
+        alert('A name was submitted: ' + this.state.value);
+        event.preventDefault();
+      }
+
+
+      
+    render() { 
         return (
             <div className="body-wrapper">
+            <form onSubmit={this.handleSubmit}>
                 <h1>Enter Shoool Name</h1>
-                <input type={'text'} value={this.state.value} />
+                <input type="text" value={this.state.value} onChange={this.handleChange} />
+                </form>
             </div>
         )
     }
