@@ -45,14 +45,15 @@ class Login extends Component {
     }
 
     loginForm() {
-        return <div className="body-wrapper">
+        return <div className="  login-form">
             <form onSubmit={this.handleSubmit}>
                 <h1> LOGIN FORM</h1>
                 <label>Username</label>
                 <input  name="username" type="text" className="form-control" value={this.state.username} onChange={this.handleChange} />
                 <label>Password</label>
                 <input  name="password" type="password" className="form-control" value={this.state.password} onChange={this.handleChange} />
-                
+              <br/>
+                <button type="submit" className="btn btn-primary">LOGIN</button>
             </form>
         </div>;
     }

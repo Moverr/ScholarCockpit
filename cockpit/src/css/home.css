@@ -29,3 +29,15 @@
     margin: auto; 
     padding: 5px;
 }
+
+.login-form{
+    margin: auto;
+    margin-top: 12%;
+    height: 350px;
+    width: 500px !important; padding: 30px;
+    background:#faf5f5;
+}
+
+.login-form h1 {
+    text-align: center;
+}
