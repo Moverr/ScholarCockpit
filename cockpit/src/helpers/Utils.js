@@ -11,9 +11,13 @@ class Utils{
     }
 
     getEndPoint(endpoint){
-        return  this.getBaseUrl()+this.endpoints[endpoint];
+        return  this.endpoints[endpoint];
     }
 
+    getFullUrl(endpoint){
+        return  this.getBaseUrl()+this.getEndPoint(endpoint);
+    }
+    
 
 
     
