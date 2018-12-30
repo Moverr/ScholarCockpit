@@ -1,106 +1,93 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import '../css/home.css';
 import Utils from '../helpers/Utils';
+import Api from './apis/Api';
 
 class Login extends Component {
+	constructor(props) {
+		super(props);
 
-    
-    constructor(props) {
-        super(props);
+		this.util = new Utils();
+		this.endpoint = this.util.getEndPoint('users');
 
-        this.util = new Utils();
-        this.endpoint =   this.util.getEndPoint('users');
-        
-        
-        this.state = {
-            username:'',
-            password:'',
-            schoolName:'',
-            endpoint:this.endpoint
-            
-        };
-        
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-    }
+		this.Api = new Api();
 
-    componentDidMount(){
-        this.setState({
-            value: !this.props.schoolname ? null : this.props.schoolname 
-        }           
-        )
+		this.state = {
+			username: '',
+			password: '',
+			schoolName: '',
+			endpoint: this.endpoint
+		};
 
+		this.handleChange = this.handleChange.bind(this);
+		this.handleSubmit = this.handleSubmit.bind(this);
+	}
 
-    }
+	componentDidMount() {
+		this.setState({
+			value: !this.props.schoolname ? null : this.props.schoolname
+		});
+	}
 
-     handleChange(evt){
-        this.setState({ [evt.target.name]: evt.target.value });
-     }
+	handleChange(evt) {
+		this.setState({ [evt.target.name]: evt.target.value });
+	}
 
-     handleSuccess=(response)=>{
-        console.log(response);
-     }
-     handleError=(response)=>{
-        console.log(response);
-     }
+	handleSuccess = (response) => {
+		console.log(response);
+	};
+	handleError = (response) => {
+		console.log(response);
+	};
 
-     handleSubmit(event) {
-        event.preventDefault();
-        let body = {
-            username:this.state.username,
-            password:this.state.password,
-            
-        }
-        let headers = {
-            "Content-Type": "application/json",
-            "schoolname": "KYADONDO PRIMARY SCHOOL",
-            
-        };
-        //todo: create a post example wwhere u can handle 
-        const url = this.endpoint + 'login';
-        this.post(url,body, headers,this.handleSuccess,this.handleError);
-        
-        
-       }
+	handleSubmit(event) {
+		event.preventDefault();
+		let body = {
+			username: this.state.username,
+			password: this.state.password
+		};
+		let headers = {
+			'Content-Type': 'application/json',
+			schoolname: 'KYADONDO PRIMARY SCHOOL'
+		};
+		//todo: create a post example wwhere u can handle
+		const url = this.endpoint + 'login';
+		this.Api.post(url, body, headers, this.handleSuccess, this.handleError);
+	}
 
+	render() {
+		return this.loginForm();
+	}
 
-
-    post(url,body, headers,successCallback,errorCallback) {
-        fetch(url, {
-            method: 'post',
-            body: JSON.stringify(body),
-            headers: headers
-        }).then(function (response) {
-            successCallback(response);
-            
-        }).then(function (data) {
-             errorCallback(data);
-        });
-    }
-
-    render() { 
-
-
-        return (
-            this.loginForm()
-        )        
-    }
-
-    loginForm() {
-        return <div className="  login-form">
-            <form onSubmit={this.handleSubmit}>
-                <h1> LOGIN FORM</h1>
-                <label>Username</label>
-                <input  name="username" type="text" className="form-control" value={this.state.username} onChange={this.handleChange} />
-                <label>Password</label>
-                <input  name="password" type="password" className="form-control" value={this.state.password} onChange={this.handleChange} />
-              <br/>
-                <button type="submit" className="btn btn-primary">LOGIN</button>
-            </form>
-        </div>;
-    }
- 
- 
+	loginForm() {
+		return (
+			<div className="  login-form">
+				<form onSubmit={this.handleSubmit}>
+					<h1> LOGIN FORM</h1>
+					<label>Username</label>
+					<input
+						name="username"
+						type="text"
+						className="form-control"
+						value={this.state.username}
+						onChange={this.handleChange}
+					/>
+					<label>Password</label>
+					<input
+						name="password"
+						type="password"
+						className="form-control"
+						value={this.state.password}
+						onChange={this.handleChange}
+					/>
+					<br />
+					<button type="submit" className="btn btn-primary">
+						LOGIN
+					</button>
+				</form>
+			</div>
+		);
+	}
 }
 
-export default Login
+export default Login;
