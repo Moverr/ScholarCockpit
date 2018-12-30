@@ -9,6 +9,7 @@ class Api {
 
 
     post(url, body, headers, successCallback, errorCallback) {
+        url = this.util.getBaseUrl()+url;        
         fetch(url, {
             method: 'post',
             body: JSON.stringify(body),
@@ -20,10 +21,6 @@ class Api {
             errorCallback(data);
         });
     }
-
-
-
-
 
 
 };
