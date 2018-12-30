@@ -4,8 +4,6 @@ class Utils{
      endpoints  = {
          users:"user/v1/",
          roles:"roles/v1/",
-         
-         
      }
 
      getBaseUrl(){
@@ -13,7 +11,7 @@ class Utils{
     }
 
     getEndPoint(endpoint){
-        return this.endpoints[endpoint];
+        return  this.getBaseUrl()+this.endpoints[endpoint];
     }
 
 

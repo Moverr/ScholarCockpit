@@ -19,6 +19,7 @@ class Login extends Component {
             endpoint:this.endpoint
             
         };
+        
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -36,13 +37,46 @@ class Login extends Component {
         this.setState({ [evt.target.name]: evt.target.value });
      }
 
+     handleSuccess=(response)=>{
+        console.log(response);
+     }
+     handleError=(response)=>{
+        console.log(response);
+     }
 
      handleSubmit(event) {
         event.preventDefault();
-        alert("Almost ready for saving");
+        let body = {
+            username:this.state.username,
+            password:this.state.password,
+            
+        }
+        let headers = {
+            "Content-Type": "application/json",
+            "schoolname": "KYADONDO PRIMARY SCHOOL",
+            
+        };
+        //todo: create a post example wwhere u can handle 
+        const url = this.endpoint + 'login';
+        this.post(url,body, headers,this.handleSuccess,this.handleError);
+        
+        
        }
 
 
+
+    post(url,body, headers,successCallback,errorCallback) {
+        fetch(url, {
+            method: 'post',
+            body: JSON.stringify(body),
+            headers: headers
+        }).then(function (response) {
+            successCallback(response);
+            
+        }).then(function (data) {
+             errorCallback(data);
+        });
+    }
 
     render() { 
 
