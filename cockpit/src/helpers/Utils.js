@@ -13,10 +13,10 @@ class Utils{
     }
 
     getEndPoint(endpoint){
-        return this.endpoints.endpoint;
+        return this.endpoints[endpoint];
     }
 
-    
+
 
     
     

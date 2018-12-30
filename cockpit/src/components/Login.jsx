@@ -1,14 +1,22 @@
 import React, { Component } from 'react'
 import '../css/home.css';
+import Utils from '../helpers/Utils';
 
 class Login extends Component {
 
+    
     constructor(props) {
         super(props);
+
+        this.util = new Utils();
+        this.endpoint =   this.util.getEndPoint('users');
+        
+        
         this.state = {
             username:'',
             password:'',
-            schoolname:''
+            schoolName:'',
+            endpoint:this.endpoint
             
         };
         this.handleChange = this.handleChange.bind(this);
@@ -38,7 +46,7 @@ class Login extends Component {
 
     render() { 
 
-  
+
         return (
             this.loginForm()
         )        
