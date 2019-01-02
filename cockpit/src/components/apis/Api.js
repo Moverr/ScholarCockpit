@@ -11,14 +11,14 @@ class Api {
             method: 'post',
             body: JSON.stringify(body),
             headers: headers
-        }).then(function (response) {
-            successCallback(response);
-
+        }).then(function (response) {  
+            successCallback(response);           
         }).then(function (data) {
+            console.log(data);
             errorCallback(data);
         });
     }
-
+ 
     get(url, body, headers, successCallback, errorCallback) {
         url = this.util.getBaseUrl()+url;        
         fetch(url, {

@@ -16,7 +16,9 @@ class Login extends Component {
 			username: '',
 			password: '',
 			schoolName: '',
-			endpoint: this.endpoint
+            endpoint: this.endpoint,
+            loginBtn:'LOGIN'
+            
 		};
 
 		this.handleChange = this.handleChange.bind(this);
@@ -34,14 +36,33 @@ class Login extends Component {
 	}
 
 	handleSuccess = (response) => {
-		console.log(response);
-	};
+        console.log(response);
+        switch (response.status) {
+            case 400:
+                response = response.json();
+                console.log(response);
+                
+            break;
+
+            default:
+                break;
+        }
+        
+        this.setState({
+            loginBtn:'LOGIN'
+        });
+    }
+    
 	handleError = (response) => {
-		console.log(response);
-	};
+        console.log(response);
+         
+	}
 
 	handleSubmit(event) {
-		event.preventDefault();
+        event.preventDefault();
+        this.setState({
+            loginBtn:'Processing...'
+        });
 		let body = {
 			username: this.state.username,
 			password: this.state.password
@@ -81,8 +102,8 @@ class Login extends Component {
 						onChange={this.handleChange}
 					/>
 					<br />
-					<button type="submit" className="btn btn-primary">
-						LOGIN
+					<button type="submit"  name="loginbtn" className="btn btn-primary">
+						{this.state.loginBtn}
 					</button>
 				</form>
 			</div>
