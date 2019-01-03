@@ -68,7 +68,7 @@ class Login extends Component {
 			'Content-Type': 'application/json',
 			schoolname: 'KYADONDO PRIMARY SCHOOL'
 		};
-		//todo: create a post example wwhere u can handle
+
 		const url = this.endpoint + 'login';
 		this.Api.post(url, body, headers, this.handleSuccess);
 	}
