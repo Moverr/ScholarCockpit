@@ -5,18 +5,26 @@ class Api {
         this.util = new Utils();
         this.baseUrl = this.util.getBaseUrl();
     }
-    post(url, body, headers, successCallback, errorCallback) {
+    post(url, body, headers, successCallback) {
         url = this.util.getBaseUrl()+url;        
         fetch(url, {
             method: 'post',
             body: JSON.stringify(body),
             headers: headers
         }).then(function (response) {  
-            successCallback(response);           
+            console.log(response.status)
+            switch(response.status){
+                case 400:
+                    return null;                 
+                default:
+                return response.json();
+                 
+            }
+            // return response.json();      
         }).then(function (data) {
-            console.log(data);
-            errorCallback(data);
-        });
+            successCallback(data);
+        })
+        .catch((err)=>console.log(err));
     }
  
     get(url, body, headers, successCallback, errorCallback) {

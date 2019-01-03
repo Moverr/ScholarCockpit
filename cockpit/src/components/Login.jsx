@@ -36,21 +36,26 @@ class Login extends Component {
 	}
 
 	handleSuccess = (response) => {
-        console.log(response);
-        switch (response.status) {
-            case 400:
-                response = response.json();
-                console.log(response);
-                
-            break;
 
-            default:
-                break;
-        }
+		this.setState({
+			loginBtn:'LOGIN'
+		});
+
+		
+		if(response == null){
+			
+		return	alert("Invalid User credentials");
+		
+
+		}
         
         this.setState({
-            loginBtn:'LOGIN'
-        });
+			authentication:response.authentication,
+			isLoggedIn:response.isLoggedIn
+		});
+
+		
+		alert("Record Saved Successfully");
     }
     
 	handleError = (response) => {
@@ -73,7 +78,7 @@ class Login extends Component {
 		};
 		//todo: create a post example wwhere u can handle
 		const url = this.endpoint + 'login';
-		this.Api.post(url, body, headers, this.handleSuccess, this.handleError);
+		this.Api.post(url, body, headers, this.handleSuccess);
 	}
 
 	render() {
