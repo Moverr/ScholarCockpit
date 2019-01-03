@@ -16,9 +16,10 @@ class Login extends Component {
 			username: '',
 			password: '',
 			schoolName: '',
-            endpoint: this.endpoint,
-            loginBtn:'LOGIN'
-            
+			endpoint: this.endpoint,
+			loginBtn: 'LOGIN',
+			message_status:'-success displaynone',
+			message:' Wait a minute '
 		};
 
 		this.handleChange = this.handleChange.bind(this);
@@ -36,38 +37,56 @@ class Login extends Component {
 	}
 
 	handleSuccess = (response) => {
+		this.setState({
+			loginBtn: 'LOGIN'
+		});
+
+		if (response == null) {
+
+			this.setState({
+				message_status:'-warning ',
+				message:' Invalid User credentials '
+			});
+
+			 
+
+			return ;
+		}
 
 		this.setState({
-			loginBtn:'LOGIN'
+			authentication: response.authentication,
+			isLoggedIn: response.isLoggedIn,
+			message_status:'-success ',
+			message:' Logged In Successfully '
 		});
 
-		
-		if(response == null){
-			
-		return	alert("Invalid User credentials");
-		
+		 
+	};
 
-		}
-        
-        this.setState({
-			authentication:response.authentication,
-			isLoggedIn:response.isLoggedIn
-		});
-
-		
-		alert("Record Saved Successfully");
-    }
-    
 	handleError = (response) => {
-        console.log(response);
-         
-	}
+		console.log(response);
+	};
 
 	handleSubmit(event) {
-        event.preventDefault();
-        this.setState({
-            loginBtn:'Processing...'
-        });
+		event.preventDefault();
+		this.setState({
+			loginBtn: 'Processing...',
+			message_status:'-success displaynone'
+		});
+
+		let username = this.state.username;
+		let password = this.state.password;
+
+		if (username.trim().length === 0 || password.trim().length === 0) {
+			this.setState({
+				message: 'Username and Password are mandatory',
+				message_status:'-warning',
+				loginBtn: 'LOGIN'
+			});
+
+			return;
+		}
+
 		let body = {
 			username: this.state.username,
 			password: this.state.password
@@ -76,7 +95,7 @@ class Login extends Component {
 			'Content-Type': 'application/json',
 			schoolname: 'KYADONDO PRIMARY SCHOOL'
 		};
-		//todo: create a post example wwhere u can handle
+
 		const url = this.endpoint + 'login';
 		this.Api.post(url, body, headers, this.handleSuccess);
 	}
@@ -90,6 +109,9 @@ class Login extends Component {
 			<div className="  login-form">
 				<form onSubmit={this.handleSubmit}>
 					<h1> LOGIN FORM</h1>
+
+					<div className={'alert alert'+this.state.message_status} role="alert"> {this.state.message} </div>
+					
 					<label>Username</label>
 					<input
 						name="username"
@@ -107,7 +129,7 @@ class Login extends Component {
 						onChange={this.handleChange}
 					/>
 					<br />
-					<button type="submit"  name="loginbtn" className="btn btn-primary">
+					<button type="submit" name="loginbtn" className="btn btn-primary">
 						{this.state.loginBtn}
 					</button>
 				</form>
