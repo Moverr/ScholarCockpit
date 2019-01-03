@@ -17,7 +17,9 @@ class Login extends Component {
 			password: '',
 			schoolName: '',
 			endpoint: this.endpoint,
-			loginBtn: 'LOGIN'
+			loginBtn: 'LOGIN',
+			message_status:'-success displaynone',
+			message:' Wait a minute '
 		};
 
 		this.handleChange = this.handleChange.bind(this);
@@ -40,15 +42,25 @@ class Login extends Component {
 		});
 
 		if (response == null) {
-			return alert('Invalid User credentials');
+
+			this.setState({
+				message_status:'-warning ',
+				message:' Invalid User credentials '
+			});
+
+			 
+
+			return ;
 		}
 
 		this.setState({
 			authentication: response.authentication,
-			isLoggedIn: response.isLoggedIn
+			isLoggedIn: response.isLoggedIn,
+			message_status:'-success ',
+			message:' Logged In Successfully '
 		});
 
-		alert('Record Saved Successfully');
+		 
 	};
 
 	handleError = (response) => {
@@ -58,14 +70,20 @@ class Login extends Component {
 	handleSubmit(event) {
 		event.preventDefault();
 		this.setState({
-			loginBtn: 'Processing...'
+			loginBtn: 'Processing...',
+			message_status:'-success displaynone'
 		});
 
 		let username = this.state.username;
 		let password = this.state.password;
 
 		if (username.trim().length === 0 || password.trim().length === 0) {
-			alert('Username and Password are mandatory');
+			this.setState({
+				message: 'Username and Password are mandatory',
+				message_status:'-warning',
+				loginBtn: 'LOGIN'
+			});
+
 			return;
 		}
 
@@ -91,6 +109,9 @@ class Login extends Component {
 			<div className="  login-form">
 				<form onSubmit={this.handleSubmit}>
 					<h1> LOGIN FORM</h1>
+
+					<div className={'alert alert'+this.state.message_status} role="alert"> {this.state.message} </div>
+					
 					<label>Username</label>
 					<input
 						name="username"
