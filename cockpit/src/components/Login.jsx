@@ -16,9 +16,8 @@ class Login extends Component {
 			username: '',
 			password: '',
 			schoolName: '',
-            endpoint: this.endpoint,
-            loginBtn:'LOGIN'
-            
+			endpoint: this.endpoint,
+			loginBtn: 'LOGIN'
 		};
 
 		this.handleChange = this.handleChange.bind(this);
@@ -36,38 +35,31 @@ class Login extends Component {
 	}
 
 	handleSuccess = (response) => {
+		this.setState({
+			loginBtn: 'LOGIN'
+		});
+
+		if (response == null) {
+			return alert('Invalid User credentials');
+		}
 
 		this.setState({
-			loginBtn:'LOGIN'
+			authentication: response.authentication,
+			isLoggedIn: response.isLoggedIn
 		});
 
-		
-		if(response == null){
-			
-		return	alert("Invalid User credentials");
-		
+		alert('Record Saved Successfully');
+	};
 
-		}
-        
-        this.setState({
-			authentication:response.authentication,
-			isLoggedIn:response.isLoggedIn
-		});
-
-		
-		alert("Record Saved Successfully");
-    }
-    
 	handleError = (response) => {
-        console.log(response);
-         
-	}
+		console.log(response);
+	};
 
 	handleSubmit(event) {
-        event.preventDefault();
-        this.setState({
-            loginBtn:'Processing...'
-        });
+		event.preventDefault();
+		this.setState({
+			loginBtn: 'Processing...'
+		});
 		let body = {
 			username: this.state.username,
 			password: this.state.password
@@ -107,7 +99,7 @@ class Login extends Component {
 						onChange={this.handleChange}
 					/>
 					<br />
-					<button type="submit"  name="loginbtn" className="btn btn-primary">
+					<button type="submit" name="loginbtn" className="btn btn-primary">
 						{this.state.loginBtn}
 					</button>
 				</form>
