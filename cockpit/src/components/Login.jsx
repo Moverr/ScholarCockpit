@@ -60,6 +60,15 @@ class Login extends Component {
 		this.setState({
 			loginBtn: 'Processing...'
 		});
+
+		let username = this.state.username;
+		let password = this.state.password;
+
+		if (username.trim().length === 0 || password.trim().length === 0) {
+			alert('Username and Password are mandatory');
+			return;
+		}
+
 		let body = {
 			username: this.state.username,
 			password: this.state.password
