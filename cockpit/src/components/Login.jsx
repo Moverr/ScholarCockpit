@@ -64,6 +64,11 @@ class Login extends Component {
 	};
 
 	handleError = (response) => {
+		this.setState({
+			message: 'Something Went Wrong Contact Administrator',
+			message_status:'-warning',
+			loginBtn: 'LOGIN'
+		});
 		console.log(response);
 	};
 

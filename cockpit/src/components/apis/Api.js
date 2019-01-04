@@ -5,7 +5,7 @@ class Api {
         this.util = new Utils();
         this.baseUrl = this.util.getBaseUrl();
     }
-    post(url, body, headers, successCallback) {
+    post(url, body, headers, successCallback,handleError) {
         url = this.util.getBaseUrl()+url;        
         fetch(url, {
             method: 'post',
@@ -24,7 +24,7 @@ class Api {
         }).then(function (data) {
             successCallback(data);
         })
-        .catch((err)=>console.log(err));
+        .catch((err)=>handleError(err));
     }
  
     get(url, body, headers, successCallback, errorCallback) {
