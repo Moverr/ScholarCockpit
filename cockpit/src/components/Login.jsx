@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../css/home.css';
 import Utils from '../helpers/Utils';
 import Api from './apis/Api';
+import inputs from '../helpers/inputs';
 
 class Login extends Component {
 	constructor(props) {
@@ -18,8 +19,8 @@ class Login extends Component {
 			schoolName: '',
 			endpoint: this.endpoint,
 			loginBtn: 'LOGIN',
-			message_status:'-success displaynone',
-			message:' Wait a minute '
+			message_status: '-success displaynone',
+			message: ' Wait a minute '
 		};
 
 		this.handleChange = this.handleChange.bind(this);
@@ -42,31 +43,26 @@ class Login extends Component {
 		});
 
 		if (response == null) {
-
 			this.setState({
-				message_status:'-warning ',
-				message:' Invalid User credentials '
+				message_status: '-warning ',
+				message: ' Invalid User credentials '
 			});
 
-			 
-
-			return ;
+			return;
 		}
 
 		this.setState({
 			authentication: response.authentication,
 			isLoggedIn: response.isLoggedIn,
-			message_status:'-success ',
-			message:' Logged In Successfully '
+			message_status: '-success ',
+			message: ' Logged In Successfully '
 		});
-
-		 
 	};
 
 	handleError = (response) => {
 		this.setState({
 			message: 'Something Went Wrong Contact Administrator',
-			message_status:'-warning',
+			message_status: '-warning',
 			loginBtn: 'LOGIN'
 		});
 		console.log(response);
@@ -76,7 +72,7 @@ class Login extends Component {
 		event.preventDefault();
 		this.setState({
 			loginBtn: 'Processing...',
-			message_status:'-success displaynone'
+			message_status: '-success displaynone'
 		});
 
 		let username = this.state.username;
@@ -85,7 +81,7 @@ class Login extends Component {
 		if (username.trim().length === 0 || password.trim().length === 0) {
 			this.setState({
 				message: 'Username and Password are mandatory',
-				message_status:'-warning',
+				message_status: '-warning',
 				loginBtn: 'LOGIN'
 			});
 
@@ -114,11 +110,11 @@ class Login extends Component {
 			<div className="  login-form">
 				<form onSubmit={this.handleSubmit}>
 					<h1> LOGIN FORM</h1>
-
-					<div className={'alert alert'+this.state.message_status} role="alert"> {this.state.message} </div>
-					
+					<div className={'alert alert' + this.state.message_status} role="alert">
+						{this.state.message}
+					</div>
 					<label>Username</label>
-					<input
+					<inputs
 						name="username"
 						type="text"
 						className="form-control"
@@ -126,7 +122,7 @@ class Login extends Component {
 						onChange={this.handleChange}
 					/>
 					<label>Password</label>
-					<input
+					<inputs
 						name="password"
 						type="password"
 						className="form-control"
