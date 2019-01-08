@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
 import '../css/home.css';
+import Login from './Login';
 
 class Verify extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			value: '',
-			verifyBtn: 'VERIFY SCHOOL'
+			verifyBtn: 'VERIFY SCHOOL',
+			schoolName: '',
+			message_status: '-success displaynone',
+			message: ' Wait a minute '
 		};
 		this.handleChange = this.handleChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
@@ -16,7 +20,7 @@ class Verify extends Component {
 	componentDidMount() {
 		if (this.props.schoolname) {
 			this.setState({
-				schoolname: this.props.schoolname
+				schoolName: this.props.schoolName
 			});
 		}
 	}
@@ -27,10 +31,14 @@ class Verify extends Component {
 
 	handleSubmit(event) {
 		event.preventDefault();
-		let schoolname = this.state.schoolname.trim();
-		if(schoolname.length() ===0 ){
-			return alert("School Name is mandatory");
+		let schoolName = this.state.schoolName.trim;
+		if (schoolName.length === 0) {
+			return this.setState({
+				message_status: '-warning ',
+				message: ' School Name is mandatory '
+			});
 		}
+		return <Login />;
 	}
 
 	render() {
@@ -44,12 +52,20 @@ class Verify extends Component {
 			<div className="  login-form">
 				<form onSubmit={this.handleSubmit}>
 					<h1> SCHOOL NAME</h1>
-					<input placeholder="Enter School Name" type="text" className="form-control" value={this.state.schoolname} onChange={this.handleChange} />
-					<br/>
+					<div className={'alert alert' + this.state.message_status} role="alert">
+						{this.state.message}
+					</div>
+					<input
+						placeholder="Enter School Name"
+						type="text"
+						className="form-control"
+						value={this.state.schoolName}
+						onChange={this.handleChange}
+					/>
+					<br />
 					<button type="submit" name="loginbtn" className="btn btn-primary">
 						{this.state.verifyBtn}
 					</button>
-
 				</form>
 			</div>
 		);
