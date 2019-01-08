@@ -19,7 +19,11 @@ class Utils {
     }
 
 
-
+    redirectPath(path) {
+		this.props.history.push(path);
+	}
+    
+    
 
 
 }

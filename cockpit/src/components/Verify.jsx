@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Utils from '../helpers/Utils';
 import '../css/home.css';
 
 class Verify extends Component {
@@ -43,7 +44,7 @@ class Verify extends Component {
 			});
 		}
 		let path = `/login/` + this.state.schoolName;
-		this.props.history.push(path);
+		Utils.redirectPath(path);
 	}
 
 	render() {
