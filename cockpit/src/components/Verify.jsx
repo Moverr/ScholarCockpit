@@ -16,7 +16,7 @@ class Verify extends Component {
 	componentDidMount() {
 		if (this.props.schoolname) {
 			this.setState({
-				value: this.props.schoolname
+				schoolname: this.props.schoolname
 			});
 		}
 	}
@@ -27,6 +27,10 @@ class Verify extends Component {
 
 	handleSubmit(event) {
 		event.preventDefault();
+		let schoolname = this.state.schoolname.trim();
+		if(schoolname.length() ===0 ){
+			return alert("School Name is mandatory");
+		}
 	}
 
 	render() {
@@ -40,7 +44,7 @@ class Verify extends Component {
 			<div className="  login-form">
 				<form onSubmit={this.handleSubmit}>
 					<h1> SCHOOL NAME</h1>
-					<input placeholder="Enter School Name" type="text" className="form-control" value={this.state.value} onChange={this.handleChange} />
+					<input placeholder="Enter School Name" type="text" className="form-control" value={this.state.schoolname} onChange={this.handleChange} />
 					<br/>
 					<button type="submit" name="loginbtn" className="btn btn-primary">
 						{this.state.verifyBtn}
