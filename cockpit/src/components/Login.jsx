@@ -35,10 +35,8 @@ class Login extends Component {
 			});
 		}
 		let path = `/verify/` + this.state.schoolName;
-		Utils.redirectPath(path);
+		this.props.history.push(path);
 	}
-
-	
 
 	handleChange(evt) {
 		this.setState({ [evt.target.name]: evt.target.value });
