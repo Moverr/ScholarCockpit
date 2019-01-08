@@ -28,9 +28,12 @@ class Login extends Component {
 	}
 
 	componentDidMount() {
-		this.setState({
-			value: !this.props.schoolName ? null : this.props.schoolName
-		});
+		let schoolName = this.props.match.params.schoolName;
+		if (schoolName !== undefined) {
+			this.setState({
+				schoolName: schoolName
+			});
+		}
 	}
 
 	handleChange(evt) {
@@ -68,7 +71,7 @@ class Login extends Component {
 		console.log(response);
 	};
 
-	handleSubmit=(event)=> {
+	handleSubmit = (event) => {
 		event.preventDefault();
 		this.setState({
 			loginBtn: 'Processing...',
@@ -99,9 +102,9 @@ class Login extends Component {
 
 		const url = this.endpoint + 'login';
 		this.Api.post(url, body, headers, this.handleSuccess);
-	}
+	};
 
-	render() {		
+	render() {
 		return this.loginForm();
 	}
 
