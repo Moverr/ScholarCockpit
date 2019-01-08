@@ -47,12 +47,12 @@ class Verify extends Component {
 	}
 
 	render() {
-		// const  schoolname = this.state.value;
+		 
 
-		return this.shoolForm();
+		return this.shoolForm(this.props);
 	}
 
-	shoolForm() {
+	shoolForm=(props)=> {
 		return (
 			<div className="  login-form">
 				<form onSubmit={this.handleSubmit}>
