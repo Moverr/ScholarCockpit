@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../css/home.css';
 import Utils from '../helpers/Utils';
 import Api from './apis/Api';
-import inputs from '../helpers/inputs';
+// import Inputs from '../helpers/Inputs';
 
 class Login extends Component {
 	constructor(props) {
@@ -114,21 +114,23 @@ class Login extends Component {
 						{this.state.message}
 					</div>
 					<label>Username</label>
-					<inputs
+					<input
 						name="username"
 						type="text"
 						className="form-control"
 						value={this.state.username}
 						onChange={this.handleChange}
 					/>
+
 					<label>Password</label>
-					<inputs
+					<input
 						name="password"
 						type="password"
 						className="form-control"
 						value={this.state.password}
 						onChange={this.handleChange}
 					/>
+
 					<br />
 					<button type="submit" name="loginbtn" className="btn btn-primary">
 						{this.state.loginBtn}
