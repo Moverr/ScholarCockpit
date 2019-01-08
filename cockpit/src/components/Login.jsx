@@ -28,8 +28,13 @@ class Login extends Component {
 	}
 
 	componentDidMount() {
+		let schoolName = this.props.match.params.schoolName;
+		if (schoolName === undefined) {
+			let path = `/verify/` + this.state.schoolName;
+			this.props.history.push(path);
+		}
 		this.setState({
-			value: !this.props.schoolName ? null : this.props.schoolName
+			schoolName: schoolName
 		});
 	}
 
@@ -68,7 +73,7 @@ class Login extends Component {
 		console.log(response);
 	};
 
-	handleSubmit=(event)=> {
+	handleSubmit = (event) => {
 		event.preventDefault();
 		this.setState({
 			loginBtn: 'Processing...',
@@ -94,12 +99,13 @@ class Login extends Component {
 		};
 		let headers = {
 			'Content-Type': 'application/json',
-			schoolName: 'KYADONDO PRIMARY SCHOOL'
+			schoolName: this.state.schoolName
 		};
 
+		// 'KYADONDO PRIMARY SCHOOL'
 		const url = this.endpoint + 'login';
 		this.Api.post(url, body, headers, this.handleSuccess);
-	}
+	};
 
 	render() {
 		return this.loginForm();

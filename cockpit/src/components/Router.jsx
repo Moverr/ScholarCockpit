@@ -10,8 +10,9 @@ class Router extends Component {
 		return (
 			<div>
 				<Switch>
-					<Route path="/verify" component={Verify} />
-					<Route path="/login/:schoolName" component={Login} />
+					<Route exact  path="/verify" component={Verify} />
+					<Route exact path="/login" component={Verify}/>
+                    <Route path="/login/:schoolName" component={Login} />
 					<Route path="*" component={Home} />
 				</Switch>
 			</div>

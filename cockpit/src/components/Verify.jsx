@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+// import Utils from '../helpers/Utils';
 import '../css/home.css';
 
 class Verify extends Component {
@@ -42,7 +43,7 @@ class Verify extends Component {
 				message: ' School Name is mandatory '
 			});
 		}
-		let path = `login?` + this.state.schoolName;
+		let path = `/login/` + this.state.schoolName;
 		this.props.history.push(path);
 	}
 

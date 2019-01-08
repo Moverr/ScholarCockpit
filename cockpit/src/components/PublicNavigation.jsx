@@ -25,15 +25,15 @@ class PublicNavigation extends Component {
 
   <ul className={'nav navbar-nav'}>
                     <li>
-                        <NavLink to={'home'} activeClassName="active">Home</NavLink></li>
+                        <NavLink exact={true} to="/home"  activeClassName="active">Home</NavLink></li>
                     <li>
-                        <NavLink to={'login'} activeClassName="active">login</NavLink>
+                        <NavLink  exact={true} to="/login"  activeClassName="active">login</NavLink>
                     </li>
                     <li>
-                        <NavLink to={'verify'} activeClassName="active">verify</NavLink>
+                        <NavLink  exact={true} to="/verify"  activeClassName="active">verify</NavLink>
                     </li>
                     <li>
-                        <NavLink to={'login'} activeClassName="active">Register</NavLink>
+                        <NavLink  exact={true} to="/login"  activeClassName="active">Register</NavLink>
                     </li>                    
     </ul>
                 
