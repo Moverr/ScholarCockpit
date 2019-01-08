@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import '../css/home.css';
-import Login from './Login';
 
 class Verify extends Component {
 	constructor(props) {
@@ -26,19 +25,26 @@ class Verify extends Component {
 	}
 
 	handleChange(event) {
-		this.setState({ value: event.target.value });
+		this.setState({ schoolName: event.target.value });
 	}
 
 	handleSubmit(event) {
 		event.preventDefault();
-		let schoolName = this.state.schoolName.trim;
+		this.setState({
+			message_status: '-warning displaynone ',
+			message: ' School Name is mandatory '
+		});
+
+		let schoolName = this.state.schoolName;
 		if (schoolName.length === 0) {
 			return this.setState({
 				message_status: '-warning ',
 				message: ' School Name is mandatory '
 			});
 		}
-		return <Login />;
+		let path = `login?schoolname=`+this.state.schoolName;
+		this.props.history.push(path);
+	
 	}
 
 	render() {
