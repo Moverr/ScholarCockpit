@@ -101,7 +101,7 @@ class Login extends Component {
 		this.Api.post(url, body, headers, this.handleSuccess);
 	}
 
-	render() {
+	render() {		
 		return this.loginForm();
 	}
 
