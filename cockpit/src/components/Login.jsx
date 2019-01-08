@@ -29,13 +29,13 @@ class Login extends Component {
 
 	componentDidMount() {
 		let schoolName = this.props.match.params.schoolName;
-		if (schoolName !== undefined) {
-			this.setState({
-				schoolName: schoolName
-			});
+		if (schoolName === undefined) {
+			let path = `/verify/` + this.state.schoolName;
+			this.props.history.push(path);
 		}
-		let path = `/verify/` + this.state.schoolName;
-		this.props.history.push(path);
+		this.setState({
+			schoolName: schoolName
+		});
 	}
 
 	handleChange(evt) {
