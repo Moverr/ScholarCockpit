@@ -42,9 +42,8 @@ class Verify extends Component {
 				message: ' School Name is mandatory '
 			});
 		}
-		let path = `login?schoolname=`+this.state.schoolName;
+		let path = `login/` + this.state.schoolName;
 		this.props.history.push(path);
-	
 	}
 
 	render() {

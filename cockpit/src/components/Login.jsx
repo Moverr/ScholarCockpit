@@ -68,7 +68,7 @@ class Login extends Component {
 		console.log(response);
 	};
 
-	handleSubmit(event) {
+	handleSubmit=(event)=> {
 		event.preventDefault();
 		this.setState({
 			loginBtn: 'Processing...',
