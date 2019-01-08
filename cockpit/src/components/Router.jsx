@@ -9,7 +9,7 @@ class Router extends Component {
 	render() {
 		return (
 			<div>
-				<Switch> 
+				<Switch>
 					<Route path="/verify" component={Verify} />
 					<Route path="/login/:schoolName" component={Login} />
 					<Route path="*" component={Home} />
