@@ -5,10 +5,12 @@ class Verify extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			value: ''
+			value: '',
+			verifyBtn: 'VERIFY SCHOOL'
 		};
 		this.handleChange = this.handleChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
+		this.loginForm = null;
 	}
 
 	componentDidMount() {
@@ -35,10 +37,15 @@ class Verify extends Component {
 
 	shoolForm() {
 		return (
-			<div className="body-wrapper">
+			<div className="  login-form">
 				<form onSubmit={this.handleSubmit}>
 					<h1> SCHOOL NAME</h1>
-					<input type="text" className="form-control" value={this.state.value} onChange={this.handleChange} />
+					<input placeholder="Enter School Name" type="text" className="form-control" value={this.state.value} onChange={this.handleChange} />
+					<br/>
+					<button type="submit" name="loginbtn" className="btn btn-primary">
+						{this.state.verifyBtn}
+					</button>
+
 				</form>
 			</div>
 		);
