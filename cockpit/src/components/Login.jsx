@@ -29,7 +29,7 @@ class Login extends Component {
 
 	componentDidMount() {
 		this.setState({
-			value: !this.props.schoolname ? null : this.props.schoolname
+			value: !this.props.schoolName ? null : this.props.schoolName
 		});
 	}
 
@@ -94,7 +94,7 @@ class Login extends Component {
 		};
 		let headers = {
 			'Content-Type': 'application/json',
-			schoolname: 'KYADONDO PRIMARY SCHOOL'
+			schoolName: 'KYADONDO PRIMARY SCHOOL'
 		};
 
 		const url = this.endpoint + 'login';

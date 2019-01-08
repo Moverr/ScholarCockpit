@@ -17,6 +17,8 @@ class Router extends Component {
                     <Route exact path="/home" component={Home} />                              
                     <Route exact path="/login" component={Login} />   
                     <Route exact path="/verify" component={Verify} />   
+                    <Route    path="/login/:schoolName" component={Login} />   
+                    
                                       
                  </Switch>
                  
