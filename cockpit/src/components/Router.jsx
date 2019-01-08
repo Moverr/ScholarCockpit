@@ -11,7 +11,9 @@ class Router extends Component {
 			<div>
 				<Switch>
 					<Route path="/verify" component={Verify} />
-					<Route path="/login/:schoolName" component={Login} />
+					<Route path="/login" component={Verify} >
+                        <Route path="/:schoolName" component={Login} />
+                    </Route>
 					<Route path="*" component={Home} />
 				</Switch>
 			</div>
