@@ -99,9 +99,10 @@ class Login extends Component {
 		};
 		let headers = {
 			'Content-Type': 'application/json',
-			schoolName: 'KYADONDO PRIMARY SCHOOL'
+			schoolName: this.state.schoolName
 		};
 
+		// 'KYADONDO PRIMARY SCHOOL'
 		const url = this.endpoint + 'login';
 		this.Api.post(url, body, headers, this.handleSuccess);
 	};
