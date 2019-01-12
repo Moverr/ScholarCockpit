@@ -104,7 +104,7 @@ class Login extends Component {
 
 		// 'KYADONDO PRIMARY SCHOOL'
 		const url = this.endpoint + 'login';
-		this.Api.post(url, body, headers, this.handleSuccess);
+		this.Api.post(url, body, headers, this.handleSuccess,this.handleError);
 	};
 
 	render() {

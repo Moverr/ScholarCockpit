@@ -30,9 +30,8 @@ class Api {
 			// .then(function (data) {
 			//     successCallback(data);
 			// })
-			.catch((err) => {
-				alert('Server Not Reacheable');
-				successCallback(null);
+			.catch((err) => {				 
+				return handleError(404);
 			});
 	}
 
