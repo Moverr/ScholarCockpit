@@ -31,11 +31,9 @@ class Login extends Component {
 
 	componentDidMount() {
 		// let schoolName = this.props.match.params.schoolName;
-		let schoolName = store.getState().authentication.schoolname;
-		
-		console.log(schoolName);
-  		// let schoolName = store.getStatus().authentication.schoolName;
-		console.log("Believing");
+		 
+		let schoolName = store.getState().Auth.Authentication.schoolname;		
+	 
 		if ( schoolName === null)  {
 			let path = `/verify/` ;
 			pushHistory(path,this.props);
@@ -71,6 +69,8 @@ class Login extends Component {
 
 			return;
 		}
+
+		//todo: improve overall state to improve the system 
 
 		this.setState({
 			authentication: response.authentication,
