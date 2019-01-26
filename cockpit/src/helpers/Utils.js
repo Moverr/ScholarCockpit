@@ -26,4 +26,8 @@ class Utils {
 
 }
 
+export function pushHistory(path,props) {
+    props.history.push(path);
+}
+
 export default Utils;

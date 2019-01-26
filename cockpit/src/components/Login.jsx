@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import '../css/home.css';
-import Utils from '../helpers/Utils';
+import Utils, { pushHistory } from '../helpers/Utils';
 import Api from './apis/Api';
+import store from '../Store';
+
 // import Inputs from '../helpers/Inputs';
 
 class Login extends Component {
@@ -28,15 +30,29 @@ class Login extends Component {
 	}
 
 	componentDidMount() {
-		let schoolName = this.props.match.params.schoolName;
-		if (schoolName === undefined) {
-			let path = `/verify/` + this.state.schoolName;
-			this.props.history.push(path);
-		}
+		// let schoolName = this.props.match.params.schoolName;
+		let schoolName = store.getState().authentication.schoolname;
+		
+		console.log(schoolName);
+  		// let schoolName = store.getStatus().authentication.schoolName;
+		console.log("Believing");
+		if ( schoolName === null)  {
+			let path = `/verify/` ;
+			pushHistory(path,this.props);
+		}else{
+			
+		let path = `/login/`+schoolName ;
+		pushHistory(path,this.props);
+
 		this.setState({
 			schoolName: schoolName
 		});
+		}
+
+
 	}
+
+	
 
 	handleChange(evt) {
 		this.setState({ [evt.target.name]: evt.target.value });

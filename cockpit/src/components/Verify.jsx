@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 // import Utils from '../helpers/Utils';
 import '../css/home.css';
 import store from '../Store';
+import { pushHistory } from '../helpers/Utils';
 
 class Verify extends Component {
 	constructor(props) {
@@ -50,8 +51,9 @@ class Verify extends Component {
 			type:'ADD_SCHOOLNAME',
 			payload:this.state.schoolName
 		});
-		let path = `/login/` + this.state.schoolName;
-		this.props.history.push(path);
+		let path = '/login/';
+		pushHistory(path,this.props); 
+
 	}
 
 	render() {
