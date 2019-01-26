@@ -1,30 +1,8 @@
 import {createStore, applyMiddleware, compose, combineReducers} from 'redux';
-
-
-const authentication_defaults = {
-schoolname:null,
-authentication:null
-};
-const authenticationReducer = (state=authentication_defaults,action)=>{
-    switch(action.type){
-        case 'ADD_SCHOOLNAME':
-            state = {...state,schoolname:action.payload}
-        break;
-        default:
-        break;
-    }
-    return state;
-};
-
-const reducer = (state={},action)=>{
-
-    return "Let me COme to YOu";
-};
+import { authenticationReducer } from './reducers/Authentication';
+import reducers from './reducers/'
 
  
-let reducers = combineReducers({
-    authentication:authenticationReducer,
-    basic:reducer});
 let store = createStore(reducers);
 
 store.subscribe(()=>{
