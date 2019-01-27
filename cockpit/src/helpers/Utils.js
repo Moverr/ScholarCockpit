@@ -29,10 +29,12 @@ export function pushHistory(path, props) {
 
 export function verifySchool() {
     let schoolName = store.getState().Auth.Authentication.schoolname;
-
-    
     return schoolName;
+}
 
+export function verifyAuthentication() {
+    let authentication = store.getState().Auth.Authentication.authentication;
+    return authentication;
 }
 
 
