@@ -115,8 +115,8 @@ class Login extends Component {
 				break;
 		}
 		this.setState({
-			message: 'Something Went Wrong Contact Administrator',
-			message_status: '-warning',
+			message: store.getState().Auth.LoginResponse.message,
+			message_status: store.getState().Auth.LoginResponse.status === 401 ?  '-warning':'-danger',
 			loginBtn: 'LOGIN'
 		});
 		console.log(response);
