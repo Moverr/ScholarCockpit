@@ -26,7 +26,7 @@ const AuthenticationStatus = {
     status:"",
     message:""
 }
-const LoginResponse = (state,action)=>{
+const LoginResponse = (state=AuthenticationStatus,action)=>{
     switch (action.type) {
         case "LOGIN_FAILURE":
             state = {...state,message:action.payload}
@@ -44,7 +44,8 @@ const LoginResponse = (state,action)=>{
 
 let Auth = combineReducers(
     {
-        Authentication
+        Authentication,
+        LoginResponse
     }
 );
 
