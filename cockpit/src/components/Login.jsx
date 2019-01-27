@@ -33,6 +33,12 @@ class Login extends Component {
 		// let schoolName = this.props.match.params.schoolName;
 		let schoolName = verifySchool();
 
+		if (schoolName === null) {
+			let path = `/verify/`;
+			pushHistory(path, this.props);
+			return;
+		}
+
 		{
 			let path = `/login/` + schoolName;
 			pushHistory(path, this.props);

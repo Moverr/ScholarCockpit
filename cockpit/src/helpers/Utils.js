@@ -19,7 +19,7 @@ class Utils {
     getFullUrl = (endpoint) => {
         return this.getBaseUrl() + this.getEndPoint(endpoint);
     }
- 
+
 }
 
 export function pushHistory(path, props) {
@@ -30,12 +30,7 @@ export function pushHistory(path, props) {
 export function verifySchool() {
     let schoolName = store.getState().Auth.Authentication.schoolname;
 
-    if (schoolName === null) {
-        let path = `/verify/`;
-        pushHistory(path, this.props);
-        return;
-    } 
-
+    
     return schoolName;
 
 }
