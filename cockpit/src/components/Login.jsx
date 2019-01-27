@@ -31,33 +31,27 @@ class Login extends Component {
 
 	componentDidMount() {
 		// let schoolName = this.props.match.params.schoolName;
-		 
-		let schoolName = store.getState().Auth.Authentication.schoolname;		
-	 
-		if ( schoolName === null)  {
-			let path = `/verify/` ;
-			pushHistory(path,this.props);
-		}else{
-			
-		let path = `/login/`+schoolName ;
-		pushHistory(path,this.props);
 
-		this.setState({
-			schoolName: schoolName
-		});
+		let schoolName = store.getState().Auth.Authentication.schoolname;
+
+		if (schoolName === null) {
+			let path = `/verify/`;
+			pushHistory(path, this.props);
+		} else {
+			let path = `/login/` + schoolName;
+			pushHistory(path, this.props);
+
+			this.setState({
+				schoolName: schoolName
+			});
 		}
-
-
 	}
-
-	
 
 	handleChange(evt) {
 		this.setState({ [evt.target.name]: evt.target.value });
 	}
 
 	handleSuccess = (response) => {
-
 		console.log(response);
 
 		this.setState({
@@ -73,10 +67,10 @@ class Login extends Component {
 			return;
 		}
 
-		//todo: improve overall state to improve the system 
+		//todo: improve overall state to improve the system
 		store.dispatch({
-			type:'ADD_AUTHENTICATION',
-			payload:response.authentication
+			type: 'ADD_AUTHENTICATION',
+			payload: response.authentication
 		});
 
 		this.setState({
@@ -86,46 +80,39 @@ class Login extends Component {
 			message: ' Logged In Successfully '
 		});
 
-		let path = `/dashboard/` ;
-		pushHistory(path,this.props);
-
+		let path = `/dashboard/`;
+		pushHistory(path, this.props);
 	};
 
 	handleError = (response) => {
-
 		console.log(response);
 		store.dispatch({
-			type:'LOGIN_STATUS',
-			payload:response
+			type: 'LOGIN_STATUS',
+			payload: response
 		});
 
-
-		switch(response){
+		switch (response) {
 			case 401:
-			store.dispatch({
-				type:'LOGIN_FAILURE',
-				payload:"Invalid User Credentials"
-			});
-			break;
+				store.dispatch({
+					type: 'LOGIN_FAILURE',
+					payload: 'Invalid User Credentials'
+				});
+				break;
 
 			case 404:
-			store.dispatch({
-				type:'LOGIN_FAILURE',
-				payload:"Server Un-reachable"
-			});
+				store.dispatch({
+					type: 'LOGIN_FAILURE',
+					payload: 'Server Un-reachable'
+				});
 
-			
-
-			break;
-
+				break;
 
 			default:
-			store.dispatch({
-				type:'LOGIN_FAILURE',
-				payload:"Something Went Wrong, contact System Administrator"
-			});
-			break;
-
+				store.dispatch({
+					type: 'LOGIN_FAILURE',
+					payload: 'Something Went Wrong, contact System Administrator'
+				});
+				break;
 		}
 		this.setState({
 			message: 'Something Went Wrong Contact Administrator',
@@ -166,7 +153,7 @@ class Login extends Component {
 
 		// 'KYADONDO PRIMARY SCHOOL'
 		const url = this.endpoint + 'login';
-		this.Api.post(url, body, headers, this.handleSuccess,this.handleError);
+		this.Api.post(url, body, headers, this.handleSuccess, this.handleError);
 	};
 
 	render() {
