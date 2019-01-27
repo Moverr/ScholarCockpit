@@ -71,6 +71,10 @@ class Login extends Component {
 		}
 
 		//todo: improve overall state to improve the system 
+		store.dispatch({
+			type:'ADD_AUTHENTICATION',
+			payload:response.authentication
+		});
 
 		this.setState({
 			authentication: response.authentication,
@@ -78,6 +82,10 @@ class Login extends Component {
 			message_status: '-success ',
 			message: ' Logged In Successfully '
 		});
+
+		let path = `/dashboard/` ;
+		pushHistory(path,this.props);
+
 	};
 
 	handleError = (response) => {

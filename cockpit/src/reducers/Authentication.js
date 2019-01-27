@@ -10,6 +10,9 @@ const defaultAuthentication = {
         case 'ADD_SCHOOLNAME':
             state = { ...state, schoolname: action.payload };
             break;
+        case 'ADD_AUTHENTICATION':
+        state = { ...state, authentication: action.payload };
+        break;
         default:
             break;
     }
