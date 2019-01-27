@@ -29,15 +29,26 @@ class Login extends Component {
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
-	componentDidMount() {
-		// let schoolName = this.props.match.params.schoolName;
-
+	verifySchool = ()=>{
 		let schoolName = store.getState().Auth.Authentication.schoolname;
 
 		if (schoolName === null) {
 			let path = `/verify/`;
 			pushHistory(path, this.props);
-		} else {
+			return;
+		} 
+
+		return schoolName;
+
+	}
+
+
+	componentDidMount() {
+		// let schoolName = this.props.match.params.schoolName;
+
+		let schoolName = 	this.verifySchool();
+		
+		{
 			let path = `/login/` + schoolName;
 			pushHistory(path, this.props);
 
