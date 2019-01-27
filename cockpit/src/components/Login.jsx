@@ -94,6 +94,12 @@ class Login extends Component {
 	handleError = (response) => {
 
 		console.log(response);
+		store.dispatch({
+			type:'LOGIN_STATUS',
+			payload:response
+		});
+
+
 		switch(response){
 			case 401:
 			store.dispatch({
@@ -107,6 +113,9 @@ class Login extends Component {
 				type:'LOGIN_FAILURE',
 				payload:"Server Un-reachable"
 			});
+
+			
+
 			break;
 
 
