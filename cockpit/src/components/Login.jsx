@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../css/home.css';
-import Utils, { pushHistory } from '../helpers/Utils';
+import Utils, { pushHistory, verifySchool } from '../helpers/Utils';
 import Api from './apis/Api';
 import store from '../Store';
 
@@ -29,25 +29,10 @@ class Login extends Component {
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
-	verifySchool = ()=>{
-		let schoolName = store.getState().Auth.Authentication.schoolname;
-
-		if (schoolName === null) {
-			let path = `/verify/`;
-			pushHistory(path, this.props);
-			return;
-		} 
-
-		return schoolName;
-
-	}
-
-
 	componentDidMount() {
 		// let schoolName = this.props.match.params.schoolName;
+		let schoolName = verifySchool();
 
-		let schoolName = 	this.verifySchool();
-		
 		{
 			let path = `/login/` + schoolName;
 			pushHistory(path, this.props);
@@ -127,7 +112,7 @@ class Login extends Component {
 		}
 		this.setState({
 			message: store.getState().Auth.LoginResponse.message,
-			message_status: store.getState().Auth.LoginResponse.status === 401 ?  '-warning':'-danger',
+			message_status: store.getState().Auth.LoginResponse.status === 401 ? '-warning' : '-danger',
 			loginBtn: 'LOGIN'
 		});
 		console.log(response);

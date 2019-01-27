@@ -1,3 +1,5 @@
+import store from "../Store";
+
 class Utils {
 
     BASE_URL = " http://localhost:9876/";
@@ -17,17 +19,26 @@ class Utils {
     getFullUrl = (endpoint) => {
         return this.getBaseUrl() + this.getEndPoint(endpoint);
     }
-
-
-
-
-
-
-
+ 
 }
 
-export function pushHistory(path,props) {
+export function pushHistory(path, props) {
     props.history.push(path);
 }
+
+
+export function verifySchool() {
+    let schoolName = store.getState().Auth.Authentication.schoolname;
+
+    if (schoolName === null) {
+        let path = `/verify/`;
+        pushHistory(path, this.props);
+        return;
+    } 
+
+    return schoolName;
+
+}
+
 
 export default Utils;
