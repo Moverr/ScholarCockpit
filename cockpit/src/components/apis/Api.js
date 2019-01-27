@@ -21,6 +21,12 @@ class Api {
                         handleError(response.status);                        
 						break;
 
+case 401:
+                        console.log('Server Not Found');
+                        handleError(response.status);                        
+						break;
+						
+
 					default:
 						response.json().then(successCallback);
 						break;

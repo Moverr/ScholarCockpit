@@ -13,6 +13,8 @@ const defaultAuthentication = {
         case 'ADD_AUTHENTICATION':
         state = { ...state, authentication: action.payload };
         break;
+
+        
         default:
             break;
     }
@@ -20,7 +22,25 @@ const defaultAuthentication = {
 };
 
 
+const AuthenticationStatus = {
+    status:"",
+    message:""
+}
+const LoginResponse = (state,action)=>{
+    switch (action.type) {
+        case "LOGIN_FAILURE":
+            state = {...state,message:action.payload}
+            break;
 
+    case "LOGIN_STATUS":
+            state = {...state,status:action.payload}
+            break;
+            
+        default:
+            break;
+    }
+    return state;
+};
 
 let Auth = combineReducers(
     {

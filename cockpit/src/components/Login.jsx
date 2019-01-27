@@ -57,6 +57,9 @@ class Login extends Component {
 	}
 
 	handleSuccess = (response) => {
+
+		console.log(response);
+
 		this.setState({
 			loginBtn: 'LOGIN'
 		});
@@ -89,6 +92,32 @@ class Login extends Component {
 	};
 
 	handleError = (response) => {
+
+		console.log(response);
+		switch(response){
+			case 401:
+			store.dispatch({
+				type:'LOGIN_FAILURE',
+				payload:"Invalid User Credentials"
+			});
+			break;
+
+			case 404:
+			store.dispatch({
+				type:'LOGIN_FAILURE',
+				payload:"Server Un-reachable"
+			});
+			break;
+
+
+			default:
+			store.dispatch({
+				type:'LOGIN_FAILURE',
+				payload:"Something Went Wrong, contact System Administrator"
+			});
+			break;
+
+		}
 		this.setState({
 			message: 'Something Went Wrong Contact Administrator',
 			message_status: '-warning',
