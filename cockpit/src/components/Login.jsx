@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import '../css/home.css';
-import Utils from '../helpers/Utils';
+import Utils, { pushHistory, verifySchool } from '../helpers/Utils';
 import Api from './apis/Api';
+import store from '../Store';
+
 // import Inputs from '../helpers/Inputs';
 
 class Login extends Component {
@@ -28,14 +30,23 @@ class Login extends Component {
 	}
 
 	componentDidMount() {
-		let schoolName = this.props.match.params.schoolName;
-		if (schoolName === undefined) {
-			let path = `/verify/` + this.state.schoolName;
-			this.props.history.push(path);
+		// let schoolName = this.props.match.params.schoolName;
+		let schoolName = verifySchool();
+
+		if (schoolName === null) {
+			let path = `/verify/`;
+			pushHistory(path, this.props);
+			return;
 		}
-		this.setState({
-			schoolName: schoolName
-		});
+
+		{
+			let path = `/login/` + schoolName;
+			pushHistory(path, this.props);
+
+			this.setState({
+				schoolName: schoolName
+			});
+		}
 	}
 
 	handleChange(evt) {
@@ -43,6 +54,8 @@ class Login extends Component {
 	}
 
 	handleSuccess = (response) => {
+		console.log(response);
+
 		this.setState({
 			loginBtn: 'LOGIN'
 		});
@@ -56,18 +69,56 @@ class Login extends Component {
 			return;
 		}
 
+		//todo: improve overall state to improve the system
+		store.dispatch({
+			type: 'ADD_AUTHENTICATION',
+			payload: response.authentication
+		});
+
 		this.setState({
 			authentication: response.authentication,
 			isLoggedIn: response.isLoggedIn,
 			message_status: '-success ',
 			message: ' Logged In Successfully '
 		});
+
+		let path = `/dashboard/`;
+		pushHistory(path, this.props);
 	};
 
 	handleError = (response) => {
+		console.log(response);
+		store.dispatch({
+			type: 'LOGIN_STATUS',
+			payload: response
+		});
+
+		switch (response) {
+			case 401:
+				store.dispatch({
+					type: 'LOGIN_FAILURE',
+					payload: 'Invalid User Credentials'
+				});
+				break;
+
+			case 404:
+				store.dispatch({
+					type: 'LOGIN_FAILURE',
+					payload: 'Server Un-reachable'
+				});
+
+				break;
+
+			default:
+				store.dispatch({
+					type: 'LOGIN_FAILURE',
+					payload: 'Something Went Wrong, contact System Administrator'
+				});
+				break;
+		}
 		this.setState({
-			message: 'Something Went Wrong Contact Administrator',
-			message_status: '-warning',
+			message: store.getState().Auth.LoginResponse.message,
+			message_status: store.getState().Auth.LoginResponse.status === 401 ? '-warning' : '-danger',
 			loginBtn: 'LOGIN'
 		});
 		console.log(response);
@@ -104,7 +155,7 @@ class Login extends Component {
 
 		// 'KYADONDO PRIMARY SCHOOL'
 		const url = this.endpoint + 'login';
-		this.Api.post(url, body, headers, this.handleSuccess);
+		this.Api.post(url, body, headers, this.handleSuccess, this.handleError);
 	};
 
 	render() {
