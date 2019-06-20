@@ -9,7 +9,7 @@ class Home extends Component {
         return (
             <div className={'home'}>
 
-                <h1>SCHOLA : We need to design the home screen  </h1>
+                <h1>SCHOLA   </h1>
             </div>
         );
     }
