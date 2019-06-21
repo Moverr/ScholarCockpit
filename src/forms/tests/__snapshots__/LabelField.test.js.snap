@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Button FIeld should  render correctly 1`] = `
+<label>
+  props.title
+</label>
+`;
