@@ -1,7 +1,9 @@
 import React from 'react'
 
 
+
 function ButtonField(props){
-    return <button onClick={props.handleClickEvent} > props.name </button>;
+    
+    return <button name={props.name} onClick={props.handleClick}> props.title </button>;
 }
 export default ButtonField;
