@@ -13,7 +13,7 @@ class App extends Component {
             
             <div>                 
                  {/* <PublicNavigation/>  */}
-                <Router/>
+                {/* <Router/> */}
             </div>
         );
     }
