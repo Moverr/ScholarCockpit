@@ -14,7 +14,7 @@ class App extends Component {
         return (
             
             <div>                 
-                 <PublicNavigation/> 
+                 {/* <PublicNavigation/>  */}
                 <Router/>
             </div>
         );
