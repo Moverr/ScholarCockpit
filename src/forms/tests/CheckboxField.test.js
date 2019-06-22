@@ -9,8 +9,7 @@ describe('Testing Input FIeld', () => {
   it('should  render correctly', () => {    
     const props = {
         "className":"inputfield",
-        "value":'Label Title',
-        "type":"input" 
+        "value":'Label Title'
     }
 
       const wrapper = shallow(<CheckboxField props />);
