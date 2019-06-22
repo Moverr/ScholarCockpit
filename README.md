@@ -81,3 +81,11 @@ npm install --save-dev enzyme enzyme-adapter-react-16 enzyme-to-json
 enzyme-to-json provides a better component format for snapshot comparison than Enzyme’s internal component representation. snapshotSerializers allows you to minimise code duplication when working with snapshots. Without the serializer each time a component is created in a test it must have the enzyme-to-json method .toJson() used individually before it can be passed to Jest’s snapshot matcher, with the serializer you never use it individually.
 
 
+
+If you’re using Apache HTTP Server, you need to create a .htaccess file in the public folder that looks like this:
+
+Options -MultiViews
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.html [QSA,L]
+

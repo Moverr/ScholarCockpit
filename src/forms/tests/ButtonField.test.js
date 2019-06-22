@@ -4,22 +4,40 @@ import { shallow } from 'enzyme';
  
 import ButtonField from '../ButtonField';
 
-const  handleClick = jest.fn();
  
-const wrapper = null;
+ const clickAlert  = jest.fn();
+  
+let wrapper = null;
 beforeAll(()=>{
 
 const props = {
         title:"Button Title",
         name:'Button Name',
-        handleClick:handleClick()
+        className:"buttonField",
+        id:"buttonID",
+        handleClick:clickAlert()
     };
     wrapper = shallow(<ButtonField props />); 
+  
 });
 
 describe('Testing Button FIeld', () => {
+ 
   it('should  render correctly', () => {     
-    expect(wrapper).toMatchSnapshot();  });
+    expect(wrapper).toMatchSnapshot(); 
+     });
+
+
+  it('button should respond to click event ', () => {     
+      expect(clickAlert).toHaveBeenCalled();      
+      wrapper.find('button').simulate('click');       
+      expect(clickAlert).toHaveBeenCalledTimes(1);
+
+      
+     });
+
+
+
 })
 
 

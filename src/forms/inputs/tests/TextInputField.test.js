@@ -9,8 +9,9 @@ describe('Testing Input FIeld', () => {
   it('should  render correctly', () => {    
     const props = {
         className:"inputfield",
-        value:"text example".
+        value:"text example",
         name:"name" 
+        
            }
 
       const wrapper = shallow(<TextInputField props />);
