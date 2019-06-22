@@ -9,17 +9,20 @@ import ButtonField from '../ButtonField';
 }
 
 
-describe('Testing Button FIeld', () => {
-  it('should  render correctly', () => {    
-    const props = {
+const wrapper = null;
+beforeAll(()=>{
+
+const props = {
         title:"Button Title",
         name:'Button Name',
         handleClick:handleClick()
-    }
+    };
+    wrapper = shallow(<ButtonField props />); 
+});
 
-      const wrapper = shallow(<ButtonField props />);
-      expect(wrapper).toMatchSnapshot();
-  });
+describe('Testing Button FIeld', () => {
+  it('should  render correctly', () => {    
+      expect(wrapper).toMatchSnapshot();  });
 })
 
 
