@@ -13,7 +13,7 @@ describe('Testing Button FIeld', () => {
   it('should  render correctly', () => {    
     const props = {
         title:"Option 1",
-        name:'Radion Buttion',
+         name:"name" ,
         checked:true,
         className:"form-check-input"
         

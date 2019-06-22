@@ -12,9 +12,9 @@ import ButtonField from '../ButtonField';
 describe('Testing Button FIeld', () => {
   it('should  render correctly', () => {    
     const props = {
-        "title":"Button Title",
-        "name":'Button Name',
-        "handleClick":handleClick()
+        title:"Button Title",
+        name:'Button Name',
+        handleClick:handleClick()
     }
 
       const wrapper = shallow(<ButtonField props />);

@@ -8,8 +8,9 @@ import CheckboxField from '../CheckboxField';
 describe('Testing Input FIeld', () => {
   it('should  render correctly', () => {    
     const props = {
-        "className":"inputfield",
-        "value":'Label Title'
+        className:"inputfield",
+        value:"Label Title",
+         name:"name" 
     }
 
       const wrapper = shallow(<CheckboxField props />);
