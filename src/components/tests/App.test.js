@@ -1,10 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from '../App';
+
+import shallow from 'enzyme';
+import App from '../App.jsx';
+
+ 
+ const appComponent =()=>{
+      <App/>
+    };
+    
 
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+
+describe('App Component', () => {
+  
+  
+
+  it("should redender correctly ",()=>{
+    
+    // const wrapper = shallow(<appComponent />);
+
+    // expect(component).toMatchSnapShot();
+  });
 });
