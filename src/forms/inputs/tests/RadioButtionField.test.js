@@ -12,9 +12,10 @@ import RadioButtonField from '../RadioButtonField';
 describe('Testing Button FIeld', () => {
   it('should  render correctly', () => {    
     const props = {
-        "title":"Option 1",
-        "name":'Radion Buttion',
-        "checked":false
+        title:"Option 1",
+         name:"name" ,
+        checked:true,
+        className:"form-check-input"
         
     }
 

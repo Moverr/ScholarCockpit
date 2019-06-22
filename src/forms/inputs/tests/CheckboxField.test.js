@@ -2,18 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { shallow } from 'enzyme';
  
-import LabelField from '../LabelField';
+import CheckboxField from '../CheckboxField';
  
 
-describe('Testing Label FIeld', () => {
+describe('Testing Input FIeld', () => {
   it('should  render correctly', () => {    
     const props = {
-        className:"labelClass",
-        title:'Label Title' ,
+        className:"inputfield",
+        value:"Label Title",
          name:"name" 
     }
 
-      const wrapper = shallow(<LabelField props />);
+      const wrapper = shallow(<CheckboxField props />);
       expect(wrapper).toMatchSnapshot();
   });
 })
