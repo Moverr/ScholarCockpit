@@ -4,11 +4,8 @@ import { shallow } from 'enzyme';
  
 import ButtonField from '../ButtonField';
 
-  function handleClick(){
-    return false;
-}
-
-
+const  handleClick = jest.fn();
+ 
 const wrapper = null;
 beforeAll(()=>{
 
@@ -21,8 +18,8 @@ const props = {
 });
 
 describe('Testing Button FIeld', () => {
-  it('should  render correctly', () => {    
-      expect(wrapper).toMatchSnapshot();  });
+  it('should  render correctly', () => {     
+    expect(wrapper).toMatchSnapshot();  });
 })
 
 
