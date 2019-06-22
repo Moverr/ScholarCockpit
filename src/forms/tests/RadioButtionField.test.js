@@ -15,7 +15,7 @@ describe('Testing Button FIeld', () => {
         "title":"Option 1",
         "name":'Radion Buttion',
         "checked":false
-        "handleClick":handleClick()
+        
     }
 
       const wrapper = shallow(<RadioButtonField props />);
