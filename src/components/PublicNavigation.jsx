@@ -6,6 +6,15 @@ import { NavLink} from 'react-router-dom';
 
 class PublicNavigation extends Component {
     render() {
+        
+        console.table(
+            {
+                "section":"Public Navigation",
+               "message":"Initilaizing  Main App Component ",
+               "props":"N/A",
+               
+            }
+            );
         return (
 
             <nav className={"navbar navbar-default navbar-fixed-top"}>

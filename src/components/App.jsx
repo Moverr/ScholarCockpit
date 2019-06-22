@@ -8,7 +8,7 @@ import Router from './Router';
 class App extends Component {
     render() {
          
-            
+            console.log("Initilaizing  Main App Component ");
         return (
             
             <div>                 
