@@ -2,13 +2,15 @@ import React, { Component } from 'react';
 
 import PublicNavigation from './PublicNavigation';
 import Router from './Router';
+import {log,logTable} from '../utils/Logger';
+
 
 
  
 class App extends Component {
-    render() {
+    render() {         
          
-            console.log("Initilaizing  Main App Component ");
+            log("Initilaizing  Main App Component ");
         return (
             
             <div>                 

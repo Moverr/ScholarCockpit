@@ -5,11 +5,7 @@ export function log(message = null){
     }
 }
 
-export function logTable(section,message,params){
-    console.table({
-        "SECTION":section,
-        "MESSAGE":message,
-        "PARAMS" : params
-    })
+export function logTable(data){
+    console.table(data);
 }
 
