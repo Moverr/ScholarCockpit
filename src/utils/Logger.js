@@ -1,11 +1,11 @@
-
-export function logging(message = null){
+ 
+export function log(message = null){
     if(message != null){
         console.log(message);
     }
 }
 
-export function loggingTable(section,message,params){
+export function logTable(section,message,params){
     console.table({
         "SECTION":section,
         "MESSAGE":message,
