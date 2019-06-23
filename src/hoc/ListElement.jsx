@@ -8,12 +8,12 @@ const listitems=[
 	
 ];
 function ListEleent(props){
-   listitems.map((listitem)=>{
-	console.log(listitems);
+   
+	let listItemsArray = [];
+	listitems.map((listitem)=>{
+	console.log(listitem);
+	listItemsArray[] = <li key={listitem.id}>listitem.name</li>
    });
-	//todo :  making sure that we are getting items of lists
-	
-	// return <InputField type="checkbox" {...props} />; 
-	return null;
+return listItemsArray;
 }
 export default ListEleent;
