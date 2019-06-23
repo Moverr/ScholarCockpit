@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom';
-import { logTable } from '../utils/Logger';
+import { logTable } from '../../utils/Logger';
+import {applicationTitle} from '../../utils/Constants';
 
 class HeaderBar extends Component {
   render() {
@@ -19,8 +20,7 @@ class HeaderBar extends Component {
 
         <nav id="bs-navbar" className=" col-md-12 navbar navbar-expand-lg navbar-light bg-light navbar-dark bg-dark">
           <ul className="nav navbar-nav">
-            <li> <NavLink className={"navbar-brand"} to={'#'} activeClassName="active"> SCHOLAR </NavLink>
-
+            <li> <NavLink className={"navbar-brand"} to={'#'} activeClassName="active"> {applicationTitle} </NavLink>
             </li>
           </ul>
 
