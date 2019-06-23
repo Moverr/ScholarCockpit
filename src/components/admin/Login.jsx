@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import '../css/home.css';
-import Utils, { pushHistory, verifySchool } from '../helpers/Utils';
-import Api from './api/Api';
-import store from '../Store';
+import '../../css/home.css';
+import Utils, { pushHistory, verifySchool } from '../../helpers/Utils';
+import Api from '../api/Api';
+import store from '../../Store';
 
 // import Inputs from '../helpers/Inputs';
 

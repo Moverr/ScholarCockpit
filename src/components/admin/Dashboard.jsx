@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { verifySchool, pushHistory, verifyAuthentication } from '../../helpers/Utils';
-import '../css/bootstrap-4.1.3-dist/css/bootstrap.css';
+import '../../css/bootstrap-4.1.3-dist/css/bootstrap.css';
+
 class Dashboard extends Component {
 	componentDidMount() {
 		let schoolName = verifySchool();

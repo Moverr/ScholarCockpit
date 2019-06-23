@@ -2,17 +2,19 @@ import React, { Component } from 'react';
 
 import PublicNavigation from './PublicNavigation';
 import Router from './Router';
+import {log,logTable} from '../utils/Logger';
+
 
 
  
 class App extends Component {
-    render() {
+    render() {         
          
-            
+            log("Initilaizing  Main App Component ");
         return (
             
             <div>                 
-                 <PublicNavigation/> 
+                 {/* <PublicNavigation/>  */}
                 <Router/>
             </div>
         );
