@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom';
 import { logTable } from '../../utils/Logger';
-import {applicationTitle} from '../../utils/Constants';
+import { applicationTitle } from '../../utils/Constants';
+import logo from '../../images/logo.png';
 
 class HeaderBar extends Component {
   render() {
@@ -18,15 +19,21 @@ class HeaderBar extends Component {
     return (
       <div classname={"row-fluid"}>
 
-        <nav id="bs-navbar" className=" col-md-12 navbar navbar-expand-lg navbar-light bg-light navbar-dark bg-dark">
+        <nav id="bs-navbar" className=" col-md-12 navbar navbar-fixed-top  navbar-expand-lg navbar-light ">
           <ul className="nav navbar-nav">
-            <li> <NavLink className={"navbar-brand"} to={'#'} activeClassName="active"> {applicationTitle} </NavLink>
+            <li><img src={logo} alt="Logo" /> <NavLink className={"navbar-brand"} to={'#'} activeClassName="active"> {applicationTitle} </NavLink>
             </li>
           </ul>
 
 
-          <ul className="nav navbar-nav navbar-right visible-sm">
-            <li><a href="javascript.html" target="_blank" title="Open New Tab"><span className="glyphicon glyphicon-arrow-up"></span></a></li>
+          <ul className="nav navbar-nav navbar-right ">
+            <li> <NavLink to={'#'} activeClassName="active"> Product | &nbsp;</NavLink> 
+            </li> 
+            <li> <NavLink to={'#'} activeClassName="active"> Pricing | &nbsp;</NavLink> 
+            </li> 
+            <li> <NavLink to={'#'} activeClassName="active"> Support &nbsp;</NavLink> 
+            </li> 
+            
           </ul>
 
         </nav>

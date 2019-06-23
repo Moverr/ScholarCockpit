@@ -1,4 +1,4 @@
 
-const applicationTitle = "SCHOLAR";
+const applicationTitle = "scholar";
 
 export {applicationTitle};

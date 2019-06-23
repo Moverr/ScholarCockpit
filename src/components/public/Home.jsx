@@ -9,9 +9,10 @@ class Home extends Component {
     render() {
         return (
 
-            <div className={"container-fluid"}>
+            <div >
                 <HeaderBar/>
-                    
+
+                     
                 <div className={"row"}>
                     <div className={"col-md-12"}>
                      
