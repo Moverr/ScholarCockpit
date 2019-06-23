@@ -10,10 +10,11 @@ class Home extends Component {
         return (
 
             <div className={"container-fluid"}>
+                <HeaderBar/>
+                    
                 <div className={"row"}>
                     <div className={"col-md-12"}>
-                    {/* //todo adding the header bar  */}
-                    <HeaderBar/>
+                     
                         <h1>SCHOLA   </h1>
                     </div>
                 </div>
