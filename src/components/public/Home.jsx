@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../../css/home.css';
 
-import  HeaderBar  from  './HeaderBar';
+import  TopNavigation  from  './TopNavigation';
 
 
 
@@ -10,7 +10,7 @@ class Home extends Component {
         return (
 
             <div >
-                <HeaderBar/>
+                <TopNavigation/>
 
                      
                 <div className={"row"}>
