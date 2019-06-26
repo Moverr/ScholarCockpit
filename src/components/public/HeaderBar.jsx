@@ -4,6 +4,9 @@ import { logTable } from '../../utils/Logger';
 import { applicationTitle } from '../../utils/Constants';
 import logo from '../../images/logo.png';
 
+import '../../css/nav.css';
+
+
 class HeaderBar extends Component {
   render() {
     const logdata = (
@@ -26,10 +29,10 @@ class HeaderBar extends Component {
           </ul>
 
 
-          <ul className="nav navbar-nav navbar-right ">
-            <li> <NavLink to={'#'} activeClassName="active"> Product | &nbsp;</NavLink> 
+          <ul className="nav  navigation_right ">
+            <li> <NavLink to={'#'} activeClassName="active"> Product &nbsp; | &nbsp;</NavLink> 
             </li> 
-            <li> <NavLink to={'#'} activeClassName="active"> Pricing | &nbsp;</NavLink> 
+            <li> <NavLink to={'#'} activeClassName="active"> Pricing &nbsp; | &nbsp;</NavLink> 
             </li> 
             <li> <NavLink to={'#'} activeClassName="active"> Support &nbsp;</NavLink> 
             </li> 
