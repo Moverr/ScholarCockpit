@@ -14,3 +14,29 @@
     text-decoration: none;
     color:#929292;
 }
+.headerbar{
+    background: #929292;
+    display: block;
+   
+    
+}
+.banner{
+    text-align: center;
+    background-image: url("../images/imageone.png") ;
+    height: 370px;
+    
+
+    padding-top: 15%;
+    
+    
+}
+ .banner h1{
+  /* Chris Coyier's favorite color! */
+    color: #fff;
+    font-family:Arial  Bold;
+    -webkit-text-stroke: 5px #666666; 
+    z-index: -1;
+    font-weight: 700;
+    font-size: 50px;
+    
+ }
