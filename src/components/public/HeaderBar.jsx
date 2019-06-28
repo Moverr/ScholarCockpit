@@ -23,11 +23,15 @@ function HeaderBar() {
     <div className={"row-fluid"}>
       <div className="row headerbar">
         <div className="col-md-9">
-           <Banner/>
+          <Banner />
         </div>
         <div className="col-md-3">
-
-          <h1>Sing ooff </h1>
+          <br />
+          <h5>Enter School Name</h5>
+          <input type="text" className="text" value="" placeholder="Enter School Name " />
+          <br />
+          
+          <button>CONTINUE</button>
         </div>
       </div>
 
