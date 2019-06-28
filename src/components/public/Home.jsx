@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import '../../css/home.css';
 
-import  HeaderBar  from  './HeaderBar';
+import  TopNavigation  from  './TopNavigation';
+import HeaderBar from './HeaderBar';
 
 
 
@@ -10,7 +11,9 @@ class Home extends Component {
         return (
 
             <div >
+                <TopNavigation/>
                 <HeaderBar/>
+                
 
                      
                 <div className={"row"}>

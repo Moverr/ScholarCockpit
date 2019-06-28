@@ -7,10 +7,13 @@ import Dashboard from './admin/Dashboard';
 // import Verify from './Verify';
 
 class Router extends Component {
+
+ 
 	render() {
 		return (
 			<div>
 				<Switch>
+
 					<Route exact  path="/verify" component={Verify} />
 					<Route exact path="/login/" component={Login}/>
                     <Route path="/login/:schoolName" component={Login} />

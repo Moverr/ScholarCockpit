@@ -4,42 +4,36 @@ import { logTable } from '../../utils/Logger';
 import { applicationTitle } from '../../utils/Constants';
 import logo from '../../images/logo.png';
 
-class HeaderBar extends Component {
-  render() {
-    const logdata = (
-      {
-        "section": "HeaderBar",
-        "message": "Layout the public menu and navigation ",
-        "props": "N/A",
+import '../../css/nav.css';
+import Banner from './Banner';
 
-      }
-    );
-    logTable(logdata);
+const logdata = (
+  {
+    "section": "HeaderBar",
+    "message": "Layout to the header section ",
+    "props": "N/A",
 
-    return (
-      <div classname={"row-fluid"}>
+  }
+);
 
-        <nav id="bs-navbar" className=" col-md-12 navbar navbar-fixed-top  navbar-expand-lg navbar-light ">
-          <ul className="nav navbar-nav">
-            <li><img src={logo} alt="Logo" /> <NavLink className={"navbar-brand"} to={'#'} activeClassName="active"> {applicationTitle} </NavLink>
-            </li>
-          </ul>
+function HeaderBar() {
+  logTable(logdata);
 
+  return (
+    <div className={"row-fluid"}>
+      <div className="row headerbar">
+        <div className="col-md-8">
+           <Banner/>
+        </div>
+        <div className="col-md-4">
 
-          <ul className="nav navbar-nav navbar-right ">
-            <li> <NavLink to={'#'} activeClassName="active"> Product | &nbsp;</NavLink> 
-            </li> 
-            <li> <NavLink to={'#'} activeClassName="active"> Pricing | &nbsp;</NavLink> 
-            </li> 
-            <li> <NavLink to={'#'} activeClassName="active"> Support &nbsp;</NavLink> 
-            </li> 
-            
-          </ul>
-
-        </nav>
+          <h1>Sing ooff </h1>
+        </div>
       </div>
 
-    )
-  }
+    </div>
+
+  )
+
 }
 export default HeaderBar;
