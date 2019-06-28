@@ -1,20 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { shallow } from 'enzyme';
+import Banner from '../Banner';
  
-import CheckboxField from '../CheckboxField';
  
+
+
+      
+ let wrapper = shallow(<Banner />);
+
+   
 
 describe('Testing Input FIeld', () => {
-  it('should  render correctly', () => {    
-    const props = {
-        className:"inputfield",
-        value:"Label Title",
-         name:"name" 
-    }
+     
 
-      const wrapper = shallow(<CheckboxField props />);
+  it('should  render correctly', () => {       
+
       expect(wrapper).toMatchSnapshot();
+  });
+
+  it('Should have a class banner',()=>{
+        expect(wrapper).toMatchSnapshot();
   });
 })
 
