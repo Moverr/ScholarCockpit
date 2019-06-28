@@ -22,10 +22,10 @@ function HeaderBar() {
   return (
     <div className={"row-fluid"}>
       <div className="row headerbar">
-        <div className="col-md-8">
+        <div className="col-md-9">
            <Banner/>
         </div>
-        <div className="col-md-4">
+        <div className="col-md-3">
 
           <h1>Sing ooff </h1>
         </div>
