@@ -6,6 +6,7 @@ import logo from '../../images/logo.png';
 
 import '../../css/nav.css';
 import Banner from './Banner';
+import VerifySchool from './VerifySchool';
 
 const logdata = (
   {
@@ -17,6 +18,7 @@ const logdata = (
 );
 
 function HeaderBar() {
+
   logTable(logdata);
 
   return (
@@ -26,12 +28,7 @@ function HeaderBar() {
           <Banner />
         </div>
         <div className="col-md-3">
-          <br />
-          <h5>Enter School Name</h5>
-          <input type="text" className="text" value="" placeholder="Enter School Name " />
-          <br />
-          
-          <button>CONTINUE</button>
+         <VerifySchool/>
         </div>
       </div>
 
