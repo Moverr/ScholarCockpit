@@ -6,6 +6,7 @@ import logo from '../../images/logo.png';
 
 import '../../css/nav.css';
 import Banner from './Banner';
+import VerifySchool from './VerifySchool';
 
 const logdata = (
   {
@@ -17,17 +18,17 @@ const logdata = (
 );
 
 function HeaderBar() {
+
   logTable(logdata);
 
   return (
     <div className={"row-fluid"}>
       <div className="row headerbar">
-        <div className="col-md-8">
-           <Banner/>
+        <div className="col-md-9">
+          <Banner />
         </div>
-        <div className="col-md-4">
-
-          <h1>Sing ooff </h1>
+        <div className="col-md-3">
+         <VerifySchool/>
         </div>
       </div>
 

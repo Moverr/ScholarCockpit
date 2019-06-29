@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Input FIeld Should have a class banner 1`] = `
+<div
+  className="banner"
+>
+  <h1>
+     SCHOOL MANAGEMENT SYSTEM 
+    <br />
+     v1.0 beta
+  </h1>
+</div>
+`;
+
+exports[`Testing Input FIeld should  render correctly 1`] = `
+<div
+  className="banner"
+>
+  <h1>
+     SCHOOL MANAGEMENT SYSTEM 
+    <br />
+     v1.0 beta
+  </h1>
+</div>
+`;
