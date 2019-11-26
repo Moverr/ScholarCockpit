@@ -1,15 +1,55 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types'; 
 import InputField from '../../forms/inputs/InputField';
-function VerifySchool() {
-   return  <div className="verifySchoolview col-md-12">
-         <br />
-          <h5>Enter School Name</h5>
-          <InputField type="text" className="text" value="" placeholder="Enter School Name " />
-           
-          <br />
-          
-          <button>CONTINUE</button>
-    </div>
+
+
+class VerifySchool extends Component {
+      constructor(props) {
+            super(props);
+
+      }
+
+      componentWillMount() {
+
+      }
+
+      componentDidMount() {
+
+      }
+
+      componentWillReceiveProps(nextProps) {
+
+      }
+
+      shouldComponentUpdate(nextProps, nextState) {
+
+      }
+
+      componentWillUpdate(nextProps, nextState) {
+
+      }
+
+      componentDidUpdate(prevProps, prevState) {
+
+      }
+
+      componentWillUnmount() {
+
+      }
+
+      render() {
+            return (
+                  <div>
+                         <InputField type="text" className="text" value="" placeholder="Enter School Name " />
+         
+                  </div>
+            );
+      }
 }
 
+VerifySchool.propTypes = {
+
+};
+ 
+ 
 export default VerifySchool;

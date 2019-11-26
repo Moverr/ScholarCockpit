@@ -17,7 +17,7 @@ const logdata = (
   }
 );
 
-function HeaderBar() {
+function RightBar() {
 
   logTable(logdata);
 
@@ -37,4 +37,4 @@ function HeaderBar() {
   )
 
 }
-export default HeaderBar;
+export default RightBar;

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../../css/home.css';
 
 import  TopNavigation  from  './TopNavigation';
-import HeaderBar from './HeaderBar';
+import RightBar from './RightBar';
 
 
 
@@ -12,7 +12,7 @@ class Home extends Component {
 
             <div >
                 <TopNavigation/>
-                <HeaderBar/>
+                <RightBar/>
                 
 
                      
