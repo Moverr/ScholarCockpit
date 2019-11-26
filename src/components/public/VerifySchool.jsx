@@ -6,6 +6,7 @@ import InputField from '../../forms/inputs/InputField';
 class VerifySchool extends Component {
       constructor(props) {
             super(props);
+            
 
       }
 
@@ -39,9 +40,13 @@ class VerifySchool extends Component {
 
       render() {
             return (
-                  <div>
-                         <InputField type="text" className="text" value="" placeholder="Enter School Name " />
+                  <div className="container-fluid">
+                        <br/>
+                        <div className="form-group">
+                        <InputField type="text" className="text form-control" value="" placeholder="Enter School Name " />
          
+                        </div>
+                      
                   </div>
             );
       }
