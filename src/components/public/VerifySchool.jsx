@@ -6,6 +6,9 @@ import InputField from '../../forms/inputs/InputField';
 class VerifySchool extends Component {
       constructor(props) {
             super(props);
+            this.state = {
+                  schoolname : null
+            }
             
 
       }
