@@ -9,8 +9,7 @@ class VerifySchool extends Component {
             this.state = {
                   schoolname : null
             }
-            
-
+             
       }
 
       componentWillMount() {
@@ -44,19 +43,19 @@ class VerifySchool extends Component {
       render() {
             return (
                   <div className="container-fluid">
+                       <form  role="form" onSubmit={this.handleSubmit} > 
                         <br/>
+                        <h2> School Name </h2>
                         <div className="form-group">
-                        <InputField type="text" className="text form-control" value="" placeholder="Enter School Name " />
-         
-                        </div>
-                      
+                        <InputField type="text" className="text form-control" value={this.state.schoolname} placeholder="Enter School Name " />         
+                        </div> 
+                        </form>                     
                   </div>
             );
       }
 }
 
-VerifySchool.propTypes = {
-
+VerifySchool.propTypes = { 
 };
  
  
