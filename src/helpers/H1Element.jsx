@@ -1,6 +1,6 @@
 import React from 'react'
 
-function HeaderElement(props) {
+function H1Element(props) {
     return <h1 {...props} > {props.text} </h1>;
 }
-export default HeaderElement;
+export default H1Element;
