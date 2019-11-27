@@ -44,10 +44,13 @@ class VerifySchool extends Component {
             return (
                   <div className="container-fluid">
                        <form  role="form" onSubmit={this.handleSubmit} > 
-                        <br/>
+                        <br/> 
                         <h2> SCHOOL NAME </h2>
                         <div className="form-group">
                         <InputField type="text" className="text form-control" value={this.state.schoolname} placeholder="Enter School Name " />         
+                        
+                        <button className="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+
                         </div> 
                         </form>                     
                   </div>
