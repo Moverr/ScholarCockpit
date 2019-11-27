@@ -1,0 +1,19 @@
+.verifyschoolwrapper{
+    background:#ddd !important;
+    width: 100%; text-align: center;
+    height: 100%;
+}
+
+.verifyschoolwrapper  .header{
+    font-weight: 600;
+}
+
+.verifyschoolwrapper .verify-button{
+    margin: 15px 5px 0px 0px;
+    padding: 10px;
+    
+}
+
+.verify-textinput{
+ border: 1px solid wheat; padding: 20px !important;
+}
