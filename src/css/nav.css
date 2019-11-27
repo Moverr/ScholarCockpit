@@ -15,18 +15,19 @@
     color:#929292;
 }
 .headerbar{
-    background: #929292;
+    /* background: #929292; */
     display: block;
    
     
 }
 .banner{
     text-align: center;
-    background-image: url("../images/imageone.png") ;
+    background-image: url("../images/imageone.png");
+    background-repeat: no-repeat;
     height: 370px;
      
     padding-top: 15%;
-    border-right: #fff 5px solid;
+    
     
     
 }
