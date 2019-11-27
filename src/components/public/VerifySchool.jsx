@@ -56,10 +56,28 @@ class VerifySchool extends Component {
                   </div>
             );
       }
+
+      
+handleSubmit(e) {
+      e.preventDefault();
+}
+
+handleChange(evt) {
+      const value = evt.target.value;
+      this.setState({
+          ...this.state,
+          [evt.target.name]: value
+      });
+  }
+
+  
+
+
 }
 
 VerifySchool.propTypes = { 
 };
  
+
  
 export default VerifySchool;
