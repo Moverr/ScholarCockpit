@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import InputField from '../../forms/inputs/InputField';
-import '../../css/verifyschool.css'
+import '../../css/verifyschool.css';
+import { NavLink } from 'react-router-dom';
+
 
 
 class VerifySchool extends Component {
@@ -49,8 +51,8 @@ class VerifySchool extends Component {
                               <h2 className="center-align header"> SCHOOL NAME </h2>
                               <div className="form-group">
                                     <InputField type="text" className="text form-control verify-textinput" value={this.state.schoolname} placeholder="Enter School Name " />
-
                                     <button className="btn btn-primary col-md-12 verify-button green " type="submit">VERIFY</button>
+                                    
 
                               </div>
                         </form>
