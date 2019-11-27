@@ -51,7 +51,7 @@ class VerifySchool extends Component {
                               <h2 className="center-align header"> SCHOOL NAME </h2>
                               <div className="form-group">
                                     <InputField type="text" className="text form-control verify-textinput" value={this.state.schoolname} placeholder="Enter School Name " />
-                                    <button className="btn btn-primary col-md-12 verify-button green " type="submit">VERIFY</button>
+                                    <button className="btn btn-primary col-md-12 verify-button green " type="submit">NEXT</button>
                                     
 
                               </div>

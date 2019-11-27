@@ -33,11 +33,11 @@
 }
  .banner h1{
   /* Chris Coyier's favorite color! */
-    color: #fff;
-    font-family:Arial  Bold;
-    -webkit-text-stroke: 5px #666666; 
+    color: goldenrod;
+     
+    -webkit-text-stroke: 5px #666666;  
     z-index: -1;
-    font-weight: 700;
-    font-size: 50px;
+    font-weight: 500;
+    font-size:70px;
     
  }
