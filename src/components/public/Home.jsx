@@ -17,12 +17,35 @@ class Home extends Component {
 
 
                 <div className={"row"}>
-                    <div className={"col-md-12"}>
+                    <div className={"col-md-12 row"}>
 
                         <div className={"col-md-3"}>
-                            <div>header</div>
+                            <div className="home-header">Why Scholar?</div>
 
                         </div>
+
+                        <div className={"col-md-3"}>
+                            <div className="home-header">Product</div>
+
+                        </div>
+
+                        <div className={"col-md-3"}>
+                            <div className="home-header">Help</div>
+
+                        </div>
+
+
+                        <div className={"col-md-3"}>
+                            <div className="home-header">Partner</div>
+
+                        </div>
+
+
+                        
+
+
+
+
 
 
 
