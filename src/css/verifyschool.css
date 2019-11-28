@@ -31,18 +31,26 @@
 }
 
 .verifyschoolwrapper  .sublinks{
-  margin: auto; margin-left: 5%;
+  text-align: center; padding-left: 14%;
 }
 
 .verifyschoolwrapper  .sublinks  li {
-  float: left;
+  float: left; padding: 7px;
 }
 .verifyschoolwrapper  .sublinks  li   a{
-  font-size: 16px !important; text-decoration: none;
-  color: #000; font-weight: 300;
+  font-size: 14px !important; text-decoration: none;
+  color: #15c; font-weight: bold;
+  cursor: pointer;
 }
+
+
+.verifyschoolwrapper  .sublinks  li   a:hover{
+  cursor: pointer;
+  }
+
 
 .verify-textinput {
   border: 1px solid wheat;
   padding: 20px !important;
 }
+ 

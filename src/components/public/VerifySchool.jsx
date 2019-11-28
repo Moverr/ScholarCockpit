@@ -55,10 +55,10 @@ class VerifySchool extends Component {
                                     <button className="btn btn-primary col-md-12 verify-button gray " type="submit">NEXT</button>
 
                                     <ul className="nav sublinks">
-                                          <li> <NavLink className={"navbar-brand"} to={'#'} activeClassName="active"> Forgot school name ! </NavLink>
+                                          <li> <NavLink   to={'#'} activeClassName="active"> Find School </NavLink>
                                           </li>
                                            
-                                          <li> <NavLink className={"navbar-brand"} to={'#'} activeClassName="active"> Register your school   </NavLink>
+                                          <li> <NavLink to={'#'} activeClassName="active"> Register  school   </NavLink>
                                           </li>
 
                                     </ul>
