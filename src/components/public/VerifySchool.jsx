@@ -49,12 +49,19 @@ class VerifySchool extends Component {
                         <form role="form" onSubmit={this.handleSubmit} >
                               <br />
                               <h3 className="center-align header">Enter Your school name. </h3>
-                             
+
                               <div className="form-group">
                                     <InputField type="text" className="text form-control verify-textinput" value={this.state.schoolname} placeholder=" " />
                                     <button className="btn btn-primary col-md-12 verify-button gray " type="submit">NEXT</button>
-                                    
 
+                                    <ul className="nav sublinks">
+                                          <li> <NavLink className={"navbar-brand"} to={'#'} activeClassName="active"> Forgot school name ! </NavLink>
+                                          </li>
+                                           
+                                          <li> <NavLink className={"navbar-brand"} to={'#'} activeClassName="active"> Register your school   </NavLink>
+                                          </li>
+
+                                    </ul>
                               </div>
                         </form>
                   </div>
