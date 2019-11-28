@@ -8,7 +8,7 @@ function Banner() {
   return (
     <div  className="banner  col-md-12">
       <h1 className="col-md-12"> SCHOLAR   </h1>
-      School Management System  v1.0 beta
+      <span className={"header-skirting"}>School Management System  v1.0 beta</span>
     </div>
 
   )

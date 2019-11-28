@@ -3,19 +3,17 @@
   width: 100%;
   text-align: center;
   height: 100%;
- 
-  background: linear-gradient(-137deg, #ddd 6px, transparent 0) 0 5px, linear-gradient(320deg, #ddd 5px, #fff 0) 0 5px;
-  background-color:#fff;
+
+  background: linear-gradient(-137deg, #ddd 6px, transparent 0) 0 5px,
+    linear-gradient(320deg, #ddd 5px, #fff 0) 0 5px;
+  background-color: #fff;
   background-position: left bottom;
   background-repeat: repeat-y;
   background-size: 10px 10px;
 
-  border: 1px  #ddd solid;
+  border: 1px #ddd solid;
   border-left: none !important;
-
-
-
-   }
+}
 
 .verifyschoolwrapper .header {
   font-weight: 200;
@@ -30,27 +28,28 @@
   font-weight: 600;
 }
 
-.verifyschoolwrapper  .sublinks{
-  text-align: center; padding-left: 14%;
+.verifyschoolwrapper .sublinks {
+  text-align: center;
+  padding-left: 14%;
 }
 
-.verifyschoolwrapper  .sublinks  li {
-  float: left; padding: 7px;
+.verifyschoolwrapper .sublinks li {
+  float: left;
+  padding: 7px;
 }
-.verifyschoolwrapper  .sublinks  li   a{
-  font-size: 14px !important; text-decoration: none;
-  color: #15c; font-weight: bold;
+.verifyschoolwrapper .sublinks li a {
+  font-size: 14px !important;
+  text-decoration: none;
+  color: #15c;
+  font-weight: bold;
   cursor: pointer;
 }
 
-
-.verifyschoolwrapper  .sublinks  li   a:hover{
+.verifyschoolwrapper .sublinks li a:hover {
   cursor: pointer;
-  }
-
+}
 
 .verify-textinput {
   border: 1px solid wheat;
   padding: 20px !important;
 }
- 
