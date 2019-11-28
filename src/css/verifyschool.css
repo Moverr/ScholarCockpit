@@ -1,22 +1,33 @@
-.verifyschoolwrapper{
-    /* background:#ddd !important; */
-    width: 100%; text-align: center;
-    height: 100%;
+.verifyschoolwrapper {
+  /* background:#ddd !important; */
+  width: 100%;
+  text-align: center;
+  height: 100%;
+ 
+  background: linear-gradient(-137deg, #e8117f 6px, transparent 0) 0 5px, linear-gradient(320deg, #e8117f 5px, #fff 0) 0 5px;
+  background-color: #e8117f;
+  background-position: left bottom;
+  background-repeat: repeat-y;
+  background-size: 10px 10px;
+
+
+
+   }
+
+.verifyschoolwrapper .header {
+  font-weight: 600;
 }
 
-.verifyschoolwrapper  .header{
-    font-weight: 600;
+.verifyschoolwrapper .verify-button {
+  margin: 15px 5px 0px 0px;
+  padding: 10px;
+  /* border-radius: 25px; */
+  border: 0px solid;
+  font-size: 18px;
+  font-weight: 600;
 }
 
-.verifyschoolwrapper .verify-button{
-    margin: 15px 5px 0px 0px;
-    padding: 10px;
-    /* border-radius: 25px; */
-    border:0px solid; font-size: 18px;
-    font-weight: 600;
-    
-}
-
-.verify-textinput{
- border: 1px solid wheat; padding: 20px !important;
+.verify-textinput {
+  border: 1px solid wheat;
+  padding: 20px !important;
 }
