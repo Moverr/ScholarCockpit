@@ -48,7 +48,8 @@ class VerifySchool extends Component {
                   <div className="container-fluid verifyschoolwrapper">
                         <form role="form" onSubmit={this.handleSubmit} >
                               <br />
-                              <h3 className="center-align header"> SCHOOL NAME </h3>
+                              <h3 className="center-align header">Enter Your school name. </h3>
+                             
                               <div className="form-group">
                                     <InputField type="text" className="text form-control verify-textinput" value={this.state.schoolname} placeholder=" " />
                                     <button className="btn btn-primary col-md-12 verify-button gray " type="submit">NEXT</button>
