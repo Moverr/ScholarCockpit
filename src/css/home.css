@@ -2,6 +2,7 @@
 body{
     font-family:  -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"
     !important;
+    overflow-x: hidden;
 }
 .home,
 .body-wrapper {
@@ -60,3 +61,8 @@ body{
 .green{
     background: green !important;
 }
+
+.gray{
+    background:#ddd !important;
+}
+
