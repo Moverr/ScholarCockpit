@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../../css/home.css';
 
-import  TopNavigation  from  './TopNavigation';
+import TopNavigation from './TopNavigation';
 import RightBar from './RightBar';
 
 
@@ -11,15 +11,24 @@ class Home extends Component {
         return (
 
             <div >
-                <TopNavigation/>
-                <RightBar/>
-                
+                <TopNavigation />
+                <RightBar />
 
-                     
+
+
                 <div className={"row"}>
                     <div className={"col-md-12"}>
-                     
-                        <h1>SCHOLA   </h1>
+
+                        <div className={"col-md-3"}>
+                            <div>header</div>
+
+                        </div>
+
+
+
+
+
+
                     </div>
                 </div>
             </div>
