@@ -16,9 +16,9 @@ class VerifySchool extends Component {
                   message: ' Wait a minute '
             };
 
-      
-      this.handleChange = this.handleChange.bind(this);
-      this.handleSubmit = this.handleSubmit.bind(this);
+
+            this.handleChange = this.handleChange.bind(this);
+            this.handleSubmit = this.handleSubmit.bind(this);
 
 
       }
@@ -30,19 +30,25 @@ class VerifySchool extends Component {
       componentDidMount() {
 
       }
- 
+
 
       handleSubmit(e) {
             e.preventDefault();
-            this.setState({
-                  message_status: '-warning ',
-			message: ' Trust Me '
-            });
- 
- 
+            var schoolname = this.state.schoolname;
+            if (schoolname == null || schoolname.trim().length() == 0) {
+                  this.setState({
+                        message_status: '-warning ',
+                        message: ' Love you MARIA '
+                  });
+
+                  return;
+            }
+
+
+
       }
 
-      
+
       handleChange(evt) {
             const value = evt.target.value;
             this.setState({
@@ -60,8 +66,8 @@ class VerifySchool extends Component {
                         <form role="form" onSubmit={this.handleSubmit} >
                               <br />
                               <h3 className="center-align header">Enter Your school name. </h3>
-                              <Alert message={this.state.message}  className={'alert alert' + this.state.message_status} role={"alert"} />
-                               
+                              <Alert message={this.state.message} className={'alert alert' + this.state.message_status} role={"alert"} />
+
                               <div className="form-group">
 
                                     <InputField type="text" className="text form-control verify-textinput" value={this.state.schoolname} placeholder=" " />
@@ -82,7 +88,7 @@ class VerifySchool extends Component {
       }
 
 
-    
+
 
 
 
