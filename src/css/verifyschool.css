@@ -41,8 +41,9 @@
   font-size: 14px !important;
   text-decoration: none;
   color: #15c;
-  font-weight: bold;
+  font-weight: 400;
   cursor: pointer;
+  letter-spacing: 0.1em;
 }
 
 .verifyschoolwrapper .sublinks li a:hover {
