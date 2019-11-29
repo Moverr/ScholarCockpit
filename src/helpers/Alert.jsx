@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const Alert = props => {
     return (
-        <div className={...this.props}>
+        <div className={this.props.className}>
             {this.props.title}
         </div>
     );
