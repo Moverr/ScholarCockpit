@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import '../../css/home.css';
 import store from '../../Store';
 import { pushHistory } from '../../helpers/Utils';
-import Alert from '../../helpers/Alert';
 
 class Verify extends Component {
 	constructor(props) {
@@ -68,7 +67,6 @@ class Verify extends Component {
 			<div className="  login-form">
 				<form onSubmit={this.handleSubmit}>
 					<h1> SCHOOL NAME</h1>
-					<Alert title=	{this.state.message} role={"alert"} />
 					<div className={'alert alert' + this.state.message_status} role="alert">
 						{this.state.message}
 					</div>
