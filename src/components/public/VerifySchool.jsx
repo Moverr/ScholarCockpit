@@ -12,7 +12,7 @@ class VerifySchool extends Component {
             super(props);
             this.state = {
                   schoolname: null,
-                  message_status: '-success ',
+                  message_status: '-success displaynone',
                   message: ' Wait a minute '
             };
 
@@ -52,7 +52,7 @@ class VerifySchool extends Component {
       }
 
 
-      
+
 
       render() {
             return (
@@ -60,10 +60,8 @@ class VerifySchool extends Component {
                         <form role="form" onSubmit={this.handleSubmit} >
                               <br />
                               <h3 className="center-align header">Enter Your school name. </h3>
-                              <Alert title={this.state.message}  className={'alert alert' + this.state.message_status} role={"alert"} />
-                              <div className={'alert alert' + this.state.message_status} role="alert">
-						{this.state.message}
-					</div>
+                              <Alert message={this.state.message}  className={'alert alert' + this.state.message_status} role={"alert"} />
+                               
                               <div className="form-group">
 
                                     <InputField type="text" className="text form-control verify-textinput" value={this.state.schoolname} placeholder=" " />
