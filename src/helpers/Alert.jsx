@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 
 const Alert = props => {
     return (
-        <div>
-            
+        <div className={...this.props}>
+            {this.props.title}
         </div>
     );
 };
 
 Alert.propTypes = {
-    
+    title:PropTypes.string
 };
 
 export default Alert;
