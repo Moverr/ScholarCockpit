@@ -51,6 +51,7 @@ class VerifySchool extends Component {
                               <h3 className="center-align header">Enter Your school name. </h3>
 
                               <div className="form-group">
+                                   
                                     <InputField type="text" className="text form-control verify-textinput" value={this.state.schoolname} placeholder=" " />
                                     <button className="btn btn-primary col-md-12 verify-button gray " type="submit">NEXT</button>
 
@@ -71,6 +72,7 @@ class VerifySchool extends Component {
 
       handleSubmit(e) {
             e.preventDefault();
+            alert("Pass");
       }
 
       handleChange(evt) {
