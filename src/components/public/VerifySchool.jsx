@@ -30,26 +30,29 @@ class VerifySchool extends Component {
       componentDidMount() {
 
       }
+ 
 
-      componentWillReceiveProps(nextProps) {
-
+      handleSubmit(e) {
+            e.preventDefault();
+            this.setState({
+                  message_status: '-warning ',
+			message: ' Trust Me '
+            });
+ 
+ 
       }
 
-      shouldComponentUpdate(nextProps, nextState) {
-
+      
+      handleChange(evt) {
+            const value = evt.target.value;
+            this.setState({
+                  ...this.state,
+                  [evt.target.name]: value
+            });
       }
 
-      componentWillUpdate(nextProps, nextState) {
 
-      }
-
-      componentDidUpdate(prevProps, prevState) {
-
-      }
-
-      componentWillUnmount() {
-
-      }
+      
 
       render() {
             return (
@@ -58,7 +61,9 @@ class VerifySchool extends Component {
                               <br />
                               <h3 className="center-align header">Enter Your school name. </h3>
                               <Alert title={this.state.message}  className={'alert alert' + this.state.message_status} role={"alert"} />
-
+                              <div className={'alert alert' + this.state.message_status} role="alert">
+						{this.state.message}
+					</div>
                               <div className="form-group">
 
                                     <InputField type="text" className="text form-control verify-textinput" value={this.state.schoolname} placeholder=" " />
@@ -79,25 +84,7 @@ class VerifySchool extends Component {
       }
 
 
-      handleSubmit(e) {
-            e.preventDefault();
-            this.setState({
-                  message_status: '-warning ',
-			message: ' Wait a minute '
-            });
-
-            alert("pass")
- 
-      }
-
-      handleChange(evt) {
-            const value = evt.target.value;
-            this.setState({
-                  ...this.state,
-                  [evt.target.name]: value
-            });
-      }
-
+    
 
 
 
