@@ -6,6 +6,10 @@ import { NavLink } from 'react-router-dom';
 import Alert from '../../helpers/Alert';
 import { verifySchoolName } from '../../services/VerificationService';
 
+import store from '../../Store';
+import { pushHistory } from '../../helpers/Utils';
+
+
 
 
 class VerifySchool extends Component {
@@ -51,8 +55,13 @@ class VerifySchool extends Component {
                   return;
             }
 
-            verifySchoolName(this.state.schoolname,()=>{
-                  alert("Quite Interesting Programming ");
+            verifySchoolName(this.state.schoolname, () => {
+                  store.dispatch({
+                        type: 'ADD_SCHOOLNAME',
+                        payload: this.state.schoolName
+                  });
+                  let path = '/login/';
+                  pushHistory(path, this.props);
             })
 
       }
