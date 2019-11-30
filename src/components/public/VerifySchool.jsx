@@ -9,7 +9,7 @@ import { verifySchoolName } from '../../services/VerificationService';
 import store from '../../Store';
 import { pushHistory } from '../../helpers/Utils';
 
-
+import {withRouter} from 'react-router-dom';
 
 
 class VerifySchool extends Component {
@@ -55,15 +55,17 @@ class VerifySchool extends Component {
                   return;
             }
              
-            verifySchoolName(this.state.schoolname, () => {
+            
+ 
+           verifySchoolName(this.state.schoolname, () => {
                   store.dispatch({
                         type: 'ADD_SCHOOLNAME',
                         payload: this.state.schoolName
                   });
-                 
-                  // props.history.push(path);
-                  // pushHistory(path, this.props);
-            })
+                   
+                  this.props.history.push("/login/"+this.state.schoolName);
+                  
+            })  
 
       }
 
@@ -123,4 +125,4 @@ VerifySchool.propTypes = {
 
 
 
-export default VerifySchool;
+export default withRouter(VerifySchool);
