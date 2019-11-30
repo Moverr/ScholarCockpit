@@ -51,16 +51,16 @@ class VerifySchool extends Component {
       }
 
 
-      handleChange(evt) { 
+      handleChange(evt) {
             let value = evt.target.value;
-            
+
             this.setState({
                   ...this.state,
                   [evt.target.name]: value
             });
 
             console.log(this.state);
-          
+
       }
 
 
@@ -76,7 +76,7 @@ class VerifySchool extends Component {
 
                               <div className="form-group">
 
-                                    <InputField type="text" className="text form-control verify-textinput" callback={this.handleChange}  name="schoolname" value={this.state.schoolName}
+                                    <InputField type="text" className="text form-control verify-textinput" callback={this.handleChange} name="schoolname" value={this.state.schoolName}
                                           placeholder=" " />
                                     <button className="btn btn-primary col-md-12 verify-button gray " type="submit">NEXT</button>
 

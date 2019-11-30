@@ -4,17 +4,12 @@ class InputField extends React.Component {
     constructor(props) {
         super(props);
         this.handleChange = this.handleChange.bind(this);
-
-
     }
 
     handleChange(e) {
-       let  x =   e.target.value;
- 
-       this.props.callback(e);
-    //    alert("pass");
-
+        this.props.callback(e);
     }
+
 
     render() {
         return (
