@@ -51,7 +51,7 @@ class VerifySchool extends Component {
                   return;
             }
 
-            verifySchoolName(this.state.schoolname, (response = null) => {
+            verifySchoolName(this.state.schoolname,()=>{
                   alert("Quite Interesting Programming ");
             })
 

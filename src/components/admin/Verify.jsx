@@ -4,6 +4,7 @@ import '../../css/home.css';
 import store from '../../Store';
 import { pushHistory } from '../../helpers/Utils';
 
+
 class Verify extends Component {
 	constructor(props) {
 		super(props);
