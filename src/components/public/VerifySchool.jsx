@@ -54,14 +54,14 @@ class VerifySchool extends Component {
 
                   return;
             }
-
+             
             verifySchoolName(this.state.schoolname, () => {
                   store.dispatch({
                         type: 'ADD_SCHOOLNAME',
                         payload: this.state.schoolName
                   });
-                  let path = '/login/';
-                  this.props.history.push(path);
+                 
+                  // props.history.push(path);
                   // pushHistory(path, this.props);
             })
 
