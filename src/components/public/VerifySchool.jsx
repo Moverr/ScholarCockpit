@@ -34,9 +34,13 @@ class VerifySchool extends Component {
 
       handleSubmit(e) {
             e.preventDefault();
+            this.setState({
+                  message_status: '-warning  displaynone',
+                  message: ' Invalid School name'
+            });
 
-            alert(this.state.schoolname);
-            if (this.state.schoolname == null) {
+           
+            if (this.state.schoolname == null || this.state.schoolname.trim().length == 0) {
 
                   this.setState({
                         message_status: '-warning ',
@@ -59,7 +63,7 @@ class VerifySchool extends Component {
                   [evt.target.name]: value
             });
 
-            console.log(this.state);
+           
 
       }
 
