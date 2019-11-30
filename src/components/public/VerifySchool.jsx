@@ -34,11 +34,13 @@ class VerifySchool extends Component {
 
       handleSubmit(e) {
             e.preventDefault();
-            var schoolname = this.state.schoolname;
-            if (schoolname == null || schoolname.trim().length() == 0) {
+
+            alert(this.state.schoolname);
+            if (this.state.schoolname == null) {
+
                   this.setState({
                         message_status: '-warning ',
-                        message: ' Love you MARIA '
+                        message: ' Invalid School name'
                   });
 
                   return;
@@ -49,12 +51,16 @@ class VerifySchool extends Component {
       }
 
 
-      handleChange(evt) {
-            const value = evt.target.value;
+      handleChange(evt) { 
+            let value = evt.target.value;
+            
             this.setState({
                   ...this.state,
                   [evt.target.name]: value
             });
+
+            console.log(this.state);
+          
       }
 
 
@@ -70,7 +76,8 @@ class VerifySchool extends Component {
 
                               <div className="form-group">
 
-                                    <InputField type="text" className="text form-control verify-textinput" value={this.state.schoolname} placeholder=" " />
+                                    <InputField type="text" className="text form-control verify-textinput" callback={this.handleChange}  name="schoolname" value={this.state.schoolName}
+                                          placeholder=" " />
                                     <button className="btn btn-primary col-md-12 verify-button gray " type="submit">NEXT</button>
 
                                     <ul className="nav sublinks">

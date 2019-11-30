@@ -1,6 +1,37 @@
 import React from 'react'
 
-function InputField(props) {
-    return <input {...props} />;
+class InputField extends React.Component {
+    constructor(props) {
+        super(props);
+        this.handleChange = this.handleChange.bind(this);
+
+
+    }
+
+    handleChange(e) {
+       let  x =   e.target.value;
+ 
+       this.props.callback(e);
+    //    alert("pass");
+
+    }
+
+    render() {
+        return (
+            <input {...this.props} onChange={this.handleChange} />
+
+        )
+
+    }
 }
+
+
+// function handleChange(e) {
+//     // this.setState({ schoolName: event.target.value });
+//     // props.value = result;
+// }
+
+// function InputField(props) {
+//     return <input {...props}    />;
+// }
 export default InputField;
