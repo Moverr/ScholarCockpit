@@ -61,7 +61,8 @@ class VerifySchool extends Component {
                         payload: this.state.schoolName
                   });
                   let path = '/login/';
-                  pushHistory(path, this.props);
+                  this.props.history.push(path);
+                  // pushHistory(path, this.props);
             })
 
       }
