@@ -4,6 +4,7 @@ import InputField from '../../forms/inputs/InputField';
 import '../../css/verifyschool.css';
 import { NavLink } from 'react-router-dom';
 import Alert from '../../helpers/Alert';
+import { verifySchoolName } from '../../services/VerificationService';
 
 
 
@@ -36,21 +37,23 @@ class VerifySchool extends Component {
             e.preventDefault();
             this.setState({
                   message_status: '-warning  displaynone',
-                  message: ' Invalid School name'
+                  message: ' school name is required'
             });
 
-           
+
             if (this.state.schoolname == null || this.state.schoolname.trim().length == 0) {
 
                   this.setState({
                         message_status: '-warning ',
-                        message: ' Invalid School name'
+                        message: ' school name is required'
                   });
 
                   return;
             }
 
-
+            verifySchoolName(this.state.schoolname, (response = null) => {
+                  alert("Quite Interesting Programming ");
+            })
 
       }
 
@@ -63,7 +66,7 @@ class VerifySchool extends Component {
                   [evt.target.name]: value
             });
 
-           
+
 
       }
 
