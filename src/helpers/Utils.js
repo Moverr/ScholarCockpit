@@ -1,6 +1,6 @@
 import store from "../Store";
 
-const BASE_URL = " http://localhost:9876/";
+const BASE_URL = " http://localhost:9776/";
 const endpoints = {
     users: "user/v1/",
     roles: "roles/v1/",

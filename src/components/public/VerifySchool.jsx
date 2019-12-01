@@ -62,10 +62,6 @@ class VerifySchool extends Component {
 
             verifySchoolName(school_name, () => {
 
-                  store.dispatch({
-                        type: 'ADD_SCHOOLNAME',
-                        payload: school_name
-                  });
 
                   this.props.history.push("/login");
 
