@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../../css/home.css';
-import  { pushHistory, verifySchool } from '../../helpers/Utils';
+import  { pushHistory, verifySchool, getEndPoint } from '../../helpers/Utils';
 
 import Api from '../api/Api';
 import store from '../../Store';
@@ -12,7 +12,7 @@ class Login extends Component {
 		super(props);
 
 	 
-		this.endpoint = this.util.getEndPoint('users');
+		this.endpoint = getEndPoint('users');
 
 		this.Api = new Api();
 
