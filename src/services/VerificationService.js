@@ -4,37 +4,41 @@ import store from '../Store'
 import { getEndPoint } from '../helpers/Utils';
 import Api from '../components/api/Api';
 
+export class VerifcationService {
 
-let ENDPOINT = "users";
-let engine = getEndPoint('users');
-export function verifySchoolName(schoolname, callback) {
-    if (schoolname == null) {
-        return false;
+    constructor() {
+        this.ENDPOINT = "users";
+        this.engine = getEndPoint('users');
     }
 
-    let body = {
-        username: "se'se",
-        password: "spoe"
-    };
 
-    let url = ENDPOINT + '/login';
-    let headers = {};
 
-    let api = new Api();
+    verifySchoolName(schoolname, callback) {
+        if (schoolname == null) {
+            return false;
+        }
+        let body = {
 
-    api.post(url, body, headers, (data) => {
-        store.dispatch({
-            type: 'ADD_SCHOOLNAME',
-            payload: schoolname
+        };
+
+        let url = ENDPOINT + '/login';
+        let headers = {};
+
+        let api = new Api();
+
+        api.post(url, body, headers, (data) => {
+            store.dispatch({
+                type: 'ADD_SCHOOLNAME',
+                payload: schoolname
+            });
+
+
+        }, (error) => {
+            console.log(error)
         });
 
 
-    }, (error) => {
-        console.log(error)
-    });
+        return callback();
+    }
 
-
-
-
-    return callback();
 }
