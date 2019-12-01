@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 
 import store from '../Store'
-import { pushHistory } from '../helpers/Utils';
+import { getEndPoint } from '../helpers/Utils';
+import Api from '../components/api/Api';
+ 
 
-let ENDPOINT = "";
-let  = this.util.getEndPoint('users');
+let ENDPOINT = "users";
+let  engine =  getEndPoint('users');
 export function verifySchoolName(schoolname, callback) {
     if (schoolname == null) {
         return false;
@@ -15,8 +17,12 @@ export function verifySchoolName(schoolname, callback) {
         password: "spoe"
     };
 
-    let url = this.endpoint + 'login';
-    this.Api.post(url, body, headers, (data)=>{
+    let url = ENDPOINT + 'login';
+    let headers = {};
+
+    let api = new Api();
+
+    api.post(url, body, headers, (data)=>{
         console.log(data);
     },(error)=>{
         console.log(error)
