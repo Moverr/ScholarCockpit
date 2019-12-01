@@ -9,7 +9,7 @@ import { verifySchoolName } from '../../services/VerificationService';
 import store from '../../Store';
 import { pushHistory } from '../../helpers/Utils';
 
-import {withRouter} from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 
 class VerifySchool extends Component {
@@ -44,7 +44,7 @@ class VerifySchool extends Component {
                   message: ' school name is required'
             });
 
-            let school_name = this.state.schoolname.trim() ;
+            let school_name = this.state.schoolname.trim();
 
 
             if (school_name == null || school_name.length == 0) {
@@ -56,19 +56,20 @@ class VerifySchool extends Component {
 
                   return;
             }
-             
- 
-            store.dispatch({
-                  type: 'ADD_SCHOOLNAME',
-                  payload: school_name
-            });
-          
-           verifySchoolName(this.state.schoolname, () => {
-                
+
+
+
+
+            verifySchoolName(school_name, () => {
+
+                  store.dispatch({
+                        type: 'ADD_SCHOOLNAME',
+                        payload: school_name
+                  });
 
                   this.props.history.push("/login");
- 
-            })  
+
+            })
 
       }
 
