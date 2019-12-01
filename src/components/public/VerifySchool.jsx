@@ -44,8 +44,10 @@ class VerifySchool extends Component {
                   message: ' school name is required'
             });
 
+            let school_name = this.state.schoolname.trim() ;
 
-            if (this.state.schoolname == null || this.state.schoolname.trim().length == 0) {
+
+            if (school_name == null || school_name.length == 0) {
 
                   this.setState({
                         message_status: '-warning ',
@@ -56,11 +58,12 @@ class VerifySchool extends Component {
             }
              
  
+            store.dispatch({
+                  type: 'ADD_SCHOOLNAME',
+                  payload: school_name
+            });
+          
            verifySchoolName(this.state.schoolname, () => {
-                  store.dispatch({
-                        type: 'ADD_SCHOOLNAME',
-                        payload: this.state.schoolName
-                  });
                 
 
                   this.props.history.push("/login");

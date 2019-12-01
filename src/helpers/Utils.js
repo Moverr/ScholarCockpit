@@ -29,6 +29,7 @@ export function pushHistory(path, props) {
 
 export function verifySchool() {
     let schoolName = store.getState().Auth.Authentication.schoolname;
+    console.log(schoolName)
     return schoolName;
 }
 
