@@ -44,7 +44,7 @@ class VerifySchool extends Component {
                   message: ' school name is required'
             });
 
-            let school_name = this.state.schoolname.trim();
+            let school_name = (this.state.schoolname == null) ? null : this.state.schoolname.trim();
 
 
             if (school_name == null || school_name.length == 0) {
