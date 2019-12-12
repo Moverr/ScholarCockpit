@@ -1,14 +1,16 @@
 import {  combineReducers} from 'redux';
-import Auth from './Authentication';
+import {Authentication,LoginResponse} from './Authentication';
 
 
 
 
-let reducers = combineReducers(
+let allReducers = combineReducers(
     {
-    authentication:Auth
+    authReducer:Authentication,
+    loginReducer:LoginResponse
     }
 );
 
+ 
 
-export default reducers;
+export default allReducers;
