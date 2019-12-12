@@ -9,13 +9,16 @@ import Alert from '../../helpers/Alert';
 
 
 import { withRouter } from 'react-router-dom';
-import SchoolSeervice from '../../services/SchoolSeervice';
+//todo: services 
+import  {VerifySchool} from '../../services/SchoolSeervice'
 
- 
+
 import store from '../../store/Store';
 import { pushHistory } from '../../helpers/Utils';
 
-import { useSelector,useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+
+import {setSchoolName} from '../../store/actions/schoolAction'
 
 
 
@@ -36,8 +39,7 @@ class VerifySchool extends Component {
 
             this.SchoolSeervice = new SchoolSeervice();
 
-            this.authReducer = useSelector(state =>state.authReducer)
-            this.dispatch = useDispatch();
+
 
 
 
@@ -54,12 +56,14 @@ class VerifySchool extends Component {
 
       handleSubmit(e) {
             e.preventDefault();
+
+
             this.setState({
                   message_status: '-warning  displaynone',
                   message: ' school name is required'
             });
 
-            let school_name = (this.state.schoolname == null) ? null : this.state.schoolname.trim(); 
+            let school_name = (this.state.schoolname == null) ? null : this.state.schoolname.trim();
 
             if (school_name == null || school_name.length == 0) {
 
@@ -75,9 +79,10 @@ class VerifySchool extends Component {
 
 
             //todo: Verify School 
-            this.SchoolSeervice.verify(school_name, (response) => {
+            verifySchool(school_name, (response) => {
                   alert("pass me ")
                   // this.props.history.push("/login");
+                  Move.dispatch(setSchoolName("movers"))
 
             })
 
@@ -101,6 +106,7 @@ class VerifySchool extends Component {
 
       render() {
             // const counter = useSelector(state =>state.counterReducer) 
+
 
             return (
                   <div className="container-fluid verifyschoolwrapper">
@@ -140,5 +146,9 @@ VerifySchool.propTypes = {
 };
 
 
-
+  function Move() {
+      const authReducer = useSelector(state => state.authReducer);
+      const dispatch = useDispatch();
+      
+}
 export default withRouter(VerifySchool);
