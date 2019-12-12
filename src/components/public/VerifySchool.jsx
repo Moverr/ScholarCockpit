@@ -11,10 +11,11 @@ import Alert from '../../helpers/Alert';
 import { withRouter } from 'react-router-dom';
 import SchoolSeervice from '../../services/SchoolSeervice';
 
-
-import { useSelector, useDispatch } from 'react-redux'
+ 
 import store from '../../store/Store';
 import { pushHistory } from '../../helpers/Utils';
+
+import { useSelector,useDispatch } from 'react-redux';
 
 
 
@@ -34,6 +35,10 @@ class VerifySchool extends Component {
             this.handleSubmit = this.handleSubmit.bind(this);
 
             this.SchoolSeervice = new SchoolSeervice();
+
+            this.authReducer = useSelector(state =>state.authReducer)
+            this.dispatch = useDispatch();
+
 
 
       }

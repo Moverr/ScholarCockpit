@@ -5,8 +5,6 @@ import { getEndPoint } from '../helpers/Utils';
 import Api from '../components/api/Api';
 import BaseService from './BaseService';
  
-import {setSchoolName,getSchoolName} from '../store/actions/schoolAction'
-import { useSelector,useDispatch } from 'react-redux'
 
 
 class SchoolService extends BaseService {
@@ -16,7 +14,7 @@ class SchoolService extends BaseService {
         this.ENDPOINT = "users";
         this.engine = getEndPoint('users');
 
-        this.counter = useSelector(state =>state.authReducer)
+      
 
  
     }
