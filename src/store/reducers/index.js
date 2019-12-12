@@ -4,7 +4,7 @@ import {Authentication,LoginResponse} from './Authentication';
 
 
 
-let allReducers = combineReducers(
+let app = combineReducers(
     {
     authReducer:Authentication,
     loginReducer:LoginResponse
@@ -13,4 +13,4 @@ let allReducers = combineReducers(
 
  
 
-export default allReducers;
+export default app;

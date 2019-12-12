@@ -1,4 +1,4 @@
-import store from "../Store";
+import store from "../store/Store";
 
 const BASE_URL = " http://localhost:9776/";
 const endpoints = {

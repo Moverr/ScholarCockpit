@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import store from '../Store'
+import store from '../store/Store'
 import { getEndPoint } from '../helpers/Utils';
 import Api from '../components/api/Api';
 

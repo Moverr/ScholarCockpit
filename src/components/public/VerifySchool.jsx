@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom';
 import Alert from '../../helpers/Alert';
  
 
-import store from '../../Store';
+import store from '../../store/Store';
 import { pushHistory } from '../../helpers/Utils';
 
 import { withRouter } from 'react-router-dom';

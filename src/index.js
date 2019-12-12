@@ -8,7 +8,7 @@ import './index.css';
 import * as serviceWorker from './serviceWorker';
 
 import App from './components/App';
-import store from './Store';
+import store from './store/Store';
 
 
 ReactDOM.render(
