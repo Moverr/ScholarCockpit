@@ -5,7 +5,7 @@ import { getEndPoint } from '../helpers/Utils';
 import Api from '../components/api/Api';
 import BaseService from './BaseService';
 
-class SchoolService  extends BaseService{
+class SchoolService extends BaseService {
 
     constructor() {
         this.ENDPOINT = "users";
@@ -15,7 +15,7 @@ class SchoolService  extends BaseService{
 
 
     //todo: verify school 
-    verify(schoolname, callback){
+    verify(schoolname, callback) {
         //todo: register school to the state 
         if (schoolname == null) {
             return false;
@@ -25,8 +25,8 @@ class SchoolService  extends BaseService{
         };
 
         return callback({
-            status:success,
-            message:"School Persisted to Store "
+            status: success,
+            message: "School Persisted to Store "
         });
 
 
@@ -56,15 +56,15 @@ class SchoolService  extends BaseService{
                 payload: schoolname
             }); */
 
-/*
-        }, (error) => {
-            console.log(error)
-        });
-
-
-        return callback();
-    }
-    */
+    /*
+            }, (error) => {
+                console.log(error)
+            });
+    
+    
+            return callback();
+        }
+        */
 
 }
 

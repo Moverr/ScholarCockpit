@@ -9,7 +9,7 @@ import Alert from '../../helpers/Alert';
 
 
 import { withRouter } from 'react-router-dom';
-import VerifcationService from '../../services/SchoolSeervice';
+import SchoolSeervice from '../../services/SchoolSeervice';
 
 
 import { useSelector, useDispatch } from 'react-redux'
@@ -33,7 +33,7 @@ class VerifySchool extends Component {
             this.handleChange = this.handleChange.bind(this);
             this.handleSubmit = this.handleSubmit.bind(this);
 
-            this.VerifcationService = new VerifcationService();
+            this.SchoolSeervice = new SchoolSeervice();
 
 
       }
@@ -69,8 +69,8 @@ class VerifySchool extends Component {
 
 
 
-            this.VerifcationService.verifySchoolName(school_name, () => {
-
+            //todo: Verify School 
+            this.SchoolSeervice.verify(school_name, (response) => {
                   alert("pass me ")
                   // this.props.history.push("/login");
 
