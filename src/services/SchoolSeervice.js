@@ -2,16 +2,22 @@ import React, { Component } from 'react';
 
 import store from '../store/Store'
 import { getEndPoint } from '../helpers/Utils';
-import Api from '../components/api/Api'; 
- 
+import Api from '../components/api/Api';
+import { useSelector, useDispatch } from 'react-redux';
+//actions 
+import { setSchoolName } from '../store/actions/schoolAction'
 
-export function VerifySchool(schoolname, callback)){
+
+export function VerifySchoolService(schoolname, callback) {
+    const authReducer = useSelector(state => state.authReducer);
+    const dispatch = useDispatch();
 
     if (schoolname == null) {
         return false;
     }
-   
-    
+
+
+
 
     return callback({
         status: "SUCCES",
@@ -20,4 +26,3 @@ export function VerifySchool(schoolname, callback)){
 
 
 }
- 

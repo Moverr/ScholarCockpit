@@ -10,15 +10,14 @@ import Alert from '../../helpers/Alert';
 
 import { withRouter } from 'react-router-dom';
 //todo: services 
-import  {VerifySchool} from '../../services/SchoolSeervice'
+import  {VerifySchoolService} from '../../services/SchoolSeervice'
 
 
 import store from '../../store/Store';
 import { pushHistory } from '../../helpers/Utils';
 
-import { useSelector, useDispatch } from 'react-redux';
 
-import {setSchoolName} from '../../store/actions/schoolAction'
+
 
 
 
@@ -37,7 +36,7 @@ class VerifySchool extends Component {
             this.handleChange = this.handleChange.bind(this);
             this.handleSubmit = this.handleSubmit.bind(this);
 
-            this.SchoolSeervice = new SchoolSeervice();
+             
 
 
 
@@ -79,10 +78,10 @@ class VerifySchool extends Component {
 
 
             //todo: Verify School 
-            verifySchool(school_name, (response) => {
+            VerifySchoolService(school_name, (response) => {
                   alert("pass me ")
                   // this.props.history.push("/login");
-                  Move.dispatch(setSchoolName("movers"))
+                  // Move.dispatch(setSchoolName("movers"))
 
             })
 
@@ -146,9 +145,5 @@ VerifySchool.propTypes = {
 };
 
 
-  function Move() {
-      const authReducer = useSelector(state => state.authReducer);
-      const dispatch = useDispatch();
-      
-}
+ 
 export default withRouter(VerifySchool);
