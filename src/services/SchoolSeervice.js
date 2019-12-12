@@ -14,6 +14,26 @@ class SchoolService  extends BaseService{
 
 
 
+    //todo: verify school 
+    verify(schoolname, callback){
+        //todo: register school to the state 
+        if (schoolname == null) {
+            return false;
+        }
+        let body = {
+
+        };
+
+        return callback({
+            status:success,
+            message:"School Persisted to Store "
+        });
+
+
+    }
+
+    /*
+
     verifySchoolName(schoolname, callback) {
         if (schoolname == null) {
             return false;
@@ -36,7 +56,7 @@ class SchoolService  extends BaseService{
                 payload: schoolname
             }); */
 
-
+/*
         }, (error) => {
             console.log(error)
         });
@@ -44,6 +64,7 @@ class SchoolService  extends BaseService{
 
         return callback();
     }
+    */
 
 }
 

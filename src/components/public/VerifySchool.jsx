@@ -9,7 +9,7 @@ import Alert from '../../helpers/Alert';
 
 
 import { withRouter } from 'react-router-dom';
-import VerifcationService from '../../services/VerificationService';
+import VerifcationService from '../../services/SchoolSeervice';
 
 
 import { useSelector, useDispatch } from 'react-redux'
