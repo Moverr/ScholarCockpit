@@ -3,8 +3,9 @@ import React, { Component } from 'react';
 import store from '../store/Store'
 import { getEndPoint } from '../helpers/Utils';
 import Api from '../components/api/Api';
+import BaseService from './BaseService';
 
-class VerifcationService {
+class SchoolService  extends BaseService{
 
     constructor() {
         this.ENDPOINT = "users";
@@ -47,4 +48,4 @@ class VerifcationService {
 }
 
 
-export default VerifcationService
+export default SchoolService

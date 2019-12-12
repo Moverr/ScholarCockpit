@@ -5,6 +5,14 @@ let defaultAuthentication = {
     authentication: null
 };
 
+let AuthenticationStatus = {
+    status: "",
+    message: "",
+    
+}
+
+
+
 export const Authentication = (state = defaultAuthentication, action) => {
     switch (action.type) {
         case 'ADD_SCHOOLNAME':
@@ -22,10 +30,7 @@ export const Authentication = (state = defaultAuthentication, action) => {
 };
 
 
-let AuthenticationStatus = {
-    status: "",
-    message: ""
-}
+
 export const LoginResponse = (state = AuthenticationStatus, action) => {
     switch (action.type) {
         case "LOGIN_FAILURE":
