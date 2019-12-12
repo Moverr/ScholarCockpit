@@ -13,7 +13,7 @@ let AuthenticationStatus = {
 
 
 
-export const Authentication = (state = defaultAuthentication, action) => {
+export const AuthenticationReducer = (state = defaultAuthentication, action) => {
     switch (action.type) {
         case 'ADD_SCHOOLNAME':
             state = { ...state, schoolname: action.payload };
@@ -31,7 +31,7 @@ export const Authentication = (state = defaultAuthentication, action) => {
 
 
 
-export const LoginResponse = (state = AuthenticationStatus, action) => {
+export const LoginResponseReducer = (state = AuthenticationStatus, action) => {
     switch (action.type) {
         case "LOGIN_FAILURE":
             state = { ...state, message: action.payload }

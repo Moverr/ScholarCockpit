@@ -1,4 +1,4 @@
-export const addSchoolName = (payload) => {
+export const setSchoolName = (payload) => {
     return {
         type: "ADD_SCHOOLNAME",
         data: payload

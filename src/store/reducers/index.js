@@ -1,13 +1,13 @@
 import {  combineReducers} from 'redux';
-import {Authentication,LoginResponse} from './Authentication';
+import {AuthenticationReducer,LoginResponseReducer} from './Authentication';
 
 
 
 
 let allReducers = combineReducers(
     {
-    authReducer:Authentication,
-    loginReducer:LoginResponse
+    authReducer:AuthenticationReducer,
+    loginReducer:LoginResponseReducer
     }
 );
 

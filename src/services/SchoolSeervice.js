@@ -4,12 +4,21 @@ import store from '../store/Store'
 import { getEndPoint } from '../helpers/Utils';
 import Api from '../components/api/Api';
 import BaseService from './BaseService';
+ 
+import {setSchoolName,getSchoolName} from '../store/actions/schoolAction'
+import { useSelector,useDispatch } from 'react-redux'
+
 
 class SchoolService extends BaseService {
 
     constructor() {
+        super()
         this.ENDPOINT = "users";
         this.engine = getEndPoint('users');
+
+        this.counter = useSelector(state =>state.authReducer)
+
+ 
     }
 
 
@@ -20,12 +29,11 @@ class SchoolService extends BaseService {
         if (schoolname == null) {
             return false;
         }
-        let body = {
-
-        };
+       
+        
 
         return callback({
-            status: success,
+            status: "SUCCES",
             message: "School Persisted to Store "
         });
 
