@@ -3,7 +3,7 @@ import '../../css/home.css';
 import  { pushHistory, verifySchool, getEndPoint } from '../../helpers/Utils';
 
 import Api from '../api/Api';
-import store from '../../Store';
+// import store from '../../Store';
 
 // import Inputs from '../helpers/Inputs';
 
@@ -72,10 +72,11 @@ class Login extends Component {
 		}
 
 		//todo: improve overall state to improve the system
-		store.dispatch({
+	
+	/*	store.dispatch({
 			type: 'ADD_AUTHENTICATION',
 			payload: response.authentication
-		});
+		}); */
 
 		this.setState({
 			authentication: response.authentication,
@@ -90,12 +91,12 @@ class Login extends Component {
 
 	handleError = (response) => {
 		console.log(response);
-		store.dispatch({
+	/* 	store.dispatch({
 			type: 'LOGIN_STATUS',
 			payload: response
-		});
+		}); */
 
-		switch (response) {
+		/* switch (response) {
 			case 401:
 				store.dispatch({
 					type: 'LOGIN_FAILURE',
@@ -117,12 +118,13 @@ class Login extends Component {
 					payload: 'Something Went Wrong, contact System Administrator'
 				});
 				break;
-		}
-		this.setState({
+		}  */
+
+	/*	this.setState({
 			message: store.getState().Auth.LoginResponse.message,
 			message_status: store.getState().Auth.LoginResponse.status === 401 ? '-warning' : '-danger',
 			loginBtn: 'LOGIN'
-		});
+		}); */
 		console.log(response);
 	};
 
