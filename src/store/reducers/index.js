@@ -6,7 +6,7 @@ import Auth from './Authentication';
 
 let reducers = combineReducers(
     {
-    Auth
+    authentication:Auth
     }
 );
 
