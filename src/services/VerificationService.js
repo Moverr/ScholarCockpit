@@ -4,7 +4,7 @@ import store from '../Store'
 import { getEndPoint } from '../helpers/Utils';
 import Api from '../components/api/Api';
 
-export class VerifcationService {
+class VerifcationService {
 
     constructor() {
         this.ENDPOINT = "users";
@@ -21,7 +21,7 @@ export class VerifcationService {
 
         };
 
-        let url = ENDPOINT + '/login';
+        let url = this.ENDPOINT + '/login';
         let headers = {};
 
         let api = new Api();
@@ -42,3 +42,6 @@ export class VerifcationService {
     }
 
 }
+
+
+export default VerifcationService

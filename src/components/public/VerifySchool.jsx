@@ -4,12 +4,13 @@ import InputField from '../../forms/inputs/InputField';
 import '../../css/verifyschool.css';
 import { NavLink } from 'react-router-dom';
 import Alert from '../../helpers/Alert';
-import { verifySchoolName } from '../../services/VerificationService';
+ 
 
 import store from '../../Store';
 import { pushHistory } from '../../helpers/Utils';
 
 import { withRouter } from 'react-router-dom';
+import VerifcationService from '../../services/VerificationService';
 
 
 class VerifySchool extends Component {
@@ -24,6 +25,8 @@ class VerifySchool extends Component {
 
             this.handleChange = this.handleChange.bind(this);
             this.handleSubmit = this.handleSubmit.bind(this);
+
+            this.VerifcationService = new VerifcationService();
 
 
       }
@@ -60,7 +63,7 @@ class VerifySchool extends Component {
 
 
 
-            verifySchoolName(school_name, () => {
+            this.VerifcationService.verifySchoolName(school_name, () => {
 
 
                   this.props.history.push("/login");
