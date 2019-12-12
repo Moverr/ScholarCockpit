@@ -4,16 +4,23 @@ import InputField from '../../forms/inputs/InputField';
 import '../../css/verifyschool.css';
 import { NavLink } from 'react-router-dom';
 import Alert from '../../helpers/Alert';
- 
 
-import store from '../../store/Store';
-import { pushHistory } from '../../helpers/Utils';
+
+
 
 import { withRouter } from 'react-router-dom';
 import VerifcationService from '../../services/VerificationService';
 
 
+import { useSelector, useDispatch } from 'react-redux'
+import store from '../../store/Store';
+import { pushHistory } from '../../helpers/Utils';
+
+
+
 class VerifySchool extends Component {
+
+
       constructor(props) {
             super(props);
             this.state = {
@@ -47,8 +54,7 @@ class VerifySchool extends Component {
                   message: ' school name is required'
             });
 
-            let school_name = (this.state.schoolname == null) ? null : this.state.schoolname.trim();
-
+            let school_name = (this.state.schoolname == null) ? null : this.state.schoolname.trim(); 
 
             if (school_name == null || school_name.length == 0) {
 
@@ -65,8 +71,8 @@ class VerifySchool extends Component {
 
             this.VerifcationService.verifySchoolName(school_name, () => {
 
-
-                  this.props.history.push("/login");
+                  alert("pass me ")
+                  // this.props.history.push("/login");
 
             })
 
@@ -89,6 +95,8 @@ class VerifySchool extends Component {
 
 
       render() {
+            // const counter = useSelector(state =>state.counterReducer) 
+
             return (
                   <div className="container-fluid verifyschoolwrapper">
                         <form role="form" onSubmit={this.handleSubmit} >

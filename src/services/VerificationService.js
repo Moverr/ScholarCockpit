@@ -27,10 +27,13 @@ class VerifcationService {
         let api = new Api();
 
         api.post(url, body, headers, (data) => {
-            store.dispatch({
+
+            alert("pass");
+          
+          /*  store.dispatch({
                 type: 'ADD_SCHOOLNAME',
                 payload: schoolname
-            });
+            }); */
 
 
         }, (error) => {
