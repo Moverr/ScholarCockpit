@@ -100,11 +100,11 @@ function VerifySchool() {
                   <form role="form" onSubmit={handleSubmit} >
                         <br />
                         <h3 className="center-align header">Enter Your school name. </h3>
-                        <Alert message={this.state.message} className={'alert alert' + this.state.message_status} role={"alert"} />
+                        <Alert message={message} className={'alert alert' + message_status} role={"alert"} />
 
                         <div className="form-group">
 
-                              <InputField type="text" className="text form-control verify-textinput" callback={this.handleChange} name="schoolname" value={this.state.schoolName}
+                              <InputField type="text" className="text form-control verify-textinput" callback={handleChange} name="schoolname" value={schoolname}
                                     placeholder=" " />
                               <button className="btn btn-primary col-md-12 verify-button gray " type="submit">NEXT</button>
 
