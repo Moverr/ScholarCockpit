@@ -29,11 +29,9 @@ function VerifySchool() {
 
       const handleSubmit = (e) => {
             e.preventDefault();
-
-
+ 
             setMessageStatus('-warning  displaynone');
             setMessage('school name is required')
-
 
             let school_name = (schoolname == null) ? null : schoolname;
 
@@ -68,7 +66,7 @@ function VerifySchool() {
 
                         <div className="form-group">
 
-                              <InputField type="text" className="text form-control verify-textinput" callback={e => setSchoolName(e.target.name)} name="schoolname" value={schoolname}
+                              <InputField type="text" className="text form-control verify-textinput" callback={e => setSchoolName(e.target.value)} name="schoolname" value={schoolname}
                                     placeholder=" " />
                               <button className="btn btn-primary col-md-12 verify-button gray " type="submit">NEXT</button>
 
