@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import store from '../store/Store'
 import { getEndPoint } from '../helpers/Utils';
 import Api from '../components/api/Api';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector, useDispatch ,useState} from 'react-redux';
 //actions 
 import { setSchoolName } from '../store/actions/schoolAction'
 
