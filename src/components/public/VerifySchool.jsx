@@ -23,7 +23,7 @@ function VerifySchool() {
       const [schoolname, setSchoolName] = useState(null);
       const [message_status, setMessageStatus] = useState('-success displaynone');
       const [message, setMessage] = useState('Wait a minute');
- 
+
 
 
 
@@ -56,22 +56,7 @@ function VerifySchool() {
 
       }
 
-
-      const handleChange = (evt) => {
-            let value = evt.target.value;
-
-            this.setState({
-                  ...this.state,
-                  [evt.target.name]: value
-            });
-
-
-
-      }
-
-
-
-
+ 
 
 
       return (
@@ -83,7 +68,7 @@ function VerifySchool() {
 
                         <div className="form-group">
 
-                              <InputField type="text" className="text form-control verify-textinput" callback={handleChange} name="schoolname" value={schoolname}
+                              <InputField type="text" className="text form-control verify-textinput" callback={e => setSchoolName(e.target.name)} name="schoolname" value={schoolname}
                                     placeholder=" " />
                               <button className="btn btn-primary col-md-12 verify-button gray " type="submit">NEXT</button>
 
