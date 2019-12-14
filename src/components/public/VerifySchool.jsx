@@ -23,23 +23,7 @@ function VerifySchool() {
       const [schoolname, setSchoolName] = useState(null);
       const [message_status, setMessageStatus] = useState('-success displaynone');
       const [message, setMessage] = useState('Wait a minute');
-
-      /*
-            constructor(props) {
-                  super(props);
-                  this.state = {
-                        schoolname: null,
-                        message_status: '-success displaynone',
-                        message: ' Wait a minute '
-                  };
-      
-      
-                  this.handleChange = this.handleChange.bind(this);
-                  this.handleSubmit = this.handleSubmit.bind(this);
-      
-                   
-            }
-            */
+ 
 
 
 
@@ -47,23 +31,18 @@ function VerifySchool() {
             e.preventDefault();
 
 
-            this.setState({
-                  message_status: '-warning  displaynone',
-                  message: ' school name is required'
-            });
+            setMessageStatus('-warning  displaynone');
+            setMessage('school name is required')
 
-            let school_name = (this.state.schoolname == null) ? null : this.state.schoolname.trim();
+
+            let school_name = (schoolname == null) ? null : schoolname;
 
             if (school_name == null || school_name.length == 0) {
 
-                  this.setState({
-                        message_status: '-warning ',
-                        message: ' school name is required'
-                  });
-
+                  setMessageStatus('-warning');
+                  setMessage(' school name is required');
                   return;
             }
-
 
 
 
