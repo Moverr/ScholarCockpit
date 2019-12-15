@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setSchoolName, getSchoolName } from '../../store/actions/schoolAction';
-import { withRouter, useHistory,NavLink } from 'react-router-dom';
-  
+import { withRouter, useHistory, NavLink } from 'react-router-dom';
+
 
 import InputField from '../../forms/inputs/InputField';
 import '../../css/verifyschool.css';
@@ -10,8 +10,8 @@ import Alert from '../../helpers/Alert';
 
 //todo: services 
 import { VerifySchoolService } from '../../services/SchoolSeervice'
- 
- 
+
+
 
 function VerifySchool(props) {
 
@@ -23,7 +23,7 @@ function VerifySchool(props) {
       const authReducer = useSelector(state => state.authReducer);
       const dispatch = useDispatch();
 
-   
+
       const handleSubmit = (e) => {
             e.preventDefault();
 

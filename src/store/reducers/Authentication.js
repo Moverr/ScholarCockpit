@@ -1,5 +1,4 @@
-import { combineReducers } from 'redux';
-
+ 
 let defaultAuthentication = {
     schoolname: null,
     authentication: null

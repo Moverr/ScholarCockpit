@@ -1,16 +1,18 @@
-import {  combineReducers} from 'redux';
-import {AuthenticationReducer,LoginResponseReducer} from './Authentication';
+import { combineReducers } from 'redux';
+import { AuthenticationReducer, LoginResponseReducer } from './Authentication';
+import { AppReducer } from './AppReducer'
 
 
 
 
 let allReducers = combineReducers(
     {
-    authReducer:AuthenticationReducer,
-    loginReducer:LoginResponseReducer
+        app:AppReducer,
+        authReducer: AuthenticationReducer,
+        loginReducer: LoginResponseReducer
     }
 );
 
- 
+
 
 export default allReducers;
