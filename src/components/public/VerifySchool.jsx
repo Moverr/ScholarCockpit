@@ -20,7 +20,7 @@ import { setSchoolName, getSchoolName } from '../../store/actions/schoolAction';
 
 
 
-function VerifySchool() {
+function VerifySchool(props) {
 
       const [schoolname, set_schoolname] = useState(null);
       const [message_status, set_messagestatus] = useState('-success displaynone');
@@ -51,7 +51,7 @@ function VerifySchool() {
             //todo: Verify School 
             VerifySchoolService(school_name, (response) => {
                   dispatch(setSchoolName(schoolname))
-                  useHistory().push('/');
+                  props.history.push("/login");
                     
 
             })
@@ -62,7 +62,11 @@ function VerifySchool() {
 
 
       return (
+
             <div className="container-fluid verifyschoolwrapper">
+                
+
+
                   <form role="form" onSubmit={handleSubmit} >
                         <br />
                         <h3 className="center-align header">Enter Your school name. </h3>

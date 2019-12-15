@@ -17,7 +17,7 @@ const logdata = (
   }
 );
 
-function RightBar() {
+function RightBar(props) {
 
   logTable(logdata);
 
@@ -25,10 +25,10 @@ function RightBar() {
     <div className={"row-fluid"}>
       <div className="row headerbar">
         <div className="col-md-9">
-          <Banner />
+          <Banner props= {props} />
         </div>
         <div className="col-md-3">
-         <VerifySchool/>
+         <VerifySchool props={props}/>
         </div>
       </div>
 

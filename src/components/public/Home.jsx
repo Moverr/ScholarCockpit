@@ -11,8 +11,9 @@ class Home extends Component {
         return (
 
             <div >
-                <TopNavigation />
-                <RightBar />
+                <TopNavigation  props={this.props} />
+                <RightBar props={this.props}/>
+
 
 
 
