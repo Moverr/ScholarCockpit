@@ -20,7 +20,7 @@ function VerifySchool(props) {
       const [message, set_message] = useState('Wait a minute');
 
 
-      const authReducer = useSelector(state => state.authReducer);
+      const auth = useSelector(state => state.auth);
       const dispatch = useDispatch();
 
 

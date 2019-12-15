@@ -1,12 +1,13 @@
 import store from "../store/Store";
  
-const BASE_URL = " http://localhost:9776/";
+ 
 const endpoints = {
     users: "user/v1/",
     roles: "roles/v1/",
 }
 
 export function getBaseUrl() {
+    let BASE_URL = store.getState().app.baseUrl;  
     return BASE_URL;
 }
 
@@ -28,13 +29,12 @@ export function pushHistory(path, props) {
 
 
 export function verifySchool() {
-    let schoolName = store.getState().authReducer.schoolname;
-    console.log(schoolName)
+    let schoolName = store.getState().auth.schoolname; 
     return schoolName;
 }
 
 export function verifyAuthentication() {
-    let authentication = store.getState().authReducer.authentication;
+    let authentication = store.getState().auth.authentication;
     return authentication;
 }
 

@@ -8,8 +8,8 @@ import { AppReducer } from './AppReducer'
 let allReducers = combineReducers(
     {
         app:AppReducer,
-        authReducer: AuthenticationReducer,
-        loginReducer: LoginResponseReducer
+        auth: AuthenticationReducer,
+        login: LoginResponseReducer
     }
 );
 
