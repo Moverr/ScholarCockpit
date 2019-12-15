@@ -1,19 +1,17 @@
 import store from "../store/Store";
- 
- 
-const endpoints = {
-    users: "user/v1/",
-    roles: "roles/v1/",
-}
+
+
 
 export function getBaseUrl() {
-    let BASE_URL = store.getState().app.baseUrl;  
-    return BASE_URL;
+    let baseurl = store.getState().app.baseUrl;
+    return baseurl;
 }
 
 export function getEndPoint(endpoint) {
-    return endpoints[endpoint];
+    let ednpointUrl = store.getState().app.endpoints[endpoint];
+    return ednpointUrl;
 }
+
 
 
 
@@ -29,7 +27,7 @@ export function pushHistory(path, props) {
 
 
 export function verifySchool() {
-    let schoolName = store.getState().auth.schoolname; 
+    let schoolName = store.getState().auth.schoolname;
     return schoolName;
 }
 
