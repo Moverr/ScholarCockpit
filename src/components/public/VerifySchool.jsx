@@ -45,14 +45,10 @@ function VerifySchool() {
                   set_message(' school name is required');
                   return;
             }
-
-
-
+ 
             //todo: Verify School 
             VerifySchoolService(school_name, (response) => {
-                  // this.props.history.push("/login");
                   dispatch(setSchoolName(getSchoolName))
-                  // Move.dispatch(setSchoolName("movers"))
                   alert("pass me ");
 
             })
