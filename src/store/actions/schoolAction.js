@@ -1,7 +1,7 @@
 export const setSchoolName = (payload) => {
     return {
         type: "ADD_SCHOOLNAME",
-        data: payload
+        payload: payload
     }
 }
 

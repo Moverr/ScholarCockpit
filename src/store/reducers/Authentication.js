@@ -8,7 +8,7 @@ let defaultAuthentication = {
 let AuthenticationStatus = {
     status: "",
     message: "",
-    
+
 }
 
 
@@ -16,7 +16,9 @@ let AuthenticationStatus = {
 export const AuthenticationReducer = (state = defaultAuthentication, action) => {
     switch (action.type) {
         case 'ADD_SCHOOLNAME':
+
             state = { ...state, schoolname: action.payload };
+
             break;
         case 'ADD_AUTHENTICATION':
             state = { ...state, authentication: action.payload };

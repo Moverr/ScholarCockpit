@@ -5,7 +5,7 @@ import '../../css/verifyschool.css';
 import { NavLink } from 'react-router-dom';
 import Alert from '../../helpers/Alert';
 
-import { withRouter } from 'react-router-dom';
+import { withRouter,useHistory } from 'react-router-dom';
 //todo: services 
 import { VerifySchoolService } from '../../services/SchoolSeervice'
 
@@ -14,8 +14,10 @@ import store from '../../store/Store';
 import { pushHistory } from '../../helpers/Utils';
 
 import { useSelector, useDispatch } from 'react-redux';
+import { setSchoolName, getSchoolName } from '../../store/actions/schoolAction';
 
-import { setSchoolName, getSchoolName } from '../../store/actions/schoolAction'
+ 
+
 
 
 function VerifySchool() {
@@ -28,7 +30,7 @@ function VerifySchool() {
       const authReducer = useSelector(state => state.authReducer);
       const dispatch = useDispatch();
 
-
+      // let history = useHistory();
 
 
       const handleSubmit = (e) => {
@@ -45,11 +47,12 @@ function VerifySchool() {
                   set_message(' school name is required');
                   return;
             }
- 
+
             //todo: Verify School 
             VerifySchoolService(school_name, (response) => {
-                  dispatch(setSchoolName(getSchoolName))
-                  alert("pass me ");
+                  dispatch(setSchoolName(schoolname))
+                  useHistory().push('/');
+                    
 
             })
 

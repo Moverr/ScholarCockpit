@@ -1,13 +1,13 @@
 export const loggin =(payload)=>{
     return {
         type:"LOGIN_IN",
-        data:payload
+        payload:payload
     }
 }
 
 export const logout=(payload)=>{
     return {
         type:"LOGIN_OUT",
-        data:payload
+        payload:payload
     }
 }
