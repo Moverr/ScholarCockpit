@@ -1,24 +1,17 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import InputField from '../../forms/inputs/InputField';
-import '../../css/verifyschool.css';
-import { NavLink } from 'react-router-dom';
-import Alert from '../../helpers/Alert';
-
-import { withRouter,useHistory } from 'react-router-dom';
-//todo: services 
-import { VerifySchoolService } from '../../services/SchoolSeervice'
-
-
-import store from '../../store/Store';
-import { pushHistory } from '../../helpers/Utils';
-
 import { useSelector, useDispatch } from 'react-redux';
 import { setSchoolName, getSchoolName } from '../../store/actions/schoolAction';
+import { withRouter, useHistory,NavLink } from 'react-router-dom';
+  
 
+import InputField from '../../forms/inputs/InputField';
+import '../../css/verifyschool.css';
+import Alert from '../../helpers/Alert';
+
+//todo: services 
+import { VerifySchoolService } from '../../services/SchoolSeervice'
  
-
-
+ 
 
 function VerifySchool(props) {
 
@@ -30,9 +23,7 @@ function VerifySchool(props) {
       const authReducer = useSelector(state => state.authReducer);
       const dispatch = useDispatch();
 
-      // let history = useHistory();
-
-
+   
       const handleSubmit = (e) => {
             e.preventDefault();
 
@@ -52,7 +43,7 @@ function VerifySchool(props) {
             VerifySchoolService(school_name, (response) => {
                   dispatch(setSchoolName(schoolname))
                   props.history.push("/login");
-                    
+
 
             })
 
@@ -64,7 +55,7 @@ function VerifySchool(props) {
       return (
 
             <div className="container-fluid verifyschoolwrapper">
-                
+
 
 
                   <form role="form" onSubmit={handleSubmit} >
