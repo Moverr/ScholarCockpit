@@ -3,18 +3,18 @@ import '../../css/home.css';
 
 import TopNavigation from './TopNavigation';
 import RightBar from './RightBar';
+import { getLastURLSegment } from '../../helpers/Utils'
 
 
 
 class Home extends Component {
-    componentDidMount(){
+    componentDidMount() {
 
-     
-        
-        var pageURL = window.location.href;
-        var lastURLSegment = pageURL.substr(pageURL.lastIndexOf('/') + 1);
-        
-  
+        var lastURLSegment = getLastURLSegment();
+        console.log("WONDER");
+        console.log(lastURLSegment)
+
+
     }
 
     render() {
@@ -22,8 +22,8 @@ class Home extends Component {
 
             <div >
                 {/*  functional components  */}
-                <TopNavigation  props={this.props} />
-                <RightBar props={this.props}/>
+                <TopNavigation props={this.props} />
+                <RightBar props={this.props} />
 
 
 
@@ -53,7 +53,7 @@ class Home extends Component {
                         </div>
 
 
-                        
+
 
 
 
