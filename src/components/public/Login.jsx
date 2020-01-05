@@ -54,11 +54,11 @@ function Login(props) {
 	// 	} */
 	// }
 
-	handleChange = (evt) => {
+	const handleChange = (evt) => {
 		this.setState({ [evt.target.name]: evt.target.value });
 	}
 
-	handleSuccess = (response) => {
+	const handleSuccess = (response) => {
 		console.log(response);
 
 		this.setState({
@@ -92,7 +92,7 @@ function Login(props) {
 		pushHistory(path, this.props);
 	};
 
-	handleError = (response) => {
+	const handleError = (response) => {
 		console.log(response);
 		/* 	store.dispatch({
 				type: 'LOGIN_STATUS',
@@ -131,7 +131,7 @@ function Login(props) {
 		console.log(response);
 	};
 
-	handleSubmit = (event) => {
+	const handleSubmit = (event) => {
 		event.preventDefault();
 		this.setState({
 			loginBtn: 'Processing...',
