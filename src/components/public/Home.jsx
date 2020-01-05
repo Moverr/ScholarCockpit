@@ -9,7 +9,12 @@ import RightBar from './RightBar';
 class Home extends Component {
     componentDidMount(){
 
+     
         
+        var pageURL = window.location.href;
+        var lastURLSegment = pageURL.substr(pageURL.lastIndexOf('/') + 1);
+        
+  
     }
 
     render() {

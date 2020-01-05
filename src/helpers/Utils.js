@@ -19,6 +19,14 @@ export function getfullurl(endpoint) {
 }
 
 
+export function getLastURLSegment(){
+    var pageURL = window.location.href;
+    var lastURLSegment = pageURL.substr(pageURL.lastIndexOf('/') + 1);
+    
+    return lastURLSegment;
+}
+
+
 
 export function pushHistory(path, props) {
     props.history.push(path);
