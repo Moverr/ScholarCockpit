@@ -1,8 +1,6 @@
-import React, { Component } from 'react'
-import { NavLink } from 'react-router-dom';
+import React from 'react'
 import { logTable } from '../../utils/Logger';
-import { applicationTitle } from '../../utils/Constants';
-import logo from '../../images/logo.png';
+
 
 import '../../css/nav.css';
 import Banner from './Banner';
@@ -25,10 +23,10 @@ function RightBar(props) {
     <div className={"row-fluid"}>
       <div className="row headerbar">
         <div className="col-md-9">
-          <Banner props= {props} />
+          <Banner props={props} />
         </div>
         <div className="col-md-3">
-         <VerifySchool props={props}/>
+          <VerifySchool props={props} />
         </div>
       </div>
 

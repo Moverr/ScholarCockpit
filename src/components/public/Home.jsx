@@ -7,6 +7,11 @@ import RightBar from './RightBar';
 
 
 class Home extends Component {
+    componentDidMount(){
+
+        
+    }
+
     render() {
         return (
 

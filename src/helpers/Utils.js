@@ -14,7 +14,6 @@ export function getEndPoint(endpoint) {
 
 
 
-
 export function getfullurl(endpoint) {
     return getBaseUrl() + getEndPoint(endpoint);
 }
