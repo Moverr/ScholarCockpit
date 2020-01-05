@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
-import Login from './admin/Login';
+import Login from './public/Login'
 import Home from './public/Home';
 import Verify from './admin/Verify';
 import Dashboard from './admin/Dashboard';
-// import Verify from './Verify';
+  
 
 class Router extends Component {
 

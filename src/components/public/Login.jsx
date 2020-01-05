@@ -1,57 +1,60 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+
 import '../../css/home.css';
-import  { pushHistory, verifySchool, getEndPoint } from '../../helpers/Utils';
+import { pushHistory, verifySchool, getEndPoint } from '../../helpers/Utils';
 
 import Api from '../api/Api';
 // import store from '../../Store';
 
 // import Inputs from '../helpers/Inputs';
 
-class Login extends Component {
-	constructor(props) {
-		super(props);
+function Login(props) {
 
-	 
-		this.endpoint = getEndPoint('users');
+	// constructor(props) {
+	// 	super(props);
 
-		this.Api = new Api();
 
-		this.state = {
-			username: '',
-			password: '',
-			schoolName: '',
-			endpoint: this.endpoint,
-			loginBtn: 'LOGIN',
-			message_status: '-success displaynone',
-			message: ' Wait a minute '
-		};
+	// 	this.endpoint = getEndPoint('users');
 
-		this.handleChange = this.handleChange.bind(this);
-		this.handleSubmit = this.handleSubmit.bind(this);
-	}
+	// 	this.Api = new Api();
 
-	componentDidMount() {
-		// let schoolName = this.props.match.params.schoolName;
-		let schoolName = verifySchool();
+	// 	this.state = {
+	// 		username: '',
+	// 		password: '',
+	// 		schoolName: '',
+	// 		endpoint: this.endpoint,
+	// 		loginBtn: 'LOGIN',
+	// 		message_status: '-success displaynone',
+	// 		message: ' Wait a minute '
+	// 	};
 
-		if (schoolName === null) {
-			let path = `/`;
-			pushHistory(path, this.props);
-			return;
-		}
+	// 	this.handleChange = this.handleChange.bind(this);
+	// 	this.handleSubmit = this.handleSubmit.bind(this);
+	// }
 
-		/*
-		{  
-			let path = `/login/` + schoolName;
-			pushHistory(path, this.props);
+	// componentDidMount() {
+	// 	// let schoolName = this.props.match.params.schoolName;
+	// 	let schoolName = verifySchool();
 
-			this.setState({
-				schoolName: schoolName
-			});
-		} */
-	}
+	// 	if (schoolName === null) {
+	// 		let path = `/`;
+	// 		pushHistory(path, this.props);
+	// 		return;
+	// 	}
 
-	handleChange(evt) {
+	// 	/*
+	// 	{  
+	// 		let path = `/login/` + schoolName;
+	// 		pushHistory(path, this.props);
+
+	// 		this.setState({
+	// 			schoolName: schoolName
+	// 		});
+	// 	} */
+	// }
+
+	handleChange = (evt) => {
 		this.setState({ [evt.target.name]: evt.target.value });
 	}
 
@@ -72,11 +75,11 @@ class Login extends Component {
 		}
 
 		//todo: improve overall state to improve the system
-	
-	/*	store.dispatch({
-			type: 'ADD_AUTHENTICATION',
-			payload: response.authentication
-		}); */
+
+		/*	store.dispatch({
+				type: 'ADD_AUTHENTICATION',
+				payload: response.authentication
+			}); */
 
 		this.setState({
 			authentication: response.authentication,
@@ -91,10 +94,10 @@ class Login extends Component {
 
 	handleError = (response) => {
 		console.log(response);
-	/* 	store.dispatch({
-			type: 'LOGIN_STATUS',
-			payload: response
-		}); */
+		/* 	store.dispatch({
+				type: 'LOGIN_STATUS',
+				payload: response
+			}); */
 
 		/* switch (response) {
 			case 401:
@@ -120,11 +123,11 @@ class Login extends Component {
 				break;
 		}  */
 
-	/*	this.setState({
-			message: store.getState().Auth.LoginResponse.message,
-			message_status: store.getState().Auth.LoginResponse.status === 401 ? '-warning' : '-danger',
-			loginBtn: 'LOGIN'
-		}); */
+		/*	this.setState({
+				message: store.getState().Auth.LoginResponse.message,
+				message_status: store.getState().Auth.LoginResponse.status === 401 ? '-warning' : '-danger',
+				loginBtn: 'LOGIN'
+			}); */
 		console.log(response);
 	};
 
@@ -162,13 +165,12 @@ class Login extends Component {
 		this.Api.post(url, body, headers, this.handleSuccess, this.handleError);
 	};
 
-	render() {
-		return this.loginForm();
-	}
 
-	loginForm() {
-		return (
-			<div className="  login-form">
+
+
+	return {
+		return(
+			<div className = "  login-form" >
 				<form onSubmit={this.handleSubmit}>
 					<h1> LOGIN FORM</h1>
 					<div className={'alert alert' + this.state.message_status} role="alert">
@@ -199,7 +201,7 @@ class Login extends Component {
 				</form>
 			</div>
 		);
-	}
+}
 }
 
 export default Login;

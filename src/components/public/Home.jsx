@@ -16,6 +16,7 @@ class Home extends Component {
         return (
 
             <div >
+                {/*  functional components  */}
                 <TopNavigation  props={this.props} />
                 <RightBar props={this.props}/>
 
