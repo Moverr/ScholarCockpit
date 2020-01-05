@@ -168,8 +168,8 @@ function Login(props) {
 
 
 
-	return {
-		return(
+	return (
+	 
 			<div className = "  login-form" >
 				<form onSubmit={this.handleSubmit}>
 					<h1> LOGIN FORM</h1>
@@ -201,7 +201,7 @@ function Login(props) {
 				</form>
 			</div>
 		);
-}
+
 }
 
 export default Login;
