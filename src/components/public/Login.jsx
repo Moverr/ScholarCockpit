@@ -11,6 +11,13 @@ import Api from '../api/Api';
 
 function Login(props) {
 
+	const [message_status, set_messagestatus] = useState('-success displaynone');
+	const [message, set_message] = useState(null);	
+	const [username, set_username] = useState(null);
+	const [password, set_password] = useState(null);
+	 
+	 
+
 	// constructor(props) {
 	// 	super(props);
 
@@ -138,8 +145,8 @@ function Login(props) {
 			message_status: '-success displaynone'
 		});
 
-		let username = this.state.username;
-		let password = this.state.password;
+		let username = username;
+		let password = password;
 
 		if (username.trim().length === 0 || password.trim().length === 0) {
 			this.setState({
@@ -152,8 +159,8 @@ function Login(props) {
 		}
 
 		let body = {
-			username: this.state.username,
-			password: this.state.password
+			username: username,
+			password:  password
 		};
 		let headers = {
 			'Content-Type': 'application/json',
@@ -171,18 +178,18 @@ function Login(props) {
 	return (
 	 
 			<div className = "  login-form" >
-				<form onSubmit={this.handleSubmit}>
+				<form onSubmit={handleSubmit}>
 					<h1> LOGIN FORM</h1>
-					<div className={'alert alert' + this.state.message_status} role="alert">
-						{this.state.message}
+					<div className={'alert alert' + message_status} role="alert">
+						{message}
 					</div>
 					<label>Username</label>
 					<input
 						name="username"
 						type="text"
 						className="form-control"
-						value={this.state.username}
-						onChange={this.handleChange}
+						value={username}
+						onChange={(e)=>{set_username(e.target.value)}}
 					/>
 
 					<label>Password</label>
@@ -190,13 +197,13 @@ function Login(props) {
 						name="password"
 						type="password"
 						className="form-control"
-						value={this.state.password}
-						onChange={this.handleChange}
+						value={password}
+						onChange={(e)=>{set_password(e.target.value)}}
 					/>
 
 					<br />
 					<button type="submit" name="loginbtn" className="btn btn-primary">
-						{this.state.loginBtn}
+						 LOGIN
 					</button>
 				</form>
 			</div>
