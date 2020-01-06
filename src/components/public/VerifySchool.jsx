@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setSchoolName, getSchoolName } from '../../store/actions/schoolAction';
-import { currentscreen,nextscreen,prevscreen,screenstatus } from '../../store/actions/authenticationAction';
+import { currentscreen, nextscreen, prevscreen, screenstatus } from '../../store/actions/authenticationAction';
 
 
 import { withRouter, useHistory, NavLink } from 'react-router-dom';
@@ -45,6 +45,14 @@ function VerifySchool(props) {
             //todo: Verify School 
             VerifySchoolService(school_name, (response) => {
                   dispatch(setSchoolName(schoolname))
+
+
+                  dispatch(nextscreen("LOGIN"));
+                  dispatch(prevscreen("VERIFYSCHOOL"));
+                  dispatch(currentscreen("VERIFYSCHOOL"));
+
+
+
                   props.history.push("/login");
 
 
