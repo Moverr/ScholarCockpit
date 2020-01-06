@@ -19,6 +19,9 @@ const logdata = (
 function RightBar(props) {
 
   logTable(logdata);
+  const urlsegment = props.urlSegment;
+  console.log("SOEOEOEOEOEOEO");
+  console.log(props);
 
   return (
     <div className={"row-fluid"}>

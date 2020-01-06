@@ -18,7 +18,7 @@ class Home extends Component {
     }
 
     componentDidMount() {
-        var lastURLSegment = getLastURLSegment();
+        let  lastURLSegment = getLastURLSegment(); 
         this.setState({urlSegment:lastURLSegment}); 
 
 
@@ -30,7 +30,7 @@ class Home extends Component {
             <div >
                 {/*  functional components  */}
                 <TopNavigation props={this.props} />
-                <RightBar props={this.props} urlSegment={this.state.urlSegment} />
+                <RightBar url={this.state.urlSegment} />
 
 
 
