@@ -26,12 +26,14 @@ const renderSwitch = (level, props) => {
   switch (level) {
     case 'LOGIN':
       return <VerifySchool props={props} />;
+      break;
 
     case 'VERIFYSCHOOL':
-      return <Login props={props} />
+      return <Login props={props} />;
+      break;
 
-
-    case 'FORGOT_PASSWORD':
+    default:
+      return <Login props={props} />;
       break;
 
   }
