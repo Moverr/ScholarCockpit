@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setSchoolName, getSchoolName } from '../../store/actions/schoolAction';
+import { currentscreen,nextscreen,prevscreen,screenstatus } from '../../store/actions/authenticationAction';
+
+
 import { withRouter, useHistory, NavLink } from 'react-router-dom';
 
 
