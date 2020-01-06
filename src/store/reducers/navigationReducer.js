@@ -8,35 +8,22 @@ let defaultNagigation = {
 
 
 
-export const NavigationReducer = (state = defaultAuthentication, action) => {
+export const NavigationReducer = (state = defaultNagigation, action) => {
     switch (action.type) {
-        case 'ADD_SCHOOLNAME':
+        case 'ADD_CURRENT_SCREEN':
 
-            state = { ...state, schoolname: action.payload };
+            state = { ...state, nextScreen: action.payload };
 
             break;
-        case 'ADD_AUTHENTICATION':
-            state = { ...state, authentication: action.payload };
+        case 'ADD_PREVIOUS_SCREEN':
+            state = { ...state, previousScreen: action.payload };
+            break;
+
+        case 'ADD_NEXT_SCREEN':
+            state = { ...state, previousScreen: action.payload };
             break;
 
 
-        default:
-            break;
-    }
-    return state;
-};
-
-
-
-export const LoginResponseReducer = (state = AuthenticationStatus, action) => {
-    switch (action.type) {
-        case "LOGIN_FAILURE":
-            state = { ...state, message: action.payload }
-            break;
-
-        case "LOGIN_STATUS":
-            state = { ...state, status: action.payload }
-            break;
 
         default:
             break;
