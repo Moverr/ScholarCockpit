@@ -34,7 +34,7 @@ export const NavigationReducer = (state = defaultNagigation, action) => {
     switch (action.type) {
         case 'ADD_CURRENT_SCREEN':
 
-            state = { ...state, nextScreen: action.payload };
+            state = { ...state, currentScreen: action.payload };
 
             break;
         case 'ADD_PREVIOUS_SCREEN':
@@ -42,7 +42,7 @@ export const NavigationReducer = (state = defaultNagigation, action) => {
             break;
 
         case 'ADD_NEXT_SCREEN':
-            state = { ...state, previousScreen: action.payload };
+            state = { ...state, nextScreen: action.payload };
             break;
  
         default:

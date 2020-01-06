@@ -7,7 +7,8 @@ let allReducers = combineReducers(
     {
         app: AppReducer,
         auth: AuthenticationReducer,
-        login: LoginResponseReducer
+        login: LoginResponseReducer,
+        navigation:NavigationReducer
     }
 );
   

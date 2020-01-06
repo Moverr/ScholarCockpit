@@ -48,7 +48,7 @@ function VerifySchool(props) {
 
 
                   dispatch(nextscreen("LOGIN"));
-                  dispatch(prevscreen("VERIFYSCHOOL"));
+                  dispatch(prevscreen(""));
                   dispatch(currentscreen("VERIFYSCHOOL"));
 
 
