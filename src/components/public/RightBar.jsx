@@ -21,13 +21,15 @@ const logdata = (
   }
 );
 
-const renderSwitch = (level) => {
+const renderSwitch = (level, props) => {
 
   switch (level) {
     case 'LOGIN':
-      break;
+      return <VerifySchool props={props} />;
+
     case 'VERIFYSCHOOL':
-      break;
+      return <Banner props={props} />
+
 
     case 'FORGOT_PASSWORD':
       break;
@@ -48,18 +50,12 @@ function RightBar(props) {
   return (
     <div className={"row-fluid"}>
       <div className="row headerbar">
-        {
-          switch(screennavigation){
-            case: "LOGIN":
-          dbreak;
 
-      }
-    }
         <div className="col-md-9">
           <Banner props={props} />
         </div>
         <div className="col-md-3">
-          <VerifySchool props={props} />
+
         </div>
 
         <div className="col-md-3">
