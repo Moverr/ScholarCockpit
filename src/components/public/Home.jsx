@@ -8,11 +8,18 @@ import { getLastURLSegment } from '../../helpers/Utils'
 
 
 class Home extends Component {
-    componentDidMount() {
 
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            urlSegment :null
+        }
+    }
+
+    componentDidMount() {
         var lastURLSegment = getLastURLSegment();
-        console.log("WONDER");
-        console.log(lastURLSegment)
+        this.setState({urlSegment:lastURLSegment}); 
 
 
     }
@@ -23,7 +30,7 @@ class Home extends Component {
             <div >
                 {/*  functional components  */}
                 <TopNavigation props={this.props} />
-                <RightBar props={this.props} />
+                <RightBar props={this.props} urlSegment={this.state.urlSegment} />
 
 
 
