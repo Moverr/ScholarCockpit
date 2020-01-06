@@ -25,16 +25,16 @@ const renderSwitch = (level, props) => {
 
   switch (level) {
     case 'LOGIN':
-      return <VerifySchool props={props} />;
-      break;
+      return <Login props={props} />;
+      
 
     case 'VERIFYSCHOOL':
-      return <Login props={props} />;
-      break;
+      return <VerifySchool props={props} />;
+     
 
     default:
-      return <Login props={props} />;
-      break;
+      return <VerifySchool props={props} />;
+     
 
   }
 }
@@ -46,7 +46,7 @@ function RightBar(props) {
   logTable(logdata);
   const urlsegment = props.urlSegment;
   console.log("SOEOEOEOEOEOEO");
-  console.log(props);
+  console.log(screennavigation.currentScreen);
 
 
   return (
@@ -57,7 +57,7 @@ function RightBar(props) {
           <Banner props={props} />
         </div>
         <div className="col-md-3">
-          {renderSwitch(screennavigation, props)}
+          {renderSwitch(screennavigation.currentScreen, props)}
         </div>
 
 
