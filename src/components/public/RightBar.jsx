@@ -28,7 +28,7 @@ const renderSwitch = (level, props) => {
       return <VerifySchool props={props} />;
 
     case 'VERIFYSCHOOL':
-      return <Banner props={props} />
+      return <Login props={props} />
 
 
     case 'FORGOT_PASSWORD':
@@ -55,12 +55,9 @@ function RightBar(props) {
           <Banner props={props} />
         </div>
         <div className="col-md-3">
-
+          {renderSwitch(screennavigation, props)}
         </div>
 
-        <div className="col-md-3">
-          <Login props={props} />
-        </div>
 
 
       </div>
