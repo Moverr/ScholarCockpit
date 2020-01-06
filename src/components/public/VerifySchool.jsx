@@ -25,8 +25,7 @@ function VerifySchool(props) {
 
 
       const auth = useSelector(state => state.auth);
-      const screennavigation = useSelector(state => state.navigation);
-      
+  
       const dispatch = useDispatch();
 
 

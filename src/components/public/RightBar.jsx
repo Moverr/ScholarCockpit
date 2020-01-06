@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react';
 import { logTable } from '../../utils/Logger';
 
 
 import '../../css/nav.css';
 import Banner from './Banner';
 import VerifySchool from './VerifySchool';
-import Login  from './Login'
+import Login  from './Login';
+const screennavigation = useSelector(state => state.navigation);
+      
+
 
 const logdata = (
   {
