@@ -8,7 +8,7 @@ import Api from '../api/Api';
 import Alert from '../../helpers/Alert';
 
 
- 
+
 function Login(props) {
 
 	const [message_status, set_messagestatus] = useState('-success displaynone');
@@ -16,7 +16,8 @@ function Login(props) {
 	const [username, set_username] = useState(null);
 	const [password, set_password] = useState(null);
 
-
+	const auth = useSelector(state => state.auth);
+  
 
 	// constructor(props) {
 	// 	super(props);
@@ -177,9 +178,12 @@ function Login(props) {
 
 	return (
 
-		<div className=" container-fluid   login-form" >
+		<div className=" container-fluid   verifyschoolwrapper " >
 			<form onSubmit={handleSubmit}>
-				<h1> LOGIN FORM</h1>
+			<br/>
+				<h3 className="center-align header"> 	{auth.schoolname}</h3>
+				<br/>
+				<h3 className="center-align header"> Login Form</h3>
 				<Alert message={message} className={'alert alert' + message_status} role={"alert"} />
 				<label>Username</label>
 				<input

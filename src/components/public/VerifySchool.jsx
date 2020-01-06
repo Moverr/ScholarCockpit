@@ -11,6 +11,7 @@ import InputField from '../../forms/inputs/InputField';
 import '../../css/verifyschool.css';
 import Alert from '../../helpers/Alert';
 
+
 //todo: services 
 import { VerifySchoolService } from '../../services/SchoolSeervice'
 
