@@ -1,18 +1,14 @@
- 
-let defaultAuthentication = {
-    schoolname: null,
-    authentication: null
+
+let defaultNagigation = {
+    nextScreen: null,
+    currentScreen: null,
+    previousScreen: null,
+
 };
 
-let AuthenticationStatus = {
-    status: "",
-    message: "",
-
-}
 
 
-
-export const AuthenticationReducer = (state = defaultAuthentication, action) => {
+export const NavigationReducer = (state = defaultAuthentication, action) => {
     switch (action.type) {
         case 'ADD_SCHOOLNAME':
 
