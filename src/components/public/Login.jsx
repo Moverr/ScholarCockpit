@@ -5,18 +5,18 @@ import '../../css/home.css';
 import { pushHistory, verifySchool, getEndPoint } from '../../helpers/Utils';
 
 import Api from '../api/Api';
-// import store from '../../Store';
+import Alert from '../../helpers/Alert';
 
-// import Inputs from '../helpers/Inputs';
 
+ 
 function Login(props) {
 
 	const [message_status, set_messagestatus] = useState('-success displaynone');
-	const [message, set_message] = useState(null);	
+	const [message, set_message] = useState(null);
 	const [username, set_username] = useState(null);
 	const [password, set_password] = useState(null);
-	 
-	 
+
+
 
 	// constructor(props) {
 	// 	super(props);
@@ -160,7 +160,7 @@ function Login(props) {
 
 		let body = {
 			username: username,
-			password:  password
+			password: password
 		};
 		let headers = {
 			'Content-Type': 'application/json',
@@ -176,38 +176,36 @@ function Login(props) {
 
 
 	return (
-	 
-			<div className = "  login-form" >
-				<form onSubmit={handleSubmit}>
-					<h1> LOGIN FORM</h1>
-					<div className={'alert alert' + message_status} role="alert">
-						{message}
-					</div>
-					<label>Username</label>
-					<input
-						name="username"
-						type="text"
-						className="form-control"
-						value={username}
-						onChange={(e)=>{set_username(e.target.value)}}
-					/>
 
-					<label>Password</label>
-					<input
-						name="password"
-						type="password"
-						className="form-control"
-						value={password}
-						onChange={(e)=>{set_password(e.target.value)}}
-					/>
+		<div className=" container-fluid   login-form" >
+			<form onSubmit={handleSubmit}>
+				<h1> LOGIN FORM</h1>
+				<Alert message={message} className={'alert alert' + message_status} role={"alert"} />
+				<label>Username</label>
+				<input
+					name="username"
+					type="text"
+					className="form-control"
+					value={username}
+					onChange={(e) => { set_username(e.target.value) }}
+				/>
 
-					<br />
-					<button type="submit" name="loginbtn" className="btn btn-primary">
-						 LOGIN
+				<label>Password</label>
+				<input
+					name="password"
+					type="password"
+					className="form-control"
+					value={password}
+					onChange={(e) => { set_password(e.target.value) }}
+				/>
+
+				<br />
+				<button type="submit" name="loginbtn" className="btn btn-primary">
+					LOGIN
 					</button>
-				</form>
-			</div>
-		);
+			</form>
+		</div>
+	);
 
 }
 
