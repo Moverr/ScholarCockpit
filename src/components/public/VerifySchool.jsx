@@ -21,9 +21,12 @@ function VerifySchool(props) {
       const [schoolname, set_schoolname] = useState(null);
       const [message_status, set_messagestatus] = useState('-success displaynone');
       const [message, set_message] = useState('Wait a minute');
+      
 
 
       const auth = useSelector(state => state.auth);
+      const screennavigation = useSelector(state => state.navigation);
+      
       const dispatch = useDispatch();
 
 
@@ -48,8 +51,8 @@ function VerifySchool(props) {
 
 
                   dispatch(nextscreen("LOGIN"));
-                  dispatch(prevscreen(""));
-                  dispatch(currentscreen("VERIFYSCHOOL"));
+                  dispatch(prevscreen("VERIFYSCHOOL"));
+                  dispatch(currentscreen("LOGIN"));
 
 
 
