@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
 import { AuthenticationReducer, LoginResponseReducer } from './Authentication';
 import { AppReducer, NavigationReducer } from './AppReducer'
- 
- 
+
+
 let allReducers = combineReducers(
     {
         app: AppReducer,
@@ -10,7 +10,5 @@ let allReducers = combineReducers(
         login: LoginResponseReducer
     }
 );
-
-
-
+  
 export default allReducers;
