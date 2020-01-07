@@ -9,13 +9,19 @@ import Alert from '../../helpers/Alert';
 
 
 
-function Login(props) {
+function LoginSchool(props) {
 
 	const [message_status, set_messagestatus] = useState('-success displaynone');
 	const [message, set_message] = useState(null);
 	const [username, set_username] = useState(null);
 	const [password, set_password] = useState(null);
 
+
+	const [loginBtn, set_loginBtn] = useState(null); 
+
+
+
+	
 	const auth = useSelector(state => state.auth);
   
 
@@ -69,16 +75,13 @@ function Login(props) {
 	const handleSuccess = (response) => {
 		console.log(response);
 
-		this.setState({
-			loginBtn: 'LOGIN'
-		});
+		set_loginBtn('LOGIN');
+ 
 
 		if (response == null) {
-			this.setState({
-				message_status: '-warning ',
-				message: ' Invalid User credentials '
-			});
-
+			set_message(' Invalid User credentials ');
+			set_messagestatus('-warning ');
+			 
 			return;
 		}
 
@@ -89,15 +92,17 @@ function Login(props) {
 				payload: response.authentication
 			}); */
 
-		this.setState({
-			authentication: response.authentication,
-			isLoggedIn: response.isLoggedIn,
-			message_status: '-success ',
-			message: ' Logged In Successfully '
-		});
+		// this.setState({
+		// 	authentication: response.authentication,
+		// 	isLoggedIn: response.isLoggedIn,
+		// 	message_status: '-success ',
+		// 	message: ' Logged In Successfully '
+		// });
 
-		let path = `/dashboard/`;
-		pushHistory(path, this.props);
+		alert("Pass");
+
+		// let path = `/dashboard/`;
+		// pushHistory(path, this.props);
 	};
 
 	const handleError = (response) => {
@@ -141,10 +146,9 @@ function Login(props) {
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		this.setState({
-			loginBtn: 'Processing...',
-			message_status: '-success displaynone'
-		});
+		set_loginBtn('Processing...');
+		set_messagestatus('-success displaynone')
+		 
 
 		let username = username;
 		let password = password;
@@ -213,4 +217,4 @@ function Login(props) {
 
 }
 
-export default Login;
+export default LoginSchool;

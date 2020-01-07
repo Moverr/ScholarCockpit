@@ -7,7 +7,7 @@ import { logTable } from '../../utils/Logger';
 import '../../css/nav.css';
 import Banner from './Banner';
 import VerifySchool from './VerifySchool';
-import Login from './Login';
+import LoginSchool from './LoginSchool';
 
 
 
@@ -25,7 +25,7 @@ const renderSwitch = (level, props) => {
 
   switch (level) {
     case 'LOGIN':
-      return <Login props={props} />;
+      return <LoginSchool props={props} />;
       
 
     case 'VERIFYSCHOOL':
