@@ -153,7 +153,7 @@ function LoginSchool(props) {
 		let username = username;
 		let password = password;
 
-		if (username.trim().length === 0 || password.trim().length === 0) {
+		if (username !== undefined || password  !== undefined ) {
 
 			set_message('Username and Password are mandatory');
 			set_messagestatus('-warning');
@@ -169,11 +169,11 @@ function LoginSchool(props) {
 		};
 		let headers = {
 			'Content-Type': 'application/json',
-			schoolName: this.state.schoolName
+			// schoolName: this.state.schoolName
 		};
 
-		// 'KYADONDO PRIMARY SCHOOL'
-		const url = this.endpoint + 'login';
+		// 'KYADONDO PRIMARY SC
+		const url = getEndPoint('login');
 		this.Api.post(url, body, headers, this.handleSuccess, this.handleError);
 	};
 
