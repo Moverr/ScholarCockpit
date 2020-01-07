@@ -154,11 +154,11 @@ function LoginSchool(props) {
 		let password = password;
 
 		if (username.trim().length === 0 || password.trim().length === 0) {
-			this.setState({
-				message: 'Username and Password are mandatory',
-				message_status: '-warning',
-				loginBtn: 'LOGIN'
-			});
+
+			set_message('Username and Password are mandatory');
+			set_messagestatus('-warning');
+			set_loginBtn('LOGIN');
+		 
 
 			return;
 		}
