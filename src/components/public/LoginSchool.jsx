@@ -17,13 +17,13 @@ function LoginSchool(props) {
 	const [password, set_password] = useState(null);
 
 
-	const [loginBtn, set_loginBtn] = useState(null); 
+	const [loginBtn, set_loginBtn] = useState(null);
 
 
 
-	
+
 	const auth = useSelector(state => state.auth);
-  
+
 
 	// constructor(props) {
 	// 	super(props);
@@ -76,12 +76,12 @@ function LoginSchool(props) {
 		console.log(response);
 
 		set_loginBtn('LOGIN');
- 
+
 
 		if (response == null) {
 			set_message(' Invalid User credentials ');
 			set_messagestatus('-warning ');
-			 
+
 			return;
 		}
 
@@ -148,17 +148,17 @@ function LoginSchool(props) {
 		event.preventDefault();
 		set_loginBtn('Processing...');
 		set_messagestatus('-success displaynone')
-		 
+
 
 		let username = username;
 		let password = password;
 
-		if (username !== undefined || password  !== undefined ) {
+		if (username !== undefined || password !== undefined) {
 
 			set_message('Username and Password are mandatory');
 			set_messagestatus('-warning');
 			set_loginBtn('LOGIN');
-		 
+
 
 			return;
 		}
@@ -171,10 +171,10 @@ function LoginSchool(props) {
 			'Content-Type': 'application/json',
 			// schoolName: this.state.schoolName
 		};
-
+		alert("Pass and GO ")
 		// 'KYADONDO PRIMARY SC
 		const url = getEndPoint('login');
-		this.Api.post(url, body, headers, this.handleSuccess, this.handleError);
+		// this.Api.post(url, body, headers, this.handleSuccess, this.handleError);
 	};
 
 
@@ -184,9 +184,9 @@ function LoginSchool(props) {
 
 		<div className=" container-fluid   verifyschoolwrapper " >
 			<form onSubmit={handleSubmit}>
-			<br/>
+				<br />
 				<h3 className="center-align header"> 	{auth.schoolname}</h3>
-				<br/>
+				<br />
 				<h3 className="center-align header"> Login Form</h3>
 				<Alert message={message} className={'alert alert' + message_status} role={"alert"} />
 				<label>Username</label>
