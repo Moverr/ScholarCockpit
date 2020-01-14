@@ -43,7 +43,7 @@
     ]
   },
   "description": "This is the scholar web office, it used to manage front end tech from scholar",
-  "main": "index.js",
+  "main": "server.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Moverr/ScholarCockpit.git"
