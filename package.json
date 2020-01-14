@@ -42,7 +42,7 @@
       "enzyme-to-json/serializer"
     ]
   },
-  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "description": "This is the scholar web office, it used to manage front end tech from scholar",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -57,5 +57,5 @@
   "bugs": {
     "url": "https://github.com/Moverr/ScholarCockpit/issues"
   },
-  "homepage": "https://github.com/Moverr/ScholarCockpit#readme"
+  "homepage": ""
 }
