@@ -8,7 +8,7 @@ let defaultNagigation = {
 };
 
 let endpoints = {
-    vi: {
+    
         users: "user/v1/",
         roles: "roles/v1/",
         account: "account/v1/",
@@ -34,10 +34,7 @@ let endpoints = {
         admissions: "admissions/v1",
         registration_term: "registration/term/v1",
         report: "report/v1"
-    },
-    v2:{},
-    v3:{},
-    v4:{}
+     
 }
 let baseUrlConfig = {
     development: "http://localhost:9776/",

@@ -178,7 +178,9 @@ function LoginSchool(props) {
 		};
 
 		let api = new Api();
-		const url = getEndPoint('login',"v1");
+		const url = getEndPoint('users')+"/login";
+		console.log("URL : "+url);
+		
 		api.post(url, body, headers, handleSuccess, handleError);
 	};
 
