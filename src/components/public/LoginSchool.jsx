@@ -8,7 +8,7 @@ import Api from '../api/Api';
 import Alert from '../../helpers/Alert';
 import InputField from '../../forms/inputs/InputField';
 
-
+import '../../css/loginschool.css';
 
 function LoginSchool(props) {
 
@@ -196,7 +196,7 @@ function LoginSchool(props) {
 					placeholder=" " />
 
 
-				<label>Password</label>
+				<label className={"label leftalign"}>Password</label>
 
 				<InputField type="password" className="text form-control verify-textinput"
 					callback={e => set_password(e.target.value)} name="password" value={password}

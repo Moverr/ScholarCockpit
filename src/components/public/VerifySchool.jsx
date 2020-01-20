@@ -8,6 +8,7 @@ import { withRouter, useHistory, NavLink } from 'react-router-dom';
 
 
 import InputField from '../../forms/inputs/InputField';
+
 import '../../css/verifyschool.css';
 import Alert from '../../helpers/Alert';
 
