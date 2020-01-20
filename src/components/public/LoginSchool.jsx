@@ -172,13 +172,16 @@ function LoginSchool(props) {
 			username: username,
 			password: password
 		};
+
+		console.log(body);
+		
 		let headers = {
 			'Content-Type': 'application/json',
 			schoolName: school_name
 		};
 
 		let api = new Api();
-		const url = getEndPoint('users')+"/login";
+		const url = getEndPoint('users')+"login";
 		console.log("URL : "+url);
 		
 		api.post(url, body, headers, handleSuccess, handleError);

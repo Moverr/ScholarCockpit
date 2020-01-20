@@ -7,6 +7,7 @@ class Api {
 		this.baseUrl = getBaseUrl();
 	}
 	post(url, body, headers, successCallback, handleError) {
+		
 		url = this.baseUrl + url;
 		fetch(url, {
 			method: 'post',
