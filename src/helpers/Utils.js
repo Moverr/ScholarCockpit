@@ -32,7 +32,7 @@ export function pushHistory(path, props) {
 }
 
 
-export function verifySchool() {
+export function getSchoolName() {
     let schoolName = store.getState().auth.schoolname;
     return schoolName;
 }
@@ -42,4 +42,6 @@ export function verifyAuthentication() {
     return authentication;
 }
 
+
+ 
 

@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import '../../css/home.css';
-import { pushHistory, verifySchool, getEndPoint } from '../../helpers/Utils';
+ import  {getSchoolName,pushHistory, verifySchool, getEndPoint } from '../../helpers/Utils';
 
 import Api from '../api/Api';
 import Alert from '../../helpers/Alert';
 import InputField from '../../forms/inputs/InputField';
+ 
+
 
 import '../../css/loginschool.css';
 
@@ -20,7 +22,7 @@ function LoginSchool(props) {
 	const [loginBtn, set_loginBtn] = useState(null);
 
 
-
+ 
 
 	const auth = useSelector(state => state.auth);
 
@@ -169,12 +171,11 @@ function LoginSchool(props) {
 		};
 		let headers = {
 			'Content-Type': 'application/json',
-			// schoolName: this.state.schoolName
+			schoolName: getSchoolName()
 		};
-		alert("Pass and GO ")
-		// 'KYADONDO PRIMARY SC
+		 
 		const url = getEndPoint('login');
-		// this.Api.post(url, body, headers, this.handleSuccess, this.handleError);
+		this.Api.post(url, body, headers, this.handleSuccess, this.handleError);
 	};
 
 
