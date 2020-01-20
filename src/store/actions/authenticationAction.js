@@ -54,4 +54,13 @@ export const addAuthentication=()=>{
 
 
 
+export const addRoles=()=>{
+    return {
+        type:"ADD_ROLES"
+       
+    }
+}
+
+
+
  
