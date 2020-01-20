@@ -44,3 +44,14 @@ export const screenstatus=()=>{
 }
 
 
+export const addAuthentication=()=>{
+    return {
+        type:"ADD_AUTHENTICATION"
+       
+    }
+}
+
+
+
+
+ 

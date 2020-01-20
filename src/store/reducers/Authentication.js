@@ -1,7 +1,8 @@
- 
+
 let defaultAuthentication = {
     schoolname: null,
-    authentication: null
+    authentication: null,
+    roles: {}
 };
 
 let AuthenticationStatus = {
@@ -22,6 +23,11 @@ export const AuthenticationReducer = (state = defaultAuthentication, action) => 
         case 'ADD_AUTHENTICATION':
             state = { ...state, authentication: action.payload };
             break;
+
+        case 'ADD_ROLES':
+            state = { ...state, roles: action.payload };
+            break;
+
 
 
         default:

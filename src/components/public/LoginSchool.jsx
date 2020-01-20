@@ -6,6 +6,10 @@ import Alert from '../../helpers/Alert';
 import InputField from '../../forms/inputs/InputField';
 import '../../css/loginschool.css';
 
+import { currentscreen, nextscreen, prevscreen, screenstatus, addAuthentication } from '../../store/actions/authenticationAction';
+
+
+
 function LoginSchool(props) {
 
 	const [message_status, set_messagestatus] = useState('-success displaynone');
@@ -14,6 +18,9 @@ function LoginSchool(props) {
 	const [password, set_password] = useState("");
 	const [loginBtn, set_loginBtn] = useState(null);
 	const auth = useSelector(state => state.auth);
+	const dispatch = useDispatch();
+
+
 
 
 	const handleSubmit = (event) => {
@@ -58,6 +65,9 @@ function LoginSchool(props) {
 
 	const handleSuccess = (response) => {
 
+
+		console.log(response);
+		
 		set_loginBtn('LOGIN');
 
 
@@ -71,6 +81,13 @@ function LoginSchool(props) {
 
 		set_message(' Successsfuly logged in  ');
 		set_messagestatus('-success ');
+
+		dispatch(nextscreen("DASHBOARD"));
+		dispatch(prevscreen("LOGIN"));
+		dispatch(currentscreen("DASHBOARD"));
+
+
+
 
 
 		//todo: improve overall state to improve the system
@@ -94,7 +111,12 @@ function LoginSchool(props) {
 
 	const handleError = (response) => {
 		console.log(response);
-		alert("Error  Pass")
+		set_loginBtn('LOGIN');
+		set_message(' Invalid User credentials   ');
+		set_messagestatus('-warning ');
+
+
+
 		/* 	store.dispatch({
 				type: 'LOGIN_STATUS',
 				payload: response
