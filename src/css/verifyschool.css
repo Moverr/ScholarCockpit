@@ -54,3 +54,8 @@
   border: 1px solid wheat;
   padding: 20px !important;
 }
+
+.leftalign {
+  text-align: left !important;
+  width:100%;
+}

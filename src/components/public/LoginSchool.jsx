@@ -187,7 +187,7 @@ function LoginSchool(props) {
 				<br />
 				<h3 className="center-align header"> 	{auth.schoolname}</h3>
 				<br />
-				<h3 className="center-align header"> Login Form</h3>
+				<h3 className="center-align  "> LOGIN FORM </h3>
 				<Alert message={message} className={'alert alert' + message_status} role={"alert"} />
 				<label className={"label leftalign"}>Username</label>
 
