@@ -6,10 +6,10 @@ import Home from './public/Home';
 import Dashboard from './admin/Dashboard';
   
 
-class Router extends Component {
+const Router =  function()  {
 
  
-	render() {
+	 
 		return (
 			<div>
 				<Switch>
@@ -22,7 +22,7 @@ class Router extends Component {
 				</Switch>
 			</div>
 		);
-	}
+	
 }
 
 export default Router;
