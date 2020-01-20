@@ -51,16 +51,6 @@ function LoginSchool(props) {
 		}
 
 
-
-
-		alert("pass");
-
-
-
-
-
-
-
 		let body = {
 			username: user_name,
 			password: pass_word
@@ -81,50 +71,6 @@ function LoginSchool(props) {
 		api.post(url, body, headers, handleSuccess, handleError);
 	};
 
-
-
-	// constructor(props) {
-	// 	super(props);
-
-
-	// 	this.endpoint = getEndPoint('users');
-
-	// 	this.Api = new Api();
-
-	// 	this.state = {
-	// 		username: '',
-	// 		password: '',
-	// 		schoolName: '',
-	// 		endpoint: this.endpoint,
-	// 		loginBtn: 'LOGIN',
-	// 		message_status: '-success displaynone',
-	// 		message: ' Wait a minute '
-	// 	};
-
-	// 	this.handleChange = this.handleChange.bind(this);
-	// 	this.handleSubmit = this.handleSubmit.bind(this);
-	// }
-
-	// componentDidMount() {
-	// 	// let schoolName = this.props.match.params.schoolName;
-	// 	let schoolName = verifySchool();
-
-	// 	if (schoolName === null) {
-	// 		let path = `/`;
-	// 		pushHistory(path, this.props);
-	// 		return;
-	// 	}
-
-	// 	/*
-	// 	{  
-	// 		let path = `/login/` + schoolName;
-	// 		pushHistory(path, this.props);
-
-	// 		this.setState({
-	// 			schoolName: schoolName
-	// 		});
-	// 	} */
-	// }
 
 
 
