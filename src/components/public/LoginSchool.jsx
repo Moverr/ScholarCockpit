@@ -189,27 +189,20 @@ function LoginSchool(props) {
 				<br />
 				<h3 className="center-align header"> Login Form</h3>
 				<Alert message={message} className={'alert alert' + message_status} role={"alert"} />
-				<label>Username</label>
+				<label className={"label leftalign"}>Username</label>
 
-				<InputField type="text" className="text form-control verify-textinput" callback={e => set_schoolname(e.target.value)} name="schoolname" value={schoolname}
+				<InputField type="text" className="text form-control verify-textinput"
+				 callback={e => set_username(e.target.value)} name="username" value={username}
                                     placeholder=" " />
-
-				<input
-					name="username"
-					type="text"
-					className="form-control"
-					value={username}
-					onChange={(e) => { set_username(e.target.value) }}
-				/>
+ 
 
 				<label>Password</label>
-				<input
-					name="password"
-					type="password"
-					className="form-control"
-					value={password}
-					onChange={(e) => { set_password(e.target.value) }}
-				/>
+
+				<InputField type="password" className="text form-control verify-textinput"
+				 callback={e => set_password(e.target.value)} name="password" value={password}
+                                    placeholder=" " />
+ 
+ 
 
 				<br />
 				<button type="submit" name="loginbtn" className="btn btn-primary">
