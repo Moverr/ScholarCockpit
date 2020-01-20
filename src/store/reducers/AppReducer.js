@@ -11,11 +11,17 @@ let endpoints = {
     users: "user/v1/",
     roles: "roles/v1/"
 }
+let baseUrlConfig = {
+    development:"http://localhost:9776/",
+    staging:"",
+    live:""
+    
+}
 
 let appConfig = {
     api: "v1.0.0.1",
     apiVersion: null,
-    baseUrl: "http://localhost:9776/",
+    baseUrl: baseUrlConfig,
     endpoints: endpoints,
     navigation: defaultNagigation
 };
