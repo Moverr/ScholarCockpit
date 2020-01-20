@@ -3,7 +3,7 @@
 </h3>
 <span>
 </HR> 
-<pre style="color:black; font-size:14px; letter-spacing:2px;  text-align:justify; ">Scholar is an IOT school management system, we aim at adopting the best standards in the industry while solving african education challenges.
+<pre style="color:black; font-size:14px; letter-spacing:2px;  text-align:justify; ">Scholar is an IOT school management system, we aim at adopting the best standards <br/>in the industry while solving african education challenges.
 </pre> <br/>
 Currently Scholar is being hosted on. <br/>
 <pre><a href="https://scholarcockpit.herokuapp.com">Scholar Web Office </a></pre>
