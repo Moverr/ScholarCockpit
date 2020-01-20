@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import '../../css/home.css';
-import { getSchoolName, pushHistory, verifySchool, getEndPoint } from '../../helpers/Utils';
+import { getSchoolName, getEndPoint } from '../../helpers/Utils';
 
 import Api from '../api/Api';
 import Alert from '../../helpers/Alert';
@@ -15,9 +14,10 @@ import '../../css/loginschool.css';
 function LoginSchool(props) {
 
 	const [message_status, set_messagestatus] = useState('-success displaynone');
-	const [message, set_message] = useState(null);
-	const [username, set_username] = useState(null);
-	const [password, set_password] = useState(null);
+
+	const [message, set_message] = useState("");
+	const [username, set_username] = useState("");
+	const [password, set_password] = useState("");
 
 	const [loginBtn, set_loginBtn] = useState(null);
 
@@ -25,6 +25,51 @@ function LoginSchool(props) {
 
 
 	const auth = useSelector(state => state.auth);
+
+
+	const handleSubmit = (event) => {
+		event.preventDefault();
+		alert("pass");
+		/*	
+			set_loginBtn('Processing...');
+			set_messagestatus('-success displaynone');
+	
+			const school_name = getSchoolName();
+	
+	
+			let user_name = username;
+			let pass_word = password;
+	
+			if (user_name !== undefined || pass_word !== undefined) {
+	
+				set_message('Username and Password are mandatory');
+				set_messagestatus('-warning');
+				set_loginBtn('LOGIN');
+	
+	
+				return;
+			}
+	
+			let body = {
+				username: user_name,
+				password: pass_word
+			};
+	
+	
+			console.log(body);
+	
+			let headers = {
+				'Content-Type': 'application/json',
+				schoolName: school_name
+			};
+	
+			let api = new Api();
+			const url = getEndPoint('users') + "login";
+			console.log("URL : " + url);
+	
+			api.post(url, body, headers, handleSuccess, handleError);  */
+	};
+
 
 
 	// constructor(props) {
@@ -70,9 +115,7 @@ function LoginSchool(props) {
 	// 	} */
 	// }
 
-	const handleChange = (evt) => {
-		this.setState({ [evt.target.name]: evt.target.value });
-	}
+
 
 	const handleSuccess = (response) => {
 		console.log(response);
@@ -102,7 +145,7 @@ function LoginSchool(props) {
 		// 	message: ' Logged In Successfully '
 		// });
 
-	
+
 		// let path = `/dashboard/`;
 		// pushHistory(path, this.props);
 	};
@@ -147,45 +190,6 @@ function LoginSchool(props) {
 		console.log(response);
 	};
 
-	const handleSubmit = (event) => {
-		event.preventDefault();
-		set_loginBtn('Processing...');
-		set_messagestatus('-success displaynone');
-
-		const school_name = getSchoolName();
-
-
-		let username = username;
-		let password = password;
-
-		if (username !== undefined || password !== undefined) {
-
-			set_message('Username and Password are mandatory');
-			set_messagestatus('-warning');
-			set_loginBtn('LOGIN');
-
-
-			return;
-		}
-
-		let body = {
-			username: username,
-			password: password
-		};
-
-		console.log(body);
-		
-		let headers = {
-			'Content-Type': 'application/json',
-			schoolName: school_name
-		};
-
-		let api = new Api();
-		const url = getEndPoint('users')+"login";
-		console.log("URL : "+url);
-		
-		api.post(url, body, headers, handleSuccess, handleError);
-	};
 
 
 
@@ -201,15 +205,13 @@ function LoginSchool(props) {
 				<Alert message={message} className={'alert alert' + message_status} role={"alert"} />
 				<label className={"label leftalign"}>Username</label>
 
-				<InputField type="text" className="text form-control verify-textinput"
-					callback={e => set_username(e.target.value)} name="username" value={username}
+				<InputField type="text" className="text form-control " callback={e => set_username(e.target.value)} name="username" value={username}
 					placeholder=" " />
 
 
 				<label className={"label leftalign"}>Password</label>
 
-				<InputField type="password" className="text form-control verify-textinput"
-					callback={e => set_password(e.target.value)} name="password" value={password}
+				<InputField type="password" className="text form-control " callback={e => set_password(e.target.value)} name="password" value={password}
 					placeholder=" " />
 
 
