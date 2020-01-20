@@ -44,9 +44,10 @@ export const screenstatus=()=>{
 }
 
 
-export const addAuthentication=()=>{
+export const addAuthentication=(payload)=>{
     return {
-        type:"ADD_AUTHENTICATION"
+        type:"ADD_AUTHENTICATION",
+        payload:payload
        
     }
 }
@@ -54,9 +55,10 @@ export const addAuthentication=()=>{
 
 
 
-export const addRoles=()=>{
+export const addRoles=(payload)=>{
     return {
-        type:"ADD_ROLES"
+        type:"ADD_ROLES",
+        payload:payload
        
     }
 }

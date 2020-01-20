@@ -6,7 +6,7 @@ import Alert from '../../helpers/Alert';
 import InputField from '../../forms/inputs/InputField';
 import '../../css/loginschool.css';
 
-import { currentscreen, nextscreen, prevscreen, screenstatus, addAuthentication, addRoles } from '../../store/actions/authenticationAction';
+import { currentscreen, nextscreen, prevscreen, addAuthentication, addRoles,loggin } from '../../store/actions/authenticationAction';
 
 
 
@@ -72,6 +72,7 @@ function LoginSchool(props) {
 			return;
 		}
 
+		console.log(response);
 
 		set_message(' Successsfuly logged in  ');
 		set_messagestatus('-success ');
@@ -81,11 +82,14 @@ function LoginSchool(props) {
 		dispatch(currentscreen("DASHBOARD"));
 
 		dispatch(addAuthentication(response.authentication));
-		dispatch(addAuthentication(response.roleResponses));
+		dispatch(addRoles(response.roleResponses));
+
+		dispatch(loggin(true));
 
 
 
 
+		
 
 		//todo: improve overall state to improve the system
 
