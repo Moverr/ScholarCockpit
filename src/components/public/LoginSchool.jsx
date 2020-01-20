@@ -33,48 +33,52 @@ function LoginSchool(props) {
 		set_loginBtn('Processing...');
 		set_messagestatus('-success displaynone');
 		const school_name = getSchoolName();
-		
+
 		let user_name = username;
 		let pass_word = password;
 
 
-		console.log(user_name);
+
+
+		if (user_name === "" || pass_word === "") {
+
+			set_message('Username and Password are mandatory');
+			set_messagestatus('-warning');
+			set_loginBtn('LOGIN');
+
+
+			return;
+		}
+
+
+
 
 		alert("pass");
-		/*	
-			
-	
-			
-	
-	
-			if (user_name !== undefined || pass_word !== undefined) {
-	
-				set_message('Username and Password are mandatory');
-				set_messagestatus('-warning');
-				set_loginBtn('LOGIN');
-	
-	
-				return;
-			}
-	
-			let body = {
-				username: user_name,
-				password: pass_word
-			};
-	
-	
-			console.log(body);
-	
-			let headers = {
-				'Content-Type': 'application/json',
-				schoolName: school_name
-			};
-	
-			let api = new Api();
-			const url = getEndPoint('users') + "login";
-			console.log("URL : " + url);
-	
-			api.post(url, body, headers, handleSuccess, handleError);  */
+
+
+
+
+
+
+
+		let body = {
+			username: user_name,
+			password: pass_word
+		};
+
+
+		console.log(body);
+
+		let headers = {
+			'Content-Type': 'application/json',
+			schoolName: school_name
+		};
+
+		let api = new Api();
+		const url = getEndPoint('users') + "login";
+		console.log("URL : " + url);
+
+		api.post(url, body, headers, handleSuccess, handleError);
 	};
 
 
