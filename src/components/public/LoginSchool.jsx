@@ -1,29 +1,18 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-
 import { getSchoolName, getEndPoint } from '../../helpers/Utils';
-
 import Api from '../api/Api';
 import Alert from '../../helpers/Alert';
 import InputField from '../../forms/inputs/InputField';
-
-
-
 import '../../css/loginschool.css';
 
 function LoginSchool(props) {
 
 	const [message_status, set_messagestatus] = useState('-success displaynone');
-
 	const [message, set_message] = useState("");
 	const [username, set_username] = useState("");
 	const [password, set_password] = useState("");
-
 	const [loginBtn, set_loginBtn] = useState(null);
-
-
-
-
 	const auth = useSelector(state => state.auth);
 
 
@@ -33,20 +22,14 @@ function LoginSchool(props) {
 		set_loginBtn('Processing...');
 		set_messagestatus('-success displaynone');
 		const school_name = getSchoolName();
-
 		let user_name = username;
 		let pass_word = password;
-
-
-
 
 		if (user_name === "" || pass_word === "") {
 
 			set_message('Username and Password are mandatory');
 			set_messagestatus('-warning');
 			set_loginBtn('LOGIN');
-
-
 			return;
 		}
 
@@ -55,7 +38,6 @@ function LoginSchool(props) {
 			username: user_name,
 			password: pass_word
 		};
-
 
 		console.log(body);
 
@@ -75,18 +57,21 @@ function LoginSchool(props) {
 
 
 	const handleSuccess = (response) => {
-		console.log(response);
-		alert("Pass");
 
-		// set_loginBtn('LOGIN');
+		set_loginBtn('LOGIN');
 
 
-		// if (response == null) {
-		// 	set_message(' Invalid User credentials ');
-		// 	set_messagestatus('-warning ');
+		if (response == null) {
+			set_message(' Invalid User credentials ');
+			set_messagestatus('-warning ');
 
-		// 	return;
-		// }
+			return;
+		}
+
+
+		set_message(' Successsfuly logged in  ');
+		set_messagestatus('-success ');
+
 
 		//todo: improve overall state to improve the system
 
