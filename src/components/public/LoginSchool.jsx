@@ -149,7 +149,9 @@ function LoginSchool(props) {
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		set_loginBtn('Processing...');
-		set_messagestatus('-success displaynone')
+		set_messagestatus('-success displaynone');
+
+		const school_name = getSchoolName();
 
 
 		let username = username;
@@ -171,7 +173,7 @@ function LoginSchool(props) {
 		};
 		let headers = {
 			'Content-Type': 'application/json',
-			schoolName: getSchoolName()
+			schoolName: school_name
 		};
 		 
 		const url = getEndPoint('login');
