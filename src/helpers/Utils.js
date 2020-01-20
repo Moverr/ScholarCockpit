@@ -8,8 +8,8 @@ export function getBaseUrl() {
     return baseurl;
 }
 
-export function getEndPoint(endpoint) {
-    let ednpointUrl = store.getState().app.endpoints[endpoint];
+export function getEndPoint(endpoint,version) {
+    let ednpointUrl = store.getState().app.endpoints[version][endpoint];
     return ednpointUrl;
 }
 

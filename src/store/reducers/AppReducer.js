@@ -8,19 +8,46 @@ let defaultNagigation = {
 };
 
 let endpoints = {
-    users: "user/v1/",
-    roles: "roles/v1/"
+    vi: {
+        users: "user/v1/",
+        roles: "roles/v1/",
+        account: "account/v1/",
+        user: "user/v1",
+        streams: "streams/v1",
+        curriculum: "curriculum/v1",
+        subjects: "subjects/v1",
+        subjects_papers: "subjects/papers/v1",
+        grading: "grading/v1",
+        grading_details: "grading/details/v1",
+        studyyear: "studyyear/v1",
+        terms: "terms/v1",
+        departments: "departments/v1",
+        staff: "staff/v1",
+        permissions: "permissions/v1",
+        exams: "exams/v1",
+        exams_classes: "exams/classes/v1",
+        exams_terms: "exams/terms/v1",
+        exams_grading: "exams/grading/v1",
+        exams_timetable: "exams/timetable/v1",
+        teaching_timetable: "teaching/timetable/v1",
+        marksheet: "marksheet/v1",
+        admissions: "admissions/v1",
+        registration_term: "registration/term/v1",
+        report: "report/v1"
+    },
+    v2:{},
+    v3:{},
+    v4:{}
 }
 let baseUrlConfig = {
-    development:"http://localhost:9776/",
-    staging:"",
-    live:""
-    
+    development: "http://localhost:9776/",
+    staging: "",
+    live: ""
+
 }
 
 let appConfig = {
-    api: "v1.0.0.1",
-    apiVersion: null,
+    apiversion: "v1.0.0.1",
     baseUrl: baseUrlConfig,
     endpoints: endpoints,
     navigation: defaultNagigation
@@ -50,7 +77,7 @@ export const NavigationReducer = (state = defaultNagigation, action) => {
         case 'ADD_NEXT_SCREEN':
             state = { ...state, nextScreen: action.payload };
             break;
- 
+
         default:
             break;
     }
