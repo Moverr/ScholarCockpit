@@ -183,7 +183,7 @@ function LoginSchool(props) {
 	return (
 
 		<div className=" container-fluid   verifyschoolwrapper " >
-			<form role="form"  onSubmit={handleSubmit}>
+			<form role="form" onSubmit={handleSubmit}>
 				<br />
 				<h3 className="center-align header"> 	{auth.schoolname}</h3>
 				<br />
@@ -192,17 +192,17 @@ function LoginSchool(props) {
 				<label className={"label leftalign"}>Username</label>
 
 				<InputField type="text" className="text form-control verify-textinput"
-				 callback={e => set_username(e.target.value)} name="username" value={username}
-                                    placeholder=" " />
- 
+					callback={e => set_username(e.target.value)} name="username" value={username}
+					placeholder=" " />
+
 
 				<label>Password</label>
 
 				<InputField type="password" className="text form-control verify-textinput"
-				 callback={e => set_password(e.target.value)} name="password" value={password}
-                                    placeholder=" " />
- 
- 
+					callback={e => set_password(e.target.value)} name="password" value={password}
+					placeholder=" " />
+
+
 
 				<br />
 				<button type="submit" name="loginbtn" className="btn btn-primary">
