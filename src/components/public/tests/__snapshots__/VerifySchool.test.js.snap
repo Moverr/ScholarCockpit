@@ -1,22 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Testing Input FIeld should  render correctly 1`] = `
-<div
-  className="verifySchoolview col-md-12"
->
-  <br />
-  <h5>
-    Enter School Name
-  </h5>
-  <InputField
-    className="text"
-    placeholder="Enter School Name "
-    type="text"
-    value=""
-  />
-  <br />
-  <button>
-    CONTINUE
-  </button>
-</div>
+<Route>
+  <Component />
+</Route>
 `;
