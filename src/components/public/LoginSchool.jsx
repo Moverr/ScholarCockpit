@@ -6,7 +6,7 @@ import Alert from '../../helpers/Alert';
 import InputField from '../../forms/inputs/InputField';
 import '../../css/loginschool.css';
 
-import { currentscreen, nextscreen, prevscreen, screenstatus, addAuthentication } from '../../store/actions/authenticationAction';
+import { currentscreen, nextscreen, prevscreen, screenstatus, addAuthentication, addRoles } from '../../store/actions/authenticationAction';
 
 
 
@@ -64,13 +64,7 @@ function LoginSchool(props) {
 
 
 	const handleSuccess = (response) => {
-
-
-		console.log(response);
-		
 		set_loginBtn('LOGIN');
-
-
 		if (response == null) {
 			set_message(' Invalid User credentials ');
 			set_messagestatus('-warning ');
@@ -85,6 +79,9 @@ function LoginSchool(props) {
 		dispatch(nextscreen("DASHBOARD"));
 		dispatch(prevscreen("LOGIN"));
 		dispatch(currentscreen("DASHBOARD"));
+
+		dispatch(addAuthentication(response.authentication));
+		dispatch(addAuthentication(response.roleResponses));
 
 
 
