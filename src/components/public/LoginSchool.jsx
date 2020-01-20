@@ -6,6 +6,7 @@ import { pushHistory, verifySchool, getEndPoint } from '../../helpers/Utils';
 
 import Api from '../api/Api';
 import Alert from '../../helpers/Alert';
+import InputField from '../../forms/inputs/InputField';
 
 
 
@@ -15,7 +16,6 @@ function LoginSchool(props) {
 	const [message, set_message] = useState(null);
 	const [username, set_username] = useState(null);
 	const [password, set_password] = useState(null);
-
 
 	const [loginBtn, set_loginBtn] = useState(null);
 
@@ -183,13 +183,17 @@ function LoginSchool(props) {
 	return (
 
 		<div className=" container-fluid   verifyschoolwrapper " >
-			<form onSubmit={handleSubmit}>
+			<form role="form"  onSubmit={handleSubmit}>
 				<br />
 				<h3 className="center-align header"> 	{auth.schoolname}</h3>
 				<br />
 				<h3 className="center-align header"> Login Form</h3>
 				<Alert message={message} className={'alert alert' + message_status} role={"alert"} />
 				<label>Username</label>
+
+				<InputField type="text" className="text form-control verify-textinput" callback={e => set_schoolname(e.target.value)} name="schoolname" value={schoolname}
+                                    placeholder=" " />
+
 				<input
 					name="username"
 					type="text"
