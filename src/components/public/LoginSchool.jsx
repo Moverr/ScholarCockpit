@@ -76,16 +76,17 @@ function LoginSchool(props) {
 
 	const handleSuccess = (response) => {
 		console.log(response);
+		alert("Pass");
 
-		set_loginBtn('LOGIN');
+		// set_loginBtn('LOGIN');
 
 
-		if (response == null) {
-			set_message(' Invalid User credentials ');
-			set_messagestatus('-warning ');
+		// if (response == null) {
+		// 	set_message(' Invalid User credentials ');
+		// 	set_messagestatus('-warning ');
 
-			return;
-		}
+		// 	return;
+		// }
 
 		//todo: improve overall state to improve the system
 
@@ -101,14 +102,14 @@ function LoginSchool(props) {
 		// 	message: ' Logged In Successfully '
 		// });
 
-		alert("Pass");
-
+	
 		// let path = `/dashboard/`;
 		// pushHistory(path, this.props);
 	};
 
 	const handleError = (response) => {
 		console.log(response);
+		alert("Error  Pass")
 		/* 	store.dispatch({
 				type: 'LOGIN_STATUS',
 				payload: response
@@ -178,7 +179,7 @@ function LoginSchool(props) {
 
 		let api = new Api();
 		const url = getEndPoint('login');
-		api.post(url, body, headers, this.handleSuccess, this.handleError);
+		api.post(url, body, headers, handleSuccess, handleError);
 	};
 
 
