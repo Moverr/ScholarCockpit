@@ -21,7 +21,7 @@ function TopNavigation() {
   logTable(logdata);
 
   return (
-    <div classname={"row-fluid"}>
+    <div className={"row-fluid"}>
       <nav id="bs-navbar" className=" col-md-12 navbar navbar-fixed-top  navbar-expand-lg navbar-light ">
         <ul className="nav navbar-nav">
           <li><img src={logo} alt="Logo" /> <NavLink className={"navbar-brand"} to={'#'} activeClassName="active"> {applicationTitle} </NavLink>

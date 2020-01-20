@@ -29,16 +29,23 @@ function LoginSchool(props) {
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
+
+		set_loginBtn('Processing...');
+		set_messagestatus('-success displaynone');
+		const school_name = getSchoolName();
+		
+		let user_name = username;
+		let pass_word = password;
+
+
+		console.log(user_name);
+
 		alert("pass");
 		/*	
-			set_loginBtn('Processing...');
-			set_messagestatus('-success displaynone');
+			
 	
-			const school_name = getSchoolName();
+			
 	
-	
-			let user_name = username;
-			let pass_word = password;
 	
 			if (user_name !== undefined || pass_word !== undefined) {
 	

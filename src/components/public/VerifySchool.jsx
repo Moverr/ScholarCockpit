@@ -2,32 +2,22 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setSchoolName, getSchoolName } from '../../store/actions/schoolAction';
 import { currentscreen, nextscreen, prevscreen, screenstatus } from '../../store/actions/authenticationAction';
-
-
 import { withRouter, useHistory, NavLink } from 'react-router-dom';
-
-
 import InputField from '../../forms/inputs/InputField';
-
 import '../../css/verifyschool.css';
 import Alert from '../../helpers/Alert';
-
-
-//todo: services 
 import { VerifySchoolService } from '../../services/SchoolSeervice'
-
-
 
 function VerifySchool(props) {
 
-      const [schoolname, set_schoolname] = useState(null);
+      const [schoolname, set_schoolname] = useState("");
       const [message_status, set_messagestatus] = useState('-success displaynone');
       const [message, set_message] = useState('Wait a minute');
-      
+
 
 
       const auth = useSelector(state => state.auth);
-  
+
       const dispatch = useDispatch();
 
 
@@ -102,7 +92,5 @@ function VerifySchool(props) {
 
 VerifySchool.propTypes = {
 };
-
-
 
 export default withRouter(VerifySchool);
