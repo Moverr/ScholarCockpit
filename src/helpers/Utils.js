@@ -3,7 +3,8 @@ import store from "../store/Store";
 
 
 export function getBaseUrl() {
-    let baseurl = store.getState().app.baseUrl;
+    let env = "development"
+    let baseurl = store.getState().app.baseUrl[env];
     return baseurl;
 }
 
