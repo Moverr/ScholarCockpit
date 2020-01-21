@@ -8,7 +8,7 @@ import '../../css/loginschool.css';
 
 import { currentscreen, nextscreen, prevscreen, addAuthentication, addRoles,loginstatus } from '../../store/actions/authenticationAction';
 
-
+ 
 
 function LoginSchool(props) {
 
