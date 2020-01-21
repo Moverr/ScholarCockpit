@@ -13,6 +13,14 @@ export const logout=(payload)=>{
 }
 
 
+export const loginstatus=(payload)=>{
+    return {
+        type:"LOGIN_STATUS",
+        payload:payload
+    }
+}
+
+
 export const nextscreen=(payload)=>{
     return {
         type:"ADD_NEXT_SCREEN",

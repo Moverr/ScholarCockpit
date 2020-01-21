@@ -6,7 +6,7 @@ import Alert from '../../helpers/Alert';
 import InputField from '../../forms/inputs/InputField';
 import '../../css/loginschool.css';
 
-import { currentscreen, nextscreen, prevscreen, addAuthentication, addRoles,loggin } from '../../store/actions/authenticationAction';
+import { currentscreen, nextscreen, prevscreen, addAuthentication, addRoles,loginstatus } from '../../store/actions/authenticationAction';
 
 
 
@@ -84,7 +84,7 @@ function LoginSchool(props) {
 		dispatch(addAuthentication(response.authentication));
 		dispatch(addRoles(response.roleResponses));
 
-		dispatch(loggin(true));
+		dispatch(loginstatus(true));
 
 
 
