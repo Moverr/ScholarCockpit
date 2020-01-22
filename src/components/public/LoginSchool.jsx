@@ -9,6 +9,8 @@ import '../../css/loginschool.css';
 import { currentscreen, nextscreen, prevscreen, addAuthentication, addRoles, loginstatus } from '../../store/actions/authenticationAction';
 import { ComponentSwicher } from '../../helpers/ComponentSwicher';
 
+import { withRouter, useHistory, NavLink } from 'react-router-dom';
+
 
 
 function LoginSchool(props) {
@@ -18,8 +20,7 @@ function LoginSchool(props) {
 	const [username, set_username] = useState("");
 	const [password, set_password] = useState("");
 	const [loginBtn, set_loginBtn] = useState(null);
-	const [props, set_props] = useState(props);
-	
+ 	
 	const auth = useSelector(state => state.auth);
 	const dispatch = useDispatch();
 
@@ -86,7 +87,8 @@ function LoginSchool(props) {
 
 		dispatch(loginstatus(true));
 
-		ComponentSwicher(props)
+		ComponentSwicher(props);
+		// props.history.push("/dashboard");
 
 
 
@@ -175,4 +177,4 @@ function LoginSchool(props) {
 
 }
 
-export default LoginSchool;
+export default withRouter(LoginSchool);
