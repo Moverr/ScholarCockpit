@@ -8,9 +8,13 @@ import InputField from '../../forms/inputs/InputField';
 import '../../css/verifyschool.css';
 import Alert from '../../helpers/Alert';
 import { VerifySchoolService } from '../../services/SchoolSeervice';
+import { getCurrentScreen } from '../helpers/Utils';
+
+
 
 function ComponentSwicher() {
-    switch(SCREEN.toLowerCase()){
+    const screen = getCurrentScreen();
+    switch (SCREEN.toLowerCase()) {
 
         case "login":
             props.history.push("/login");

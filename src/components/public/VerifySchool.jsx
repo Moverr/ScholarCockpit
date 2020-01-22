@@ -7,7 +7,8 @@ import { withRouter, useHistory, NavLink } from 'react-router-dom';
 import InputField from '../../forms/inputs/InputField';
 import '../../css/verifyschool.css';
 import Alert from '../../helpers/Alert';
-import { VerifySchoolService } from '../../services/SchoolSeervice'
+import { VerifySchoolService } from '../../services/SchoolSeervice';
+
 
 function VerifySchool(props) {
 
@@ -43,7 +44,7 @@ function VerifySchool(props) {
                   dispatch(nextscreen("LOGIN"));
                   dispatch(prevscreen("VERIFYSCHOOL"));
                   dispatch(currentscreen("LOGIN"));
-                  
+
                   props.history.push("/login");
 
 
