@@ -38,7 +38,7 @@ let endpoints = {
 }
 let baseUrlConfig = {
     development: "http://localhost:9776/",
-    staging: "",
+    staging: "http://scholarengine.us-east-2.elasticbeanstalk.com/",
     live: ""
 
 }
