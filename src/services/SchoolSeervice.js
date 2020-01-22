@@ -9,9 +9,7 @@ import { setSchoolName } from '../store/actions/schoolAction'
 
 
 export function VerifySchoolService(schoolname, callback) {
-    // const authReducer = useSelector(state => state.authReducer);
-    // const dispatch = useDispatch();
-
+ 
     if (schoolname == null) {
         return false;
     }

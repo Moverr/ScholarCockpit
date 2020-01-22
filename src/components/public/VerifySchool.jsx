@@ -18,7 +18,6 @@ function VerifySchool(props) {
 
 
       const auth = useSelector(state => state.auth);
-
       const dispatch = useDispatch();
 
 
@@ -40,15 +39,11 @@ function VerifySchool(props) {
 
             //todo: Verify School 
             VerifySchoolService(school_name, (response) => {
-                  dispatch(setSchoolName(schoolname))
-
-
+                  dispatch(setSchoolName(schoolname));
                   dispatch(nextscreen("LOGIN"));
                   dispatch(prevscreen("VERIFYSCHOOL"));
                   dispatch(currentscreen("LOGIN"));
-
-
-
+                  
                   props.history.push("/login");
 
 
