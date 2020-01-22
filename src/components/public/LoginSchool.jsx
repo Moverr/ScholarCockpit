@@ -6,9 +6,9 @@ import Alert from '../../helpers/Alert';
 import InputField from '../../forms/inputs/InputField';
 import '../../css/loginschool.css';
 
-import { currentscreen, nextscreen, prevscreen, addAuthentication, addRoles,loginstatus } from '../../store/actions/authenticationAction';
+import { currentscreen, nextscreen, prevscreen, addAuthentication, addRoles, loginstatus } from '../../store/actions/authenticationAction';
 
- 
+
 
 function LoginSchool(props) {
 
@@ -60,9 +60,6 @@ function LoginSchool(props) {
 		api.post(url, body, headers, handleSuccess, handleError);
 	};
 
-
-
-
 	const handleSuccess = (response) => {
 		set_loginBtn('LOGIN');
 		if (response == null) {
@@ -89,25 +86,7 @@ function LoginSchool(props) {
 
 
 
-		
 
-		//todo: improve overall state to improve the system
-
-		/*	store.dispatch({
-				type: 'ADD_AUTHENTICATION',
-				payload: response.authentication
-			}); */
-
-		// this.setState({
-		// 	authentication: response.authentication,
-		// 	isLoggedIn: response.isLoggedIn,
-		// 	message_status: '-success ',
-		// 	message: ' Logged In Successfully '
-		// });
-
-
-		// let path = `/dashboard/`;
-		// pushHistory(path, this.props);
 	};
 
 	const handleError = (response) => {
@@ -152,6 +131,7 @@ function LoginSchool(props) {
 				message_status: store.getState().Auth.LoginResponse.status === 401 ? '-warning' : '-danger',
 				loginBtn: 'LOGIN'
 			}); */
+
 		console.log(response);
 	};
 
