@@ -8,6 +8,7 @@ import InputField from '../../forms/inputs/InputField';
 import '../../css/verifyschool.css';
 import Alert from '../../helpers/Alert';
 import { VerifySchoolService } from '../../services/SchoolSeervice';
+import {ComponentSwicher} from '../../helpers/ComponentSwicher';
 
 
 function VerifySchool(props) {
@@ -45,7 +46,9 @@ function VerifySchool(props) {
                   dispatch(prevscreen("VERIFYSCHOOL"));
                   dispatch(currentscreen("LOGIN"));
 
-                  props.history.push("/login");
+                  ComponentSwicher(props)
+
+                  // props.history.push("/login");
 
 
             })
