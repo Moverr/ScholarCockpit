@@ -14,11 +14,16 @@ import { getCurrentScreen } from '../helpers/Utils';
 
 function ComponentSwicher() {
     const screen = getCurrentScreen();
-    switch (SCREEN.toLowerCase()) {
+    switch (screen.toLowerCase()) {
 
         case "login":
             props.history.push("/login");
             break;
+
+        case "dashboard":
+            props.history.push("/dashboard");
+            break;
+
         default:
             props.history.push("/");
             break;
