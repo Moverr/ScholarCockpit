@@ -8,3 +8,18 @@ import InputField from '../../forms/inputs/InputField';
 import '../../css/verifyschool.css';
 import Alert from '../../helpers/Alert';
 import { VerifySchoolService } from '../../services/SchoolSeervice';
+
+function ComponentSwicher(SCREEN) {
+    switch(SCREEN.toLowerCase()){
+
+        case "login":
+            break;
+        default:
+            props.history.push("/");
+            break;
+    }
+
+}
+
+export default ComponentSwicher(VerifySchool);
+
