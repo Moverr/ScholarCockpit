@@ -7,6 +7,7 @@ import InputField from '../../forms/inputs/InputField';
 import '../../css/loginschool.css';
 
 import { currentscreen, nextscreen, prevscreen, addAuthentication, addRoles, loginstatus } from '../../store/actions/authenticationAction';
+import { ComponentSwicher } from '../../helpers/ComponentSwicher';
 
 
 
@@ -83,6 +84,7 @@ function LoginSchool(props) {
 
 		dispatch(loginstatus(true));
 
+		ComponentSwicher(props)
 
 
 

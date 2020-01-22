@@ -8,7 +8,7 @@ import InputField from '../../forms/inputs/InputField';
 import '../../css/verifyschool.css';
 import Alert from '../../helpers/Alert';
 import { VerifySchoolService } from '../../services/SchoolSeervice';
-import {ComponentSwicher} from '../../helpers/ComponentSwicher';
+import { ComponentSwicher } from '../../helpers/ComponentSwicher';
 
 
 function VerifySchool(props) {
@@ -48,9 +48,7 @@ function VerifySchool(props) {
 
                   ComponentSwicher(props)
 
-                  // props.history.push("/login");
-
-
+                    
             })
 
       }
@@ -61,9 +59,7 @@ function VerifySchool(props) {
       return (
 
             <div className="container-fluid verifyschoolwrapper">
-
-
-
+ 
                   <form role="form" onSubmit={handleSubmit} >
                         <br />
                         <h3 className="center-align header">Enter Your school name. </h3>
