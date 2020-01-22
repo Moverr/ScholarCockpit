@@ -4,6 +4,7 @@ import '../../css/home.css';
 import TopNavigation from './TopNavigation';
 import RightBar from './RightBar';
 import { getLastURLSegment } from '../../helpers/Utils'
+import { ComponentSwicher } from '../../helpers/ComponentSwicher';
 
 
 
@@ -13,13 +14,15 @@ class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            urlSegment :null
+            urlSegment: null
         }
     }
 
     componentDidMount() {
-        let  lastURLSegment = getLastURLSegment(); 
-        this.setState({urlSegment:lastURLSegment}); 
+        ComponentSwicher(this.props);
+        let lastURLSegment = getLastURLSegment();
+        this.setState({ urlSegment: lastURLSegment });
+
 
 
     }

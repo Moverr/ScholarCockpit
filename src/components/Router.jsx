@@ -4,10 +4,11 @@ import { Switch, Route } from 'react-router-dom';
 import Home from './public/Home';
 // import Verify from './admin/Verify';
 import Dashboard from './admin/Dashboard';
-  
+   
+
 
 const Router =  function()  {
-
+	
  
 	 
 		return (
