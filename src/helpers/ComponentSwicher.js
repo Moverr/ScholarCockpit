@@ -9,10 +9,11 @@ import '../../css/verifyschool.css';
 import Alert from '../../helpers/Alert';
 import { VerifySchoolService } from '../../services/SchoolSeervice';
 
-function ComponentSwicher(SCREEN) {
+function ComponentSwicher() {
     switch(SCREEN.toLowerCase()){
 
         case "login":
+            props.history.push("/login");
             break;
         default:
             props.history.push("/");
