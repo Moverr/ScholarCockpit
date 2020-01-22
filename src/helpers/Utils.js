@@ -43,5 +43,12 @@ export function verifyAuthentication() {
 }
 
 
+
+export function getCurrentScreen() {
+    let navigation = store.getState().navigation.currentScreen;
+    return navigation;
+}
+
+
  
 
