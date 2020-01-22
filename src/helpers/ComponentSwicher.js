@@ -5,6 +5,12 @@ import { getCurrentScreen } from '../helpers/Utils';
 
 export function ComponentSwicher(props) {
     const screen = getCurrentScreen();
+    if (screen === null || screen === undefined) {
+
+        props.history.push("/");
+        return;
+    }
+
     switch (screen.toLowerCase()) {
 
         case "login":
@@ -22,4 +28,4 @@ export function ComponentSwicher(props) {
 
 }
 
- 
+
