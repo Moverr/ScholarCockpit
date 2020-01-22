@@ -18,6 +18,8 @@ function LoginSchool(props) {
 	const [username, set_username] = useState("");
 	const [password, set_password] = useState("");
 	const [loginBtn, set_loginBtn] = useState(null);
+	const [props, set_props] = useState(props);
+	
 	const auth = useSelector(state => state.auth);
 	const dispatch = useDispatch();
 
