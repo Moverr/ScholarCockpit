@@ -11,6 +11,7 @@ import { VerifySchoolService } from '../../services/SchoolSeervice';
 import { ComponentSwicher } from '../../helpers/ComponentSwicher';
 
 
+
 function VerifySchool(props) {
 
       const [schoolname, set_schoolname] = useState("");

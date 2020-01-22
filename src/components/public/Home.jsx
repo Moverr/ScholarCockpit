@@ -33,7 +33,7 @@ class Home extends Component {
             <div >
                 {/*  functional components  */}
                 <TopNavigation props={this.props} />
-                <RightBar url={this.state.urlSegment} />
+                <RightBar url={this.state.urlSegment} props={this.props} />
 
 
 
