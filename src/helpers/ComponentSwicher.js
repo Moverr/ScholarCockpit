@@ -12,7 +12,7 @@ import { getCurrentScreen } from '../helpers/Utils';
 
 
 
-function ComponentSwicher() {
+function ComponentSwicher(...props) {
     const screen = getCurrentScreen();
     switch (screen.toLowerCase()) {
 
