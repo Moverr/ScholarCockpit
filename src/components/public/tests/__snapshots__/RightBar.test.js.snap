@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Rightbar  Should have a class banner 1`] = `undefined`;
+
+exports[`Testing Rightbar  should  render correctly 1`] = `undefined`;

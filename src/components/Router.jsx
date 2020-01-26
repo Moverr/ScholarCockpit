@@ -18,7 +18,7 @@ const Router =  function()  {
 					{/* <Route exact  path="/verify" component={Verify} /> */}
 					{/* <Route exact path="/login/" component={Login}/> */}
                     {/* <Route path="/login/:schoolName" component={Login} /> */}
-					<Route path="/dashboard/" component={Dashboard} />
+					<Route path="/dashboard/*" component={Dashboard} />
 					<Route path="*" component={Home} />
 				</Switch>
 			</div>

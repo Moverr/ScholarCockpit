@@ -1,16 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import RightBar from '../RightBar';
 import { Provider } from 'react-redux';
-import store from '../../../store/Store';
 
 
 
 
 
 
-let wrapper = shallow( <RightBar  store={store} />);
+let wrapper = shallow( <RightBar />);
 
 
 
