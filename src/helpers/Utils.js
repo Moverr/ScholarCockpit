@@ -4,7 +4,8 @@ import store from "../store/Store";
 
 export function getBaseUrl() {
     let env = "development";
-    env = "staging";
+    //todo: adding this to the staging environment 
+    // env = "staging";
     let baseurl = store.getState().app.baseUrl[env];
     return baseurl;
 }
