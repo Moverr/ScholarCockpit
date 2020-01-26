@@ -9,7 +9,7 @@ import '../../css/loginschool.css';
 import { currentscreen, nextscreen, prevscreen, addAuthentication, addRoles, loginstatus } from '../../store/actions/authenticationAction';
 import { ComponentSwicher } from '../../helpers/ComponentSwicher';
 
-import { withRouter, useHistory, NavLink } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 
 
@@ -51,6 +51,7 @@ function LoginSchool(props) {
 		};
 
 		console.log(body);
+		
 
 		let headers = {
 			'Content-Type': 'application/json',
@@ -84,15 +85,9 @@ function LoginSchool(props) {
 
 		dispatch(addAuthentication(response.authentication));
 		dispatch(addRoles(response.roleResponses));
-
 		dispatch(loginstatus(true));
-
 		ComponentSwicher(props);
-		// props.history.push("/dashboard");
-
-
-
-
+		  
 	};
 
 	const handleError = (response) => {
@@ -100,44 +95,6 @@ function LoginSchool(props) {
 		set_loginBtn('LOGIN');
 		set_message(' Invalid User credentials   ');
 		set_messagestatus('-warning ');
-
-
-
-		/* 	store.dispatch({
-				type: 'LOGIN_STATUS',
-				payload: response
-			}); */
-
-		/* switch (response) {
-			case 401:
-				store.dispatch({
-					type: 'LOGIN_FAILURE',
-					payload: 'Invalid User Credentials'
-				});
-				break;
-
-			case 404:
-				store.dispatch({
-					type: 'LOGIN_FAILURE',
-					payload: 'Server Un-reachable'
-				});
-
-				break;
-
-			default:
-				store.dispatch({
-					type: 'LOGIN_FAILURE',
-					payload: 'Something Went Wrong, contact System Administrator'
-				});
-				break;
-		}  */
-
-		/*	this.setState({
-				message: store.getState().Auth.LoginResponse.message,
-				message_status: store.getState().Auth.LoginResponse.status === 401 ? '-warning' : '-danger',
-				loginBtn: 'LOGIN'
-			}); */
-
 		console.log(response);
 	};
 

@@ -15,8 +15,6 @@ export function VerifySchoolService(schoolname, callback) {
     }
 
 
-
-
     return callback({
         status: "SUCCES",
         message: "School Persisted to Store "

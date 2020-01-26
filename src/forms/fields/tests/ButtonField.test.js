@@ -13,9 +13,10 @@ beforeAll(()=>{
 const props = {
         title:"Button Title",
         name:'Button Name',
-        className:"buttonField",
+        message:'Button Message',
+        className:'buttonField',
         id:"buttonID",
-        handleClick:clickAlert()
+        callback:clickAlert()
     };
     wrapper = shallow(<ButtonField props />); 
   
