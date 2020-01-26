@@ -22,9 +22,7 @@ class Home extends Component {
         ComponentSwicher(this.props);
         let lastURLSegment = getLastURLSegment();
         this.setState({ urlSegment: lastURLSegment });
-
-
-
+ 
     }
 
     render() {
@@ -34,11 +32,7 @@ class Home extends Component {
                 {/*  functional components  */}
                 <TopNavigation props={this.props} />
                 <RightBar url={this.state.urlSegment} props={this.props} />
-
-
-
-
-                <div className={"row"}>
+                 <div className={"row"}>
                     <div className={"col-md-12 row"}>
 
                         <div className={"col-md-3"}>

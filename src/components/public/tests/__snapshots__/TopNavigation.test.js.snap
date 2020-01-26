@@ -1,0 +1,135 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing    Should have a class banner 1`] = `
+<div
+  className="row-fluid"
+>
+  <nav
+    className=" col-md-12 navbar navbar-fixed-top  navbar-expand-lg navbar-light "
+    id="bs-navbar"
+  >
+    <ul
+      className="nav navbar-nav"
+    >
+      <li>
+        <img
+          alt="Logo"
+          src="logo.png"
+        />
+         
+        <NavLink
+          activeClassName="active"
+          aria-current="page"
+          className="navbar-brand"
+          to="#"
+        >
+           
+          scholar
+           
+        </NavLink>
+      </li>
+    </ul>
+    <ul
+      className="nav  navigation_right "
+    >
+      <li>
+         
+        <NavLink
+          activeClassName="active"
+          aria-current="page"
+          to="#"
+        >
+           Product   |  
+        </NavLink>
+      </li>
+      <li>
+         
+        <NavLink
+          activeClassName="active"
+          aria-current="page"
+          to="#"
+        >
+           Pricing   |  
+        </NavLink>
+      </li>
+      <li>
+         
+        <NavLink
+          activeClassName="active"
+          aria-current="page"
+          to="#"
+        >
+           Support  
+        </NavLink>
+      </li>
+    </ul>
+  </nav>
+</div>
+`;
+
+exports[`Testing    should  render correctly 1`] = `
+<div
+  className="row-fluid"
+>
+  <nav
+    className=" col-md-12 navbar navbar-fixed-top  navbar-expand-lg navbar-light "
+    id="bs-navbar"
+  >
+    <ul
+      className="nav navbar-nav"
+    >
+      <li>
+        <img
+          alt="Logo"
+          src="logo.png"
+        />
+         
+        <NavLink
+          activeClassName="active"
+          aria-current="page"
+          className="navbar-brand"
+          to="#"
+        >
+           
+          scholar
+           
+        </NavLink>
+      </li>
+    </ul>
+    <ul
+      className="nav  navigation_right "
+    >
+      <li>
+         
+        <NavLink
+          activeClassName="active"
+          aria-current="page"
+          to="#"
+        >
+           Product   |  
+        </NavLink>
+      </li>
+      <li>
+         
+        <NavLink
+          activeClassName="active"
+          aria-current="page"
+          to="#"
+        >
+           Pricing   |  
+        </NavLink>
+      </li>
+      <li>
+         
+        <NavLink
+          activeClassName="active"
+          aria-current="page"
+          to="#"
+        >
+           Support  
+        </NavLink>
+      </li>
+    </ul>
+  </nav>
+</div>
+`;

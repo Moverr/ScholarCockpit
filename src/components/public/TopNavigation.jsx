@@ -27,13 +27,10 @@ function TopNavigation() {
           <li><img src={logo} alt="Logo" /> <NavLink className={"navbar-brand"} to={'#'} activeClassName="active"> {applicationTitle} </NavLink>
           </li>
         </ul>
-        {navigationPanel()}
- 
+        {navigationPanel()} 
       </nav>
     </div>
-
   )
-
 }
 
 

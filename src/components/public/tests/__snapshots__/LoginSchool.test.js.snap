@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Login  Should have a class banner 1`] = `
+<Route>
+  <Component />
+</Route>
+`;
+
+exports[`Testing Login  should  render correctly 1`] = `
+<Route>
+  <Component />
+</Route>
+`;
