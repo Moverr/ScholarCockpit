@@ -2,12 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { shallow } from 'enzyme';
 import Home from '../Home';
+import { Router } from 'react-router';
 
 
 
 
 
-let wrapper = shallow(<Home />);
+let wrapper = shallow(<Home   /> );
 
 
 

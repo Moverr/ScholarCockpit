@@ -43,9 +43,7 @@ function RightBar(props) {
 
   const screennavigation = useSelector(state => state.navigation);
 
-  logTable(logdata);
-  const urlsegment = props.urlSegment;
-  console.log("SOEOEOEOEOEOEO");
+  logTable(logdata);  
   console.log(screennavigation.currentScreen);
 
 

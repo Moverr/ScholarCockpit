@@ -55,19 +55,6 @@ class Home extends Component {
                             <div className="home-header">Partner</div>
 
                         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
                     </div>
                 </div>
             </div>
