@@ -62,6 +62,9 @@ function LoginSchool(props) {
 		const url = getEndPoint('users') + "login";
 		console.log("URL : " + url);
 
+		set_message('Processing ... ');
+		set_messagestatus('-info ');
+
 		api.post(url, body, headers, handleSuccess, handleError);
 	};
 
