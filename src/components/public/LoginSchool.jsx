@@ -19,8 +19,8 @@ function LoginSchool(props) {
 	const [message, set_message] = useState("");
 	const [username, set_username] = useState("");
 	const [password, set_password] = useState("");
-	const [loginBtn, set_loginBtn] = useState(null);
- 	
+	const [loginBtn, set_loginBtn] = useState("LOGIN");
+
 	const auth = useSelector(state => state.auth);
 	const dispatch = useDispatch();
 
@@ -51,7 +51,7 @@ function LoginSchool(props) {
 		};
 
 		console.log(body);
-		
+
 
 		let headers = {
 			'Content-Type': 'application/json',
@@ -87,7 +87,7 @@ function LoginSchool(props) {
 		dispatch(addRoles(response.roleResponses));
 		dispatch(loginstatus(true));
 		ComponentSwicher(props);
-		  
+
 	};
 
 	const handleError = (response) => {
@@ -126,8 +126,8 @@ function LoginSchool(props) {
 
 				<br />
 				<button type="submit" name="loginbtn" className="btn btn-primary">
-					LOGIN
-					</button>
+					{loginBtn}
+				</button>
 			</form>
 		</div>
 	);
