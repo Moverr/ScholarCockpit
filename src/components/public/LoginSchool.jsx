@@ -96,7 +96,7 @@ function LoginSchool(props) {
 
 	const handleError = (response) => {
 		let	erro_log ;
-		if(response == 404){
+		if(response === 404){
 			 	erro_log = {
 				"message":"Server not reachable, try again or contact administrator",
 				"status_code":404
