@@ -11,7 +11,8 @@ import { ComponentSwicher } from '../../helpers/ComponentSwicher';
 
 import { withRouter } from 'react-router-dom';
 
-
+// todo: checkout 
+// https://fb.me/react-attribute-behavior
 
 function LoginSchool(props) {
 
@@ -94,11 +95,26 @@ function LoginSchool(props) {
 	};
 
 	const handleError = (response) => {
-		console.log(response);
-		set_loginBtn('LOGIN');
-		set_message(' Invalid User credentials   ');
-		set_messagestatus('-warning ');
-		console.log(response);
+		let	erro_log ;
+		if(response == 404){
+			 	erro_log = {
+				"message":"Server not reachable, try again or contact administrator",
+				"status_code":404
+			};
+
+			console.table(erro_log);
+			set_loginBtn('LOGIN');
+			set_message(' Some technical issues, contact administrator   ');
+			set_messagestatus('-danger ');
+			 
+		}else{
+
+			console.log(response);
+			set_loginBtn('LOGIN');
+			set_message(' Invalid User credentials   ');
+			set_messagestatus('-warning ');
+			console.log(response);
+		}
 	};
 
 
