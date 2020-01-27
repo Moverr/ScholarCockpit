@@ -17,8 +17,8 @@
     "redux": "^4.0.1"
   },
   "scripts": {
-    "start": "node app.js",
-    "startold": "react-scripts start",
+    "startold": "node app.js",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -58,5 +58,7 @@
   "bugs": {
     "url": "https://github.com/Moverr/ScholarCockpit/issues"
   },
-  "homepage": ""
+  "homepage": "",
+  "GiftBirthday":"15/April/2014",
+  "MUKIBirthday":"03/Match/2018"
 }
