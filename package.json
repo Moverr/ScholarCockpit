@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.21.1",
     "babel-eslint": "^10.0.2",
     "bootstrap": "^4.3.1",
     "jest": "^24.8.0",
@@ -59,6 +60,6 @@
     "url": "https://github.com/Moverr/ScholarCockpit/issues"
   },
   "homepage": "",
-  "GiftBirthday":"15/April/2014",
-  "MUKIBirthday":"03/Match/2018"
+  "GiftBirthday": "15/April/2014",
+  "MUKIBirthday": "03/Match/2018"
 }
